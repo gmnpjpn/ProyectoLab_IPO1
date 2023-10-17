@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProyectoLab_IPO1.MainWindow"
+﻿<Window x:Class="IPO_Lab_23_24.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProyectoLab_IPO1"
+        xmlns:local="clr-namespace:IPO_Lab_23_24"
         mc:Ignorable="d"
-        Title="ProyectoLab_IPO" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         
     </Grid>

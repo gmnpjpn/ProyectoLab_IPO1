@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoLab_IPO1.Properties
+namespace IPO_Lab_23_24.Properties
 {
 
 

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProyectoLab_IPO1
+namespace IPO_Lab_23_24
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml

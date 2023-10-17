@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABC2D85A-EAD0-4050-B233-9171084C0016}</ProjectGuid>
+    <ProjectGuid>{6F30A58D-9903-4CC2-A088-19D82D0FECB7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProyectoLab_IPO1</RootNamespace>
-    <AssemblyName>ProyectoLab_IPO1</AssemblyName>
+    <RootNamespace>IPO_Lab_23_24</RootNamespace>
+    <AssemblyName>IPO_Lab_23-24</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
