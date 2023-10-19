@@ -24,5 +24,25 @@ namespace IPO_Lab_23_24
         {
             InitializeComponent();
         }
+
+        private void btnAction_Click(object sender, RoutedEventArgs e)
+        {
+
+            string userName = txtBoxUser.Text.ToString();
+            string userPass = PassBoxPass.Password.ToString();
+
+            if(string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(userPass))
+            {
+                lblWarning.Content = "Nombre de usuario y/o contraseña no válidos";
+            }
+            else
+            {
+                lblWarning.Content = "";
+                Window1 landingPage = new Window1(userName);
+                this.Close();
+                landingPage.Show();
+
+            }
+        }
     }
 }

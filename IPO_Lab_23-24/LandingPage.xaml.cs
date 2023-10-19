@@ -19,9 +19,11 @@ namespace IPO_Lab_23_24
     /// </summary>
     public partial class Window1 : Window
     {
-        public Window1()
+        public Window1(string userName)
         {
             InitializeComponent();
+            lblUser.Content = userName;
+
         }
     }
 }
