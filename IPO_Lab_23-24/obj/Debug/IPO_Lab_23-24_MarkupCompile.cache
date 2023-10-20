@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\german\ClonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\
 IPO_Lab_23_24
 none
 false
 DEBUG;TRACE
-C:\Users\german\ClonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\App.xaml
-1219584333
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\App.xaml
+31544973015
 
-51579654133
+71634967495
 13-1310406943
-MainWindow.xaml;
+LandingPage_Admin.xaml;LandingPage_User.xaml;LoginWindow.xaml;
 
 False
 

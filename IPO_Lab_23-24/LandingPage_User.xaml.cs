@@ -10,19 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace IPO_Lab_23_24
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para LandingPage_User.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LandingPage_User : Window
     {
-        public MainWindow()
+        public LandingPage_User(String userName)
         {
             InitializeComponent();
+            lblUser.Content = userName;
+        }
+
+        private void clickLogout(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginPage = new MainWindow();
+            this.Close();
+            loginPage.Show();
         }
     }
 }
