@@ -15,15 +15,14 @@ using System.Windows.Shapes;
 namespace IPO_Lab_23_24
 {
     /// <summary>
-    /// Lógica de interacción para Window1.xaml
+    /// Lógica de interacción para LandingPage_User.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class LandingPage_User : Window
     {
-        public Window1(string userName)
+        public LandingPage_User(String userName)
         {
             InitializeComponent();
             lblUser.Content = userName;
-
         }
 
         private void clickLogout(object sender, RoutedEventArgs e)

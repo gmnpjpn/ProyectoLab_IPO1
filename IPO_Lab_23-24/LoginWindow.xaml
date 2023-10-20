@@ -21,7 +21,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="325*"/>
             <ColumnDefinition Width="92*"/>
-            <ColumnDefinition Width="223*"/>
+            <ColumnDefinition Width="223"/>
             <ColumnDefinition Width="53*"/>
             <ColumnDefinition Width="587*"/>
         </Grid.ColumnDefinitions>
@@ -38,6 +38,5 @@
         <Button x:Name="btnLogin" Grid.Column="4" Content="Iniciar Sesión" Margin="167,0,0,10" Grid.Row="6" FontSize="32" Height="47" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="197" Click="btnAction_Click" TabIndex="3"/>
         <Label x:Name="lblWarning" Grid.Column="3" Content="" HorizontalAlignment="Left" Height="47" Margin="46,0,0,0" Grid.Row="7" VerticalAlignment="Top" Width="538" FontFamily="Berlin Sans FB" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Red" Grid.ColumnSpan="2"/>
         <PasswordBox x:Name="PassBoxPass" Grid.Column="4" HorizontalAlignment="Left" Margin="65,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="408" Height="59" Grid.RowSpan="2" PasswordChar="*" FontFamily="Berlin Sans FB" TabIndex="2" FontWeight="Bold" FontSize="72"/>
-        <Button Grid.Column="2" Content="Button" HorizontalAlignment="Left" Height="72" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101"/>
     </Grid>
 </Window>

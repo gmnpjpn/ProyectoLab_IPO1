@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\App.xaml
-2609367799
+31544973015
 
-7-1916019783
+8-447121123
 13-1310406943
-LoginWindow.xaml;LandingPage.xaml;
+LandingPage_Admin.xaml;LandingPage_User.xaml;LoginWindow.xaml;
 
-False
+True
 

@@ -38,9 +38,20 @@ namespace IPO_Lab_23_24
             else
             {
                 lblWarning.Content = "";
-                Window1 landingPage = new Window1(userName);
-                this.Close();
-                landingPage.Show();
+                if (userName == "admin" && userPass == "admin")
+                {
+                    LandingPage_Admin landingPage_Admin = new LandingPage_Admin(userName);
+                    this.Close();
+                    landingPage_Admin.Show();
+
+                }
+                else
+                {
+
+                    LandingPage_User landingPage_User = new LandingPage_User(userName);
+                    this.Close();
+                    landingPage_User.Show();
+                }
 
             }
         }
