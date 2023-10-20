@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:IPO_Lab_23_24"
         mc:Ignorable="d"
         Title="VinylShop ES- Login" Height="720" Width="1280" WindowStartupLocation="CenterScreen" Icon="/Media/Vinyl_White.ico">
-    <Grid Background="Black" Margin="0,0,0,0">
+    <Grid x:Name="GridLogin" Background="Black" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="70*"/>
@@ -35,8 +35,9 @@
         <Label x:Name="lblUser" Grid.Column="4" Content="Nombre de Usuario:" HorizontalAlignment="Left" Margin="63,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
         <TextBox x:Name="txtBoxUser" Grid.Column="4" Grid.Row="2" TextWrapping="Wrap" FontFamily="Consolas" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="63,59,116,58" Grid.RowSpan="3" TabIndex="1"/>
         <Label x:Name="lblPass" Grid.Column="4" Content="Contraseña:" HorizontalAlignment="Left" Margin="64,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="409" Height="59" FontFamily="Berlin Sans FB" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Grid.RowSpan="2"/>
-        <Button x:Name="btnLogin" Grid.Column="4" Content="Iniciar Sesión" Margin="167,0,0,10" Grid.Row="6" FontSize="32" Height="47" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="197" Click="btnAction_Click" TabIndex="3" Focusable="False" IsHitTestVisible="False"/>
+        <Button x:Name="btnLogin" Grid.Column="4" Content="Iniciar Sesión" Margin="167,0,0,10" Grid.Row="6" FontSize="32" Height="47" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="197" Click="btnAction_Click" TabIndex="3"/>
         <Label x:Name="lblWarning" Grid.Column="3" Content="" HorizontalAlignment="Left" Height="47" Margin="46,0,0,0" Grid.Row="7" VerticalAlignment="Top" Width="538" FontFamily="Berlin Sans FB" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Red" Grid.ColumnSpan="2"/>
         <PasswordBox x:Name="PassBoxPass" Grid.Column="4" HorizontalAlignment="Left" Margin="65,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="408" Height="59" Grid.RowSpan="2" PasswordChar="*" FontFamily="Berlin Sans FB" TabIndex="2" FontWeight="Bold" FontSize="72"/>
+        <Button Grid.Column="2" Content="Button" HorizontalAlignment="Left" Height="72" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101"/>
     </Grid>
 </Window>

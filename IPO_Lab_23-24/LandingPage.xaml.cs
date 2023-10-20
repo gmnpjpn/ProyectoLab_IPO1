@@ -25,5 +25,12 @@ namespace IPO_Lab_23_24
             lblUser.Content = userName;
 
         }
+
+        private void clickLogout(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginPage = new MainWindow();
+            this.Close();
+            loginPage.Show();
+        }
     }
 }

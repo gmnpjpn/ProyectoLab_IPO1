@@ -110,5 +110,11 @@
   <ItemGroup>
     <Resource Include="Media\AdminProfilePicture_Round.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\logoutIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logoutIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

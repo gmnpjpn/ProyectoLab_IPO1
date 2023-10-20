@@ -35,7 +35,12 @@
         </Rectangle>
         <Label x:Name="lblUser" Grid.Column="2" Content="Label" HorizontalAlignment="Left" Height="108" Margin="34,39,0,0" Grid.RowSpan="3" Grid.Row="4" VerticalAlignment="Top" Width="388" Foreground="White" FontSize="72" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Rectangle x:Name="MenuBar" Grid.ColumnSpan="7" HorizontalAlignment="Left" Height="75" Stroke="Black" VerticalAlignment="Center" Width="1280" Fill="#FF424242"/>
-        <Image x:Name="AdminImage" HorizontalAlignment="Left" Height="70" Margin="10,0,0,0" VerticalAlignment="Center" Width="70" Source="/Media/AdminProfilePicture_Round.png"/>
-        <Label Content="Admin" HorizontalAlignment="Right" Margin="85,0,0,0" VerticalAlignment="Center" TabIndex="1" FontFamily="Berlin Sans FB" FontSize="35" Height="69" Width="240" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
+        <Image x:Name="AdminImage" HorizontalAlignment="Left" Height="55" Margin="10,0,0,0" VerticalAlignment="Center" Width="55" Source="/Media/AdminProfilePicture_Round.png"/>
+        <Label Content="Admin" HorizontalAlignment="Right" Margin="85,0,0,0" VerticalAlignment="Center" TabIndex="1" FontFamily="Berlin Sans FB" FontSize="24" Height="69" Width="240" VerticalContentAlignment="Center" Foreground="White"/>
+        <Button x:Name="logOut" Grid.Column="6" Content="" HorizontalAlignment="Left" Height="55" Margin="260,10,0,0" VerticalAlignment="Top" Width="55" Click="clickLogout">
+            <Button.Background>
+                <ImageBrush ImageSource="/logoutIcon.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
