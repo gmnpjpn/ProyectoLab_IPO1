@@ -47,7 +47,6 @@ namespace IPO_Lab_23_24
                 }
                 else
                 {
-
                     LandingPage_User landingPage_User = new LandingPage_User(userName);
                     this.Close();
                     landingPage_User.Show();
