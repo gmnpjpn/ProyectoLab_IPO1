@@ -19,10 +19,11 @@ namespace IPO_Lab_23_24
     /// </summary>
     public partial class LandingPage_Admin : Window
     {
-        public LandingPage_Admin(String userName)
+        public LandingPage_Admin(string userName, string dateTimeFormatted)
         {
             InitializeComponent();
             lblUser.Content = userName;
+            lblLastAccess.Content = dateTimeFormatted;
         }
 
         private void clickLogout(object sender, RoutedEventArgs e)

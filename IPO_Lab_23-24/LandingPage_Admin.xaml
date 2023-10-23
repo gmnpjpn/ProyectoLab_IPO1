@@ -25,21 +25,24 @@
             <ColumnDefinition Width="223*"/>
             <ColumnDefinition Width="53*"/>
             <ColumnDefinition Width="170*"/>
-            <ColumnDefinition Width="92*"/>
-            <ColumnDefinition Width="325"/>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="191.642"/>
+            <ColumnDefinition Width="64.358"/>
         </Grid.ColumnDefinitions>
-        <Rectangle x:Name="wallpaper" Stroke="Black" Margin="0,1,0,0" Grid.RowSpan="10" Grid.ColumnSpan="7">
+        <Rectangle x:Name="wallpaper" Stroke="Black" Margin="0,1,0,0" Grid.RowSpan="10" Grid.ColumnSpan="8">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Media/FondoVentanaLogin.png" Opacity="0.6"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="MenuBar" Grid.ColumnSpan="7" HorizontalAlignment="Left" Height="75" Stroke="Black" VerticalAlignment="Center" Width="1280" Fill="#FF424242"/>
+        <Rectangle x:Name="MenuBar" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="75" Stroke="Black" VerticalAlignment="Center" Width="1280" Fill="#FF424242"/>
         <Image x:Name="AdminImage" HorizontalAlignment="Left" Height="55" Margin="10,0,0,0" VerticalAlignment="Center" Width="55" Source="/Media/AdminProfilePicture_Round.png"/>
-        <Label x:Name="lblUser" Content="Admin" HorizontalAlignment="Right" Margin="85,0,0,0" VerticalAlignment="Center" TabIndex="1" FontFamily="Berlin Sans FB" FontSize="24" Height="69" Width="240" VerticalContentAlignment="Center" Foreground="White"/>
-        <Button x:Name="logOut" Grid.Column="6" Content="" HorizontalAlignment="Left" Height="55" Margin="260,10,0,0" VerticalAlignment="Top" Width="55" Click="clickLogout">
+        <Label x:Name="lblUser" Content="Admin" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" TabIndex="1" FontFamily="Berlin Sans FB" FontSize="24" Height="69" Width="240" VerticalContentAlignment="Center" Foreground="White"/>
+        <Button x:Name="logOut" Grid.Column="7" Content="" HorizontalAlignment="Left" Height="55" Margin="9,10,0,0" VerticalAlignment="Top" Width="55" Click="clickLogout">
             <Button.Background>
                 <ImageBrush ImageSource="/logoutIcon.png"/>
             </Button.Background>
         </Button>
+        <Label x:Name="lblLastAccess" Grid.Column="6" Content="23-10-2023 20:20" HorizontalAlignment="Center" Height="39" VerticalAlignment="Center" Width="192" FontFamily="Berlin Sans FB" Foreground="White" FontSize="24" HorizontalContentAlignment="Right"/>
+        <Label x:Name="lblLastTimeAccessTitle" Grid.Column="4" Content="Último Acceso:" HorizontalAlignment="Left" Height="39" VerticalAlignment="Center" Width="172" HorizontalContentAlignment="Right" FontFamily="Berlin Sans FB" FontSize="24" Background="#00000000" Foreground="White" Grid.ColumnSpan="2" Margin="149,0,0,0"/>
     </Grid>
 </Window>

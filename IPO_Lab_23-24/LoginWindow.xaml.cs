@@ -28,6 +28,9 @@ namespace IPO_Lab_23_24
         private void btnAction_Click(object sender, RoutedEventArgs e)
         {
 
+            DateTime actualDateTime = DateTime.Now;
+            string dateTimeFormatted = actualDateTime.ToString("dd-MM-yyyy HH:mm");
+
             string userName = txtBoxUser.Text.ToString();
             string userPass = PassBoxPass.Password.ToString();
 
@@ -40,14 +43,14 @@ namespace IPO_Lab_23_24
                 lblWarning.Content = "";
                 if (userName == "admin" && userPass == "admin")
                 {
-                    LandingPage_Admin landingPage_Admin = new LandingPage_Admin(userName);
+                    LandingPage_Admin landingPage_Admin = new LandingPage_Admin(userName, dateTimeFormatted);
                     this.Close();
                     landingPage_Admin.Show();
 
                 }
                 else
                 {
-                    LandingPage_User landingPage_User = new LandingPage_User(userName);
+                    LandingPage_User landingPage_User = new LandingPage_User(userName, dateTimeFormatted);
                     this.Close();
                     landingPage_User.Show();
                 }
