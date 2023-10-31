@@ -3,7 +3,7 @@
  <img width=640px height=139px src="https://www.uclm.es/images/logos//-/media/Files/C01-Centros/Ta-ccss/Logos/Logo_FFCCSSTTI_UCLM-background.ashx" alt="Project logo"></a>
 </p>
 
-# IPO PROOJECT 2023-24
+# IPO PROJECT 2023-24
 
 //Simple overview of use/purpose.//
 
