@@ -17,3 +17,4 @@ C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\LandingPage
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\LandingPage_Admin.baml
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\LandingPage_User.g.cs
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\LandingPage_User.baml
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\IPO_Lab_23-24\obj\Debug\LandingPage.g.cs

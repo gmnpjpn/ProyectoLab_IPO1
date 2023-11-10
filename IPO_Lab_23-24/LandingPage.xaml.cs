@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace IPO_Lab_23_24
 {
     /// <summary>
-    /// Lógica de interacción para LandingPage_User.xaml
+    /// Lógica de interacción para LandingPage.xaml
     /// </summary>
-    public partial class LandingPage_User : Window
+    public partial class LandingPage : Window
     {
-        public LandingPage_User(string userName, string dateTimeFormatted)
+        public LandingPage(string userName, string dateTimeFormatted)
         {
             InitializeComponent();
             lblUser.Content = userName;

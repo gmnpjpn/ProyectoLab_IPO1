@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace IPO_Lab_23_24
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }
@@ -34,7 +33,7 @@ namespace IPO_Lab_23_24
             string userName = txtBoxUser.Text.ToString();
             string userPass = PassBoxPass.Password.ToString();
 
-            if(string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(userPass))
+            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(userPass))
             {
                 lblWarning.Content = "Nombre de usuario y/o contraseña no válidos";
             }
@@ -43,14 +42,14 @@ namespace IPO_Lab_23_24
                 lblWarning.Content = "";
                 if (userName == "admin" && userPass == "admin")
                 {
-                    LandingPage_Admin landingPage_Admin = new LandingPage_Admin(userName, dateTimeFormatted);
+                    LandingPage landingPage_Admin = new LandingPage(userName, dateTimeFormatted);
                     this.Close();
                     landingPage_Admin.Show();
 
                 }
                 else
                 {
-                    LandingPage_User landingPage_User = new LandingPage_User(userName, dateTimeFormatted);
+                    LandingPage landingPage_User = new LandingPage(userName, dateTimeFormatted);
                     this.Close();
                     landingPage_User.Show();
                 }
