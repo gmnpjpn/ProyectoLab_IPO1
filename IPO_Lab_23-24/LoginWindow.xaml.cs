@@ -24,7 +24,7 @@ namespace IPO_Lab_23_24
             InitializeComponent();
         }
 
-        private void btnAction_Click(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
 
             DateTime actualDateTime = DateTime.Now;
