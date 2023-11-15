@@ -1,0 +1,13 @@
+﻿<Window x:Name="landing_window" x:Class="ProyectoIPO_Lab2324.LandingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
+        mc:Ignorable="d"
+        Title="VinylShop - Página Principal" Height="720" Width="1280" Icon="/Resources/Vinyl_White.ico">
+    <Grid x:Name="grid_landing" HorizontalAlignment="Left" Width="1280" Height="704" VerticalAlignment="Center">
+        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1280" Source="/Resources/wallpaper.png" Stretch="Fill" Height="704"/>
+
+    </Grid>
+</Window>

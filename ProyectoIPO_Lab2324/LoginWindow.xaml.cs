@@ -10,19 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProyectoIPO_Lab2324
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void combobox_language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void click_login(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            LandingWindow landingWindow = new LandingWindow();
+            landingWindow.Show();
+            
         }
     }
 }
