@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:IPO_Lab_23_24"
         mc:Ignorable="d"
         Title="VinylShop ES- Login" Height="720" Width="1280" WindowStartupLocation="CenterScreen" Icon="/Media/Vinyl_White.ico">
+
     <Grid x:Name="GridLogin" Background="Black" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
@@ -48,5 +49,11 @@
             <ComboBoxItem Content="English" FontSize="14"/>
         </ComboBox>
         <Label x:Name="lblUser_Copy" Grid.Column="4" Content="Contraseña:" HorizontalAlignment="Left" Margin="65,25,0,47" Grid.Row="4" VerticalAlignment="Center" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Width="402" Grid.RowSpan="2"/>
+        <Image x:Name="contenedor_imagen" Height="431" Margin="60,0,173,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="6" Stretch="UniformToFill"/>
+        <Button x:Name="btn_cargar" Content="Cargar" Grid.Column="1" Margin="0,100.5,0,0" VerticalAlignment="Top" Click="btn_cargar_Click" Height="58" Grid.RowSpan="3" Grid.Row="6"/>
+        <Button x:Name="btn_atras" Content="&lt;" Margin="31,0,262,0.014" Click="btn_atras_Click" Grid.Row="1" Grid.RowSpan="6" Opacity="0.8"/>
+        <Button x:Name="btn_siguente" Content="&gt;" Grid.Column="2" Margin="50,0,144,0.014" Click="btn_siguente_Click" Grid.RowSpan="6" Grid.Row="1" Opacity="0.8"/>
+
     </Grid>
 </Window>
+    
