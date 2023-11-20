@@ -19,7 +19,7 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class LandingWindow : Window
     {
-        public LandingWindow()
+        public LandingWindow(TextBox textbox_user, TextBox textbox_password)
         {
             InitializeComponent();
         }
