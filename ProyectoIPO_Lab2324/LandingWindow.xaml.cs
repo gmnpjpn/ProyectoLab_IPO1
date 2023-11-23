@@ -43,8 +43,8 @@ namespace ProyectoIPO_Lab2324
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
-            this.Close();
             loginWindow.Show();
+            this.Close();
         }
     }
 }
