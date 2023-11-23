@@ -40,18 +40,11 @@ namespace ProyectoIPO_Lab2324
            
         }
 
-        private void Home_Click(object sender, RoutedEventArgs e)
-        {
-            LandingWindow landingWindow = new LandingWindow(textbox_user_local, dateTime_local);
-            landingWindow.Show();
-            this.Close();
-        }
-
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
             this.Close();
+            loginWindow.Show();
         }
     }
 }
