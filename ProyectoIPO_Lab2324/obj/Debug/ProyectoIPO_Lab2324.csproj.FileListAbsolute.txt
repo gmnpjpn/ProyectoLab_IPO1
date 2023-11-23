@@ -1,0 +1,17 @@
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\ProyectoIPO_Lab2324.exe.config
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\ProyectoIPO_Lab2324.exe
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\ProyectoIPO_Lab2324.pdb
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.csproj.AssemblyReference.cache
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\LoginWindow.g.cs
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\App.g.cs
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324_MarkupCompile.cache
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324_MarkupCompile.lref
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\LoginWindow.baml
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.g.resources
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.Properties.Resources.resources
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.csproj.GenerateResource.cache
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.csproj.CoreCompileInputs.cache
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.exe
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324.pdb
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\LandingWindow.g.cs
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\LandingWindow.baml
