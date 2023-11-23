@@ -114,9 +114,6 @@
     <Resource Include="Resources\album\AbbeyRoad_TheBeatles.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="abbeyRoad_album.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\homeIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +130,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\album\DondeQuieroEstar_Quevedo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\album\1989TaylorsVersion_TaylorSwift.jpg" />
+    <Resource Include="Resources\album\Alpha_Aitana.jpg" />
+    <Resource Include="Resources\album\PowerUp_ACDC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\album\Casanova_RecicledJ.jpg" />
+    <Resource Include="Resources\album\LosNinosDelParque_Walls.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\artist\ACDC.jpg" />
+    <Resource Include="Resources\artist\Aitana.jpg" />
+    <Resource Include="Resources\artist\Quevedo.jpg" />
+    <Resource Include="Resources\artist\RecycledJ.jpg" />
+    <Resource Include="Resources\artist\TaylorSwift.jpg" />
+    <Resource Include="Resources\artist\TheBeatles.jpg" />
+    <Resource Include="Resources\artist\Walls.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
