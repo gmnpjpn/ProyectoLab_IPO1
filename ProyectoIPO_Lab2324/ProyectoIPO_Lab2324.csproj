@@ -111,7 +111,7 @@
     <Resource Include="Resources\wallpaper.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\album\abbeyRoad_album.jpg" />
+    <Resource Include="Resources\album\AbbeyRoad_TheBeatles.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="abbeyRoad_album.jpg" />
@@ -121,6 +121,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\UserProfilePicture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shoppingCart_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FAQS_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\contact_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\album\DondeQuieroEstar_Quevedo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
