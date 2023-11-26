@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Album.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,50 +105,54 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\AdminProfilePicture_Round.png" />
-    <Resource Include="Resources\logoutIcon.png" />
-    <Resource Include="Resources\Vinyl_White.ico" />
+    <Resource Include="Resources\logout_icon.png" />
+    <Resource Include="Resources\program_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\wallpaper.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\album\AbbeyRoad_TheBeatles.jpg" />
+    <Resource Include="Resources\Album\AbbeyRoad_TheBeatles.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\homeIcon.png" />
+    <Resource Include="Resources\home_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\UserProfilePicture.png" />
+    <Resource Include="Resources\user_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\shoppingCart_icon.ico" />
+    <Resource Include="Resources\shoppingcart_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FAQS_icon.ico" />
+    <Resource Include="Resources\faqs_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\contact_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\album\DondeQuieroEstar_Quevedo.jpg" />
+    <Resource Include="Resources\Album\DondeQuieroEstar_Quevedo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\album\1989TaylorsVersion_TaylorSwift.jpg" />
-    <Resource Include="Resources\album\Alpha_Aitana.jpg" />
-    <Resource Include="Resources\album\PowerUp_ACDC.jpg" />
+    <Resource Include="Resources\Album\1989TaylorsVersion_TaylorSwift.jpg" />
+    <Resource Include="Resources\Album\Alpha_Aitana.jpg" />
+    <Resource Include="Resources\Album\PowerUp_ACDC.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\album\Casanova_RecicledJ.jpg" />
-    <Resource Include="Resources\album\LosNinosDelParque_Walls.jpg" />
+    <Resource Include="Resources\Album\Casanova_RecycledJ.jpg" />
+    <Resource Include="Resources\Album\LosNinosDelParque_Walls.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\artist\ACDC.jpg" />
-    <Resource Include="Resources\artist\Aitana.jpg" />
-    <Resource Include="Resources\artist\Quevedo.jpg" />
-    <Resource Include="Resources\artist\RecycledJ.jpg" />
-    <Resource Include="Resources\artist\TaylorSwift.jpg" />
-    <Resource Include="Resources\artist\TheBeatles.jpg" />
-    <Resource Include="Resources\artist\Walls.jpg" />
+    <Resource Include="Resources\Artist\ACDC.jpg" />
+    <Resource Include="Resources\Artist\Aitana.jpg" />
+    <Resource Include="Resources\Artist\Quevedo.jpg" />
+    <Resource Include="Resources\Artist\RecycledJ.jpg" />
+    <Resource Include="Resources\Artist\TaylorSwift.jpg" />
+    <Resource Include="Resources\Artist\TheBeatles.jpg" />
+    <Resource Include="Resources\Artist\Walls.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Data\Albums.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

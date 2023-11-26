@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - Inicio de Sesión" Height="720" Width="1280" Icon="/Resources/Vinyl_White.ico" MinHeight="720" MinWidth="1280">
+        Title="VinylShop - Inicio de Sesión" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280">
     <Grid x:Name="grid_login">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="123*"/>
@@ -48,7 +48,7 @@
             <ComboBoxItem Content="Inglés"/>
         </ComboBox>
         <Label x:Name="label_warning" Grid.Column="5" Content="Credenciales Incorrectas" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="5" Width="526" FontFamily="Berlin Sans FB" FontSize="35" Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="48"/>
-        <Image x:Name="Ad_image" Grid.Column="1" Margin="10,10,16,11" Grid.RowSpan="6" Grid.Row="3" Grid.ColumnSpan="2" Source="/Resources/album/AbbeyRoad_TheBeatles.jpg" Stretch="Fill"/>
+        <Image x:Name="Ad_image" Grid.Column="1" Margin="10,10,16,11" Grid.RowSpan="6" Grid.Row="3" Grid.ColumnSpan="2" Source="/Resources/Album/AbbeyRoad_TheBeatles.jpg" Stretch="Fill"/>
         <PasswordBox x:Name="passBox" Grid.Column="6" Grid.Row="7" FontFamily="Berlin Sans FB" TabIndex="1" Margin="0,10,0,10" Grid.ColumnSpan="4" HorizontalAlignment="Center" Width="503" FontSize="30"/>
 
     </Grid>
