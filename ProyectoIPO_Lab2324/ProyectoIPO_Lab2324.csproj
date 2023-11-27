@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Album.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -104,23 +105,54 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\AdminProfilePicture_Round.png" />
-    <Resource Include="Resources\logoutIcon.png" />
-    <Resource Include="Resources\Vinyl_White.ico" />
+    <Resource Include="Resources\logout_icon.png" />
+    <Resource Include="Resources\program_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\wallpaper.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\album\abbeyRoad_album.jpg" />
+    <Resource Include="Resources\Album\AbbeyRoad_TheBeatles.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="abbeyRoad_album.jpg" />
+    <Resource Include="Resources\home_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\homeIcon.png" />
+    <Resource Include="Resources\user_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\UserProfilePicture.png" />
+    <Resource Include="Resources\shoppingcart_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\faqs_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\contact_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Album\DondeQuieroEstar_Quevedo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Album\1989TaylorsVersion_TaylorSwift.jpg" />
+    <Resource Include="Resources\Album\Alpha_Aitana.jpg" />
+    <Resource Include="Resources\Album\PowerUp_ACDC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Album\Casanova_RecycledJ.jpg" />
+    <Resource Include="Resources\Album\LosNinosDelParque_Walls.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artist\ACDC.jpg" />
+    <Resource Include="Resources\Artist\Aitana.jpg" />
+    <Resource Include="Resources\Artist\Quevedo.jpg" />
+    <Resource Include="Resources\Artist\RecycledJ.jpg" />
+    <Resource Include="Resources\Artist\TaylorSwift.jpg" />
+    <Resource Include="Resources\Artist\TheBeatles.jpg" />
+    <Resource Include="Resources\Artist\Walls.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Data\Albums.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

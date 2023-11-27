@@ -1,0 +1,151 @@
+﻿<Albums>
+	<Album Name="1989 (Taylor's Version)"
+		   Author="Taylor Swift"
+		   LaunchYear="2023"
+		   Genre="Pop"
+		   Cover="/Resources/Album/1989TaylorsVersion_TaylorSwift.jpg"
+		   
+		   SongListText="Welcome to New York, Blank Space, Style, Out of the Woods, All You Had to Do Was Stay, Shake It Off, I Wish You Would, Bad Blood, Wildest Dreams, How You Get The Girl, This Love, I Know Places, Clean, Wonderland, You Are In Love, New Romantics, Slut!, Say Don't Go, Now That We Don't Talk, Suburban Legends, Is It Over Now?">
+		   <!-- Esto es para pruebas, no hacer caso -->
+		
+		   <SongList>
+			<Song>Welcome to New York</Song>
+			<Song>Blank Space</Song>
+			<Song>Style</Song>
+			<Song>Out of the Woods</Song>
+			<Song>All You Had to Do Was Stay</Song>
+			<Song>Shake It Off</Song>
+			<Song>I Wish You Would</Song>
+			<Song>Bad Blood</Song>
+			<Song>Wildest Dreams</Song>
+			<Song>How You Get The Girl</Song>
+			<Song>This Love</Song>
+			<Song>I Know Places</Song>
+			<Song>Clean</Song>
+			<Song>Wonderland</Song>
+			<Song>You Are In Love</Song>
+			<Song>New Romantics</Song>
+			<Song>Slut!</Song>
+			<Song>Say Don't Go</Song>
+			<Song>Now That We Don't Talk</Song>
+			<Song>Suburban Legends</Song>
+			<Song>Is It Over Now?</Song>
+		</SongList>
+	</Album>
+
+	<Album Name="Abbey Road"
+		   Author="The Beatles"
+		   LaunchYear="1969"
+		   Genre="Rock"
+		   Cover="/Resources/Album/AbbeyRoad_TheBeatles.jpg"
+
+		   SongListText="Hola\nAdios">
+			<!-- Esto es para pruebas, no hacer caso -->
+
+		<SongList>
+			<Song>Welcome to New York</Song>
+			<Song>Blank Space</Song>
+			<Song>Style</Song>
+			<Song>Out of the Woods</Song>
+			<Song>All You Had to Do Was Stay</Song>
+			<Song>Shake It Off</Song>
+			<Song>I Wish You Would</Song>
+			<Song>Bad Blood</Song>
+			<Song>Wildest Dreams</Song>
+			<Song>How You Get The Girl</Song>
+			<Song>This Love</Song>
+			<Song>I Know Places</Song>
+			<Song>Clean</Song>
+			<Song>Wonderland</Song>
+			<Song>You Are In Love</Song>
+			<Song>New Romantics</Song>
+			<Song>Slut!</Song>
+			<Song>Say Don't Go</Song>
+			<Song>Now That We Don't Talk</Song>
+			<Song>Suburban Legends</Song>
+			<Song>Is It Over Now?</Song>
+		</SongList>
+	</Album>
+
+	<Album Name="Alpha"
+		   Author="Aitana"
+		   LaunchYear="2023"
+		   Genre="Pop"
+		   Cover="/Resources/Album/Alpha_Aitana.jpg"
+
+		   SongListText="Hola\nAdios">
+		   <!-- Esto es para pruebas, no hacer caso -->
+
+		<SongList>
+			<Song>Alpha09</Song>
+			<Song>Los Ángeles</Song>
+			<Song>Las Babys</Song>
+			<Song>Dararí</Song>
+			<Song>AQYNE</Song>
+			<Song>Ella Bailaba</Song>
+			<Song>Otra noche sin ti</Song>
+			<Song>miamor</Song>
+			<Song>Luna</Song>
+			<Song>Formentera</Song>
+			<Song>2 extraños</Song>
+			<Song>24 rosas</Song>
+			<Song>En el coche</Song>
+			<Song>Pensando en ti</Song>
+		</SongList>
+	</Album>
+
+	<Album Name="Casanova"
+	       Author="Recycled J"
+		   LaunchYear="2023"
+		   Genre="Hip-Hop"
+		   Cover="/Resources/Album/Casanova_RecycledJ.jpg"
+
+		   SongListText="Hola\nAdios">
+   		   <!-- Esto es para pruebas, no hacer caso -->
+
+		<SongList>
+			<Song>150 Canciones</Song>
+			<Song>Ganas</Song>
+			<Song>Cara A Cara</Song>
+			<Song>Casanova</Song>
+			<Song>Perro Hambriento</Song>
+			<Song>No Hay Manera</Song>
+			<Song>Rosas Freestyle</Song>
+			<Song>10.000 Kms</Song>
+			<Song>Primadonna</Song>
+			<Song>Los Muertos Y Las Flores</Song>
+			<Song>Dime Algo</Song>
+			<Song>Pa No Volver</Song>
+		</SongList>
+	</Album>
+
+	<Album Name="Donde Quiero Estar"
+	       Author="Quevedo"
+		   LaunchYear="2023"
+		   Genre="Hip-Hop"
+		   Cover="/Resources/Album/DondeQuieroEstar_Quevedo.jpg"
+		   
+		   SongListText="Hola\nAdios">
+		   <!-- Esto es para pruebas, no hacer caso -->
+
+		<SongList>
+			<Song>Intro - Speech Cruzzi</Song>
+			<Song>Ahora qué</Song>
+			<Song>Yankee</Song>
+			<Song>Vista Al Mar</Song>
+			<Song>Playa Del Inglés</Song>
+			<Song>Sin Señal</Song>
+			<Song>Dame</Song>
+			<Song>Cuéntale</Song>
+			<Song>Luces Azules</Song>
+			<Song>Punto G</Song>
+			<Song>Muñeca</Song>
+			<Song>Wanda</Song>
+			<Song>Me Falta Algo</Song>
+			<Song>Lisboa</Song>
+			<Song>Éramos Dos</Song>
+			<Song>Donde Quiero Estar</Song>
+		</SongList>
+	</Album>
+
+</Albums>
