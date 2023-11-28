@@ -3,12 +3,9 @@
 		   Author="Taylor Swift"
 		   LaunchYear="2023"
 		   Genre="Pop"
-		   Cover="/Resources/Album/1989TaylorsVersion_TaylorSwift.jpg"
-		   
-		   SongListText="Welcome to New York, Blank Space, Style, Out of the Woods, All You Had to Do Was Stay, Shake It Off, I Wish You Would, Bad Blood, Wildest Dreams, How You Get The Girl, This Love, I Know Places, Clean, Wonderland, You Are In Love, New Romantics, Slut!, Say Don't Go, Now That We Don't Talk, Suburban Legends, Is It Over Now?">
-		   <!-- Esto es para pruebas, no hacer caso -->
-		
-		   <SongList>
+		   Cover="/Resources/Album/1989TaylorsVersion_TaylorSwift.jpg">
+
+		<SongList>
 			<Song>Welcome to New York</Song>
 			<Song>Blank Space</Song>
 			<Song>Style</Song>
@@ -37,11 +34,8 @@
 		   Author="The Beatles"
 		   LaunchYear="1969"
 		   Genre="Rock"
-		   Cover="/Resources/Album/AbbeyRoad_TheBeatles.jpg"
-
-		   SongListText="Hola\nAdios">
-			<!-- Esto es para pruebas, no hacer caso -->
-
+		   Cover="/Resources/Album/AbbeyRoad_TheBeatles.jpg">
+		
 		<SongList>
 			<Song>Welcome to New York</Song>
 			<Song>Blank Space</Song>
@@ -71,10 +65,7 @@
 		   Author="Aitana"
 		   LaunchYear="2023"
 		   Genre="Pop"
-		   Cover="/Resources/Album/Alpha_Aitana.jpg"
-
-		   SongListText="Hola\nAdios">
-		   <!-- Esto es para pruebas, no hacer caso -->
+		   Cover="/Resources/Album/Alpha_Aitana.jpg">
 
 		<SongList>
 			<Song>Alpha09</Song>
@@ -98,10 +89,7 @@
 	       Author="Recycled J"
 		   LaunchYear="2023"
 		   Genre="Hip-Hop"
-		   Cover="/Resources/Album/Casanova_RecycledJ.jpg"
-
-		   SongListText="Hola\nAdios">
-   		   <!-- Esto es para pruebas, no hacer caso -->
+		   Cover="/Resources/Album/Casanova_RecycledJ.jpg">
 
 		<SongList>
 			<Song>150 Canciones</Song>
@@ -123,10 +111,7 @@
 	       Author="Quevedo"
 		   LaunchYear="2023"
 		   Genre="Hip-Hop"
-		   Cover="/Resources/Album/DondeQuieroEstar_Quevedo.jpg"
-		   
-		   SongListText="Hola\nAdios">
-		   <!-- Esto es para pruebas, no hacer caso -->
+		   Cover="/Resources/Album/DondeQuieroEstar_Quevedo.jpg">
 
 		<SongList>
 			<Song>Intro - Speech Cruzzi</Song>

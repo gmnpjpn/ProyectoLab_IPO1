@@ -14,9 +14,8 @@ namespace ProyectoIPO_Lab2324
         public string Genre { set; get; }
         public List<string> Songs { set; get; }
         public String LaunchYear { set; get; }
-        public String SongListText { set; get; }
 
-        public Album(string name, string author, Uri cover, string genre, List<string> songs, string launchYear, string songListText)
+        public Album(string name, string author, Uri cover, string genre, List<string> songs, string launchYear)
         {
             Name = name;
             Author = author;
@@ -24,7 +23,6 @@ namespace ProyectoIPO_Lab2324
             Genre = genre;
             Songs = songs;
             LaunchYear = launchYear;
-            SongListText = songListText;
         }
     }
 }

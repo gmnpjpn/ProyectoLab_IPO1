@@ -62,6 +62,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Faq.cs" />
+    <Compile Include="FaqsWindow.xaml.cs">
+      <DependentUpon>FaqsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LandingWindow.xaml.cs">
       <DependentUpon>LandingWindow.xaml</DependentUpon>
     </Compile>
@@ -94,6 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="FaqsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LandingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,7 +158,9 @@
     <Resource Include="Resources\Artist\TheBeatles.jpg" />
     <Resource Include="Resources\Artist\Walls.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Data\Faqs.xml" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Data\Albums.xml" />
   </ItemGroup>

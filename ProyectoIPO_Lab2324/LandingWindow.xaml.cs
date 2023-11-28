@@ -55,7 +55,7 @@ namespace ProyectoIPO_Lab2324
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
-                var newAlbum = new Album("", "", null, "", new List<string>(), "", "");
+                var newAlbum = new Album("", "", null, "", new List<string>(), "");
 
                 newAlbum.Name = node.Attributes["Name"].Value;
                 newAlbum.Author = node.Attributes["Author"].Value;
@@ -63,7 +63,16 @@ namespace ProyectoIPO_Lab2324
                 newAlbum.Genre = node.Attributes["Genre"].Value;
                 newAlbum.LaunchYear = node.Attributes["LaunchYear"].Value;
                 //Falta la lista de canciones convertida en texto
-                newAlbum.SongListText = node.Attributes["SongListText"].Value;
+
+                // Obtener la lista de canciones
+                List<string> songsList = new List<string>();
+                foreach (XmlNode songNode in node.SelectNodes("Song"))
+                {
+                    songsList.Add(songNode.InnerText);
+                }
+
+                newAlbum.Songs = songsList;
+
                 albumList.Add(newAlbum);
             }
         }
@@ -80,6 +89,13 @@ namespace ProyectoIPO_Lab2324
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             this.Close();
+        }
+
+        private void clickFaqs(object sender, RoutedEventArgs e)
+        {
+            FaqsWindow faqsWindow = new FaqsWindow();
+            faqsWindow.Show();
+            this.Hide();
         }
     }
 }
