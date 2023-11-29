@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - FAQS" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720">
-    <Grid x:Name="grid_landing_persistent" HorizontalAlignment="Left" Width="1280" Height="704" VerticalAlignment="Center">
+        Title="VinylShop - FAQS" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" Closing="stopAtClose" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="grid_landing" HorizontalAlignment="Left" Width="1280" Height="704" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="69*"/>
             <RowDefinition Height="635*"/>

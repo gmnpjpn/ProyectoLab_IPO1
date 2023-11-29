@@ -23,9 +23,18 @@ namespace ProyectoIPO_Lab2324
 
         List<Faq> faqList;
 
-        public FaqsWindow()
+        private string textbox_user_local;
+        private string dateTime_local;
+
+        public FaqsWindow(String textbox_user, String dateTime)
         {
             InitializeComponent();
+
+            textbox_user_local = textbox_user;
+            dateTime_local = dateTime;
+
+            textblock_lastTime.Text = "Ultimo Acceso: " + dateTime;
+            textblock_username.Text = textbox_user_local;
 
             // Create faq list
             faqList = new List<Faq>();
@@ -58,7 +67,15 @@ namespace ProyectoIPO_Lab2324
 
         private void clickHome(object sender, RoutedEventArgs e)
         {
+            LandingWindow landingWindow = new LandingWindow(textbox_user_local, dateTime_local);
+            landingWindow.Show();
+            this.Hide();
 
+        }
+
+        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
