@@ -55,7 +55,7 @@ namespace ProyectoIPO_Lab2324
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
-                var newAlbum = new Album("", "", null, "", new List<string>(), "", "");
+                var newAlbum = new Album("", "", null, "", "");
 
                 newAlbum.Name = node.Attributes["Name"].Value;
                 newAlbum.Author = node.Attributes["Author"].Value;
@@ -63,16 +63,17 @@ namespace ProyectoIPO_Lab2324
                 newAlbum.Genre = node.Attributes["Genre"].Value;
                 newAlbum.LaunchYear = node.Attributes["LaunchYear"].Value;
                 //Falta la lista de canciones convertida en texto
-                newAlbum.SongListText = node.Attributes["SongListText"].Value;
+
+                // Obtener la lista de canciones
+
+                // XmlNodeList subElementNodes = node.SelectNodes("SongList/Song");
+                foreach (XmlNode songNode in node.SelectNodes("SongList/Song"))
+                {
+                    newAlbum.Songs.Add(songNode.InnerText);
+                }
+
                 albumList.Add(newAlbum);
             }
-        }
-
-        // It makes program to shutdown when clicked (main window is hide and not closed to preserve execution running)
-        private void closingButton_event(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
-           
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -80,6 +81,28 @@ namespace ProyectoIPO_Lab2324
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             this.Close();
+        }
+
+        private void clickFaqs(object sender, RoutedEventArgs e)
+        {
+            FaqsWindow faqsWindow = new FaqsWindow(textbox_user_local, dateTime_local);
+            faqsWindow.Show();
+            this.Hide();
+        }
+
+        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btnAlbumPage_Click(object sender, RoutedEventArgs e)
+        {
+            Album selectedAlbum = lstAlbumList.SelectedItem as Album;
+
+            if (selectedAlbum != null)
+            {
+
+            }
         }
     }
 }
