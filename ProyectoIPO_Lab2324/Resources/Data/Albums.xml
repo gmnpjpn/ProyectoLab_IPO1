@@ -3,7 +3,14 @@
 		   Author="Taylor Swift"
 		   LaunchYear="2023"
 		   Genre="Pop"
-		   Cover="/Resources/Album/1989TaylorsVersion_TaylorSwift.jpg">
+		   Cover="/Resources/Album/1989TaylorsVersion_TaylorSwift.jpg"
+		   RecordLabel="Republic Records"
+		   Format="30cm"
+		   Country="USA"
+		   Likes="12"
+		   Puntuation="8.8"
+		   Pvp="39,89€"
+		   Stock="24">
 
 		<SongList>
 			<Song>Welcome to New York</Song>
@@ -34,7 +41,14 @@
 		   Author="The Beatles"
 		   LaunchYear="1969"
 		   Genre="Rock"
-		   Cover="/Resources/Album/AbbeyRoad_TheBeatles.jpg">
+		   Cover="/Resources/Album/AbbeyRoad_TheBeatles.jpg"
+		   RecordLabel="Universal Music"
+		   Format="30cm"
+		   Country="UK"
+		   Likes="8"
+		   Puntuation="9.0"
+		   Pvp="34€"
+		   Stock="31">
 		
 		<SongList>
 			<Song>Come Together</Song>
@@ -57,27 +71,32 @@
 		</SongList>
 	</Album>
 
-	<Album Name="Alpha"
-		   Author="Aitana"
-		   LaunchYear="2023"
-		   Genre="Pop"
-		   Cover="/Resources/Album/Alpha_Aitana.jpg">
+	<Album Name="My Way"
+		   Author="Frank Sinatra"
+		   LaunchYear="1969"
+		   Genre="Pop clásico"
+		   Cover="/Resources/Album/MyWay_FrankSinatra.jpg"
+		   RecordLabel="Reprise Records"
+		   Format="30cm"
+		   Country="USA"
+		   Likes="20"
+		   Puntuation="8.1"
+		   Pvp="34€"
+		   Stock="31">
 
 		<SongList>
-			<Song>Alpha09</Song>
-			<Song>Los Ángeles</Song>
-			<Song>Las Babys</Song>
-			<Song>Dararí</Song>
-			<Song>AQYNE</Song>
-			<Song>Ella Bailaba</Song>
-			<Song>Otra noche sin ti</Song>
-			<Song>miamor</Song>
-			<Song>Luna</Song>
-			<Song>Formentera</Song>
-			<Song>2 extraños</Song>
-			<Song>24 rosas</Song>
-			<Song>En el coche</Song>
-			<Song>Pensando en ti</Song>
+			<Song>Watch What Happens</Song>
+			<Song>Didn't We?</Song>
+			<Song>Hallelujah, I Love Her So</Song>
+			<Song>Yesterday</Song>
+			<Song>All My Tomorrows</Song>
+			<Song>My Way</Song>
+			<Song>OA Day in the Life of a Fool</Song>
+			<Song>For Once in My Life</Song>
+			<Song>If You Go Away</Song>
+			<Song>Mrs. Robinson</Song>
+			<Song>For Once in My Life</Song>
+			<Song>My Way</Song>
 		</SongList>
 	</Album>
 
@@ -85,7 +104,14 @@
 	       Author="Recycled J"
 		   LaunchYear="2023"
 		   Genre="Hip-Hop"
-		   Cover="/Resources/Album/Casanova_RecycledJ.jpg">
+		   Cover="/Resources/Album/Casanova_RecycledJ.jpg"
+		   RecordLabel="Taste the Floor Records"
+		   Format="30cm"
+		   Country="España"
+		   Likes="29"
+		   Puntuation="7.5"
+		   Pvp="29€"
+		   Stock="12">
 
 		<SongList>
 			<Song>150 Canciones</Song>
@@ -107,7 +133,14 @@
 	       Author="Quevedo"
 		   LaunchYear="2023"
 		   Genre="Hip-Hop"
-		   Cover="/Resources/Album/DondeQuieroEstar_Quevedo.jpg">
+		   Cover="/Resources/Album/DondeQuieroEstar_Quevedo.jpg"
+		   RecordLabel="Taste the Floor Records"
+		   Format="30cm"
+		   Country="España"
+		   Likes="20"
+		   Puntuation="8.1"
+		   Pvp="20€"
+		   Stock="31">
 
 		<SongList>
 			<Song>Intro - Speech Cruzzi</Song>

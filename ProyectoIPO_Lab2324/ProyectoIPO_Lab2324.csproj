@@ -62,6 +62,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistWindow.xaml.cs">
+      <DependentUpon>ArtistWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Faq.cs" />
     <Compile Include="FaqsWindow.xaml.cs">
       <DependentUpon>FaqsWindow.xaml</DependentUpon>
@@ -98,6 +101,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ArtistWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FaqsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +170,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Data\Albums.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Documents\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Album\MyWay_FrankSinatra.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

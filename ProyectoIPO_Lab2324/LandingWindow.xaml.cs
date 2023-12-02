@@ -55,18 +55,22 @@ namespace ProyectoIPO_Lab2324
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
-                var newAlbum = new Album("", "", null, "", "");
+                var newAlbum = new Album();
 
                 newAlbum.Name = node.Attributes["Name"].Value;
                 newAlbum.Author = node.Attributes["Author"].Value;
                 newAlbum.Cover = new Uri(node.Attributes["Cover"].Value, UriKind.Relative);
                 newAlbum.Genre = node.Attributes["Genre"].Value;
                 newAlbum.LaunchYear = node.Attributes["LaunchYear"].Value;
-                //Falta la lista de canciones convertida en texto
+                newAlbum.RecordLabel = node.Attributes["RecordLabel"].Value;
+                newAlbum.Format = node.Attributes["Format"].Value;
+                newAlbum.Country = node.Attributes["Country"].Value;
+                newAlbum.Likes = node.Attributes["Likes"].Value;
+                newAlbum.Puntuation = node.Attributes["Puntuation"].Value;
+                newAlbum.Pvp = node.Attributes["Pvp"].Value;
+                newAlbum.Stock = node.Attributes["Stock"].Value;
 
                 // Obtener la lista de canciones
-
-                // XmlNodeList subElementNodes = node.SelectNodes("SongList/Song");
                 foreach (XmlNode songNode in node.SelectNodes("SongList/Song"))
                 {
                     newAlbum.Songs.Add(songNode.InnerText);
@@ -80,7 +84,7 @@ namespace ProyectoIPO_Lab2324
         {
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void clickFaqs(object sender, RoutedEventArgs e)
@@ -102,6 +106,38 @@ namespace ProyectoIPO_Lab2324
             if (selectedAlbum != null)
             {
 
+            }
+        }
+
+        private void btnLike_Click(object sender, RoutedEventArgs e)
+        {
+            string albumPlusArtist = lblName.Content.ToString() + " - " + lblAuthor.Content.ToString();
+
+            // Verificar si el contenido ya existe en la lista
+            if (!lstFavorites.Items.Contains(albumPlusArtist))
+            {
+                // Agregar el contenido de lblName a la lista lstFavorites
+                lstFavorites.Items.Add(albumPlusArtist);
+            }
+            else
+            {
+                // Si ya existe, puedes manejar esto como desees (por ejemplo, mostrar un mensaje)
+                MessageBox.Show("Este álbum ya está en tus favoritos.", "Error al añadir a favoritos");
+            }
+        }
+
+        private void btnDeleteFav_Click(object sender, RoutedEventArgs e)
+        {
+            // Verificar si hay un elemento seleccionado en lstFavorites
+            if (lstFavorites.SelectedItem != null)
+            {
+                // Eliminar el elemento seleccionado de lstFavorites
+                lstFavorites.Items.Remove(lstFavorites.SelectedItem);
+            }
+            else
+            {
+                // Manejar el caso en el que no se haya seleccionado ningún elemento para eliminar
+                MessageBox.Show("Por favor, selecciona un elemento de la lista para eliminarlo.", "Error al eliminar un favorito");
             }
         }
     }
