@@ -13,5 +13,12 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            LoginWindow loginWindow = new LoginWindow();
+            WindowManager.LoginWindowInstance = loginWindow;
+        }
+
     }
 }

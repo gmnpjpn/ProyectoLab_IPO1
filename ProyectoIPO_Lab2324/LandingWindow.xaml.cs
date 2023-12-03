@@ -69,6 +69,8 @@ namespace ProyectoIPO_Lab2324
                 newAlbum.Puntuation = node.Attributes["Puntuation"].Value;
                 newAlbum.Pvp = node.Attributes["Pvp"].Value;
                 newAlbum.Stock = node.Attributes["Stock"].Value;
+                newAlbum.ArtistBio = node.Attributes["ArtistBio"].Value;
+                newAlbum.ArtistImage = new Uri(node.Attributes["ArtistImage"].Value, UriKind.Relative);
 
                 // Obtener la lista de canciones
                 foreach (XmlNode songNode in node.SelectNodes("SongList/Song"))
@@ -82,9 +84,12 @@ namespace ProyectoIPO_Lab2324
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
+            if (WindowManager.LoginWindowInstance != null && !WindowManager.LoginWindowInstance.IsVisible)
+            {
+                WindowManager.LoginWindowInstance.Show();
+            }
             this.Hide();
+
         }
 
         private void clickFaqs(object sender, RoutedEventArgs e)
@@ -97,16 +102,6 @@ namespace ProyectoIPO_Lab2324
         private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
-        }
-
-        private void btnAlbumPage_Click(object sender, RoutedEventArgs e)
-        {
-            Album selectedAlbum = lstAlbumList.SelectedItem as Album;
-
-            if (selectedAlbum != null)
-            {
-
-            }
         }
 
         private void btnLike_Click(object sender, RoutedEventArgs e)
@@ -138,6 +133,27 @@ namespace ProyectoIPO_Lab2324
             {
                 // Manejar el caso en el que no se haya seleccionado ningún elemento para eliminar
                 MessageBox.Show("Por favor, selecciona un elemento de la lista para eliminarlo.", "Error al eliminar un favorito");
+            }
+        }
+
+        private void btnArtistPage_Click(object sender, RoutedEventArgs e)
+        {
+            Album selectedAlbum = lstAlbumList.SelectedItem as Album;
+
+            if (selectedAlbum != null)
+            {
+                string selectedArtistName = selectedAlbum.Author;
+                string selectedArtistBio = selectedAlbum.ArtistBio;
+                Uri selectedArtistImage = selectedAlbum.ArtistImage;
+
+                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, textbox_user_local, dateTime_local, selectedArtistImage);
+                artistWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                // Manejar el caso en el que no se ha seleccionado ningún álbum
+                MessageBox.Show("Por favor, selecciona un álbum para ver información del artista.", "Error al acceder a la página del artista");
             }
         }
     }

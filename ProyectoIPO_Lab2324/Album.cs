@@ -21,6 +21,8 @@ namespace ProyectoIPO_Lab2324
         public String Puntuation { set; get; }
         public String Pvp { set; get; }
         public String Stock { set; get; }
+        public String ArtistBio {  set; get; }
+        public  Uri ArtistImage { set; get; }
 
 
         public Album()
@@ -38,6 +40,8 @@ namespace ProyectoIPO_Lab2324
             Puntuation = "";
             Pvp = "";
             Stock = "";
+            ArtistBio = "";
+            ArtistImage = null;
         }
     }
 }

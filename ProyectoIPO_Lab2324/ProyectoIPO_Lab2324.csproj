@@ -60,6 +60,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArtistWindow.xaml.cs">
@@ -161,7 +162,6 @@
     <Resource Include="Resources\Artist\Aitana.jpg" />
     <Resource Include="Resources\Artist\Quevedo.jpg" />
     <Resource Include="Resources\Artist\RecycledJ.jpg" />
-    <Resource Include="Resources\Artist\TaylorSwift.jpg" />
     <Resource Include="Resources\Artist\TheBeatles.jpg" />
     <Resource Include="Resources\Artist\Walls.jpg" />
   </ItemGroup>
@@ -176,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Album\MyWay_FrankSinatra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artist\FrankSinatra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artist\TaylorSwift.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

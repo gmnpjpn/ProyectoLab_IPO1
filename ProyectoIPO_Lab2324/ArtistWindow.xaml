@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Center" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="2"/>
         <Rectangle x:Name="rectangle_up" Height="70" Stroke="Black" VerticalAlignment="Center" Fill="#FF3A3A3A"/>
-        <Button x:Name="Home" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="Home" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnHome_Click">
             <Image x:Name="image_home" Source="\Resources\home_icon.png" Width="49" Height="40" />
         </Button>
         <Button x:Name="User" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
@@ -51,10 +51,22 @@
             </StackPanel>
         </Button>
 
-        <StackPanel Orientation="Horizontal" Margin="5" Grid.Row="2">
-            <Image Source="/Resources/Artist/ACDC.jpg" Height="452" Width="301" Margin="10"/>
-            
-            
+        <StackPanel x:Name="spArtist" Orientation="Horizontal" Margin="5" Grid.Row="2">
+            <Image x:Name="imgArtist" Height="452" Width="301" Margin="10"/>
+
+            <StackPanel x:Name="spBio" Orientation="Vertical" Margin="5" Grid.Row="2">
+
+                <Label x:Name="lblArtistName" FontSize="24" FontWeight="Regular" Foreground="White" HorizontalContentAlignment="Center"
+                       Content="Nombre Artista">
+                </Label>
+
+                <TextBlock x:Name="tbBio" Width="500" Foreground="White" FontSize="18"
+                           Text="Biografía"
+                           TextTrimming="None" TextWrapping="Wrap">
+                </TextBlock>
+
+            </StackPanel>
+
         </StackPanel>
 
     </Grid>
