@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/artist/taylorswift.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/contact/pin-icon-png-image_4986495.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/contact/square.jpg")]
 
 
