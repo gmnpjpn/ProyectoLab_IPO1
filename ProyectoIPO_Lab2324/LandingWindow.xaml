@@ -8,50 +8,57 @@
         Title="VinylShop - Página Principal" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" Closing="stopAtClose" WindowStartupLocation="CenterScreen">
     <Grid x:Name="grid_landing_persistent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="69*"/>
-            <RowDefinition Height="635*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="315*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="619*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="85*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Center" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="2"/>
-        <Rectangle x:Name="rectangle_up" Height="70" Stroke="Black" VerticalAlignment="Center" Fill="#FF3A3A3A"/>
-        <Button x:Name="Home" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="3" Grid.ColumnSpan="7"/>
+        <Rectangle x:Name="rectangle_up" Stroke="Black" Fill="#FF3A3A3A" Grid.ColumnSpan="7" Margin="0,2,0,2" Grid.RowSpan="2"/>
+        <Button x:Name="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,13,0,0" Height="49" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2">
             <Image x:Name="image_home" Source="\Resources\home_icon.png" Width="49" Height="40" />
         </Button>
-        <Button x:Name="User" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="User" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2">
             <Image x:Name="image_user" Source="\Resources\user_icon.png" Width="49" Height="40" />
         </Button>
-        <Button x:Name="Logout" Click="Logout_Click" Margin="1210,12,10,2" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <TextBlock x:Name="textblock_username" Margin="4,12,84,40" TextWrapping="Wrap" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White" Grid.Column="1" Grid.RowSpan="2"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
+        <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="4,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White" Height="20" Width="220" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
+        <Button x:Name="Contact" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="3" Foreground="{x:Null}" Grid.RowSpan="2">
+            <StackPanel>
+                <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="37.8" />
+                <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="FAQS" Margin="10,9,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Click="clickFaqs" Grid.Column="4" Foreground="{x:Null}" Grid.RowSpan="2">
+            <StackPanel>
+
+                <Image x:Name="FAQS_image" Source="\Resources\faqs_icon.ico" Width="49" Height="38" />
+                <TextBlock x:Name="TextBlock_FAQS" Text="FAQS" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="ShoppingCart" Margin="10,10,10,10" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="5" Foreground="{x:Null}" Grid.RowSpan="2">
+            <StackPanel>
+                <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="49" Height="38" RenderTransformOrigin="0.592,0.5" />
+                <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Margin="1,1,1,1"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Logout" Click="Logout_Click" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="6" Foreground="{x:Null}" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="image_logout" Source="\Resources\logout_icon.png" Width="49" Height="38" />
                 <TextBlock x:Name="TextBlock_Logout" Text="Cerrar Sesión" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
 
             </StackPanel>
         </Button>
-        <TextBlock x:Name="textblock_username" HorizontalAlignment="Left" Margin="146,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
-        <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="146,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
-        <Button x:Name="ShoppingCart" Margin="1114,10,75,4" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
-            <StackPanel>
-                <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="49" Height="40" />
-                <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito de la compra" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
-            </StackPanel>
-        </Button>
-        <Button x:Name="FAQS" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1056,7,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="clickFaqs">
-            <StackPanel>
 
-                <Image x:Name="FAQS_image" Source="\Resources\faqs_icon.ico" Width="49" Height="43" />
-                <TextBlock x:Name="TextBlock_FAQS" Text="FAQS" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
-            </StackPanel>
-        </Button>
-        <Button x:Name="Contact" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="988,7,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
-            <StackPanel>
-                <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="43" />
-                <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
-            </StackPanel>
-        </Button>
-
-        <TabControl Margin="10,3,10,10" Grid.Row="1">
+        <TabControl Margin="10,3,10,10" Grid.Row="2" Opacity="0.9" Grid.ColumnSpan="7">
             <TabItem Header="Catálogo" IsSelected="True">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <ListBox x:Name="lstAlbumList"
@@ -92,43 +99,79 @@
 
                     </ListBox>
 
-                    <StackPanel x:Name="spDetail" Width="400" Orientation="Vertical">
-                        <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
+
+                    <ScrollViewer>
+
+                        <StackPanel x:Name="spDetail" Width="400" Orientation="Vertical">
+
+
+                            <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
                                Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Name}"/>
-                        <Label x:Name="lblAuthor" FontWeight="Regular" FontSize="18"
+                            <Label x:Name="lblAuthor" FontWeight="Regular" FontSize="18"
                                Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Author}"/>
 
-                        <Image x:Name="imgCover"
+                            <Image x:Name="imgCover"
                                Height="220" Width="200"
                                HorizontalAlignment="Left"
                                Margin="5" Stretch="Fill"
                                Source="{Binding ElementName=lstAlbumList, Path= SelectedItem.Cover}"/>
 
-                        <Label FontWeight="Bold">Género:</Label>
-                        <Label x:Name="lblGenre"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Genre}"/>
+                            <DockPanel x:Name="spButtons" LastChildFill="False">
 
-                        <Label FontWeight="Bold">Año de Lanzamiento:</Label>
-                        <Label x:Name="lblLaunchYear"
+                                <Button x:Name="btnArtistPage" Margin="5"
+                                Content="Página del Artista" FontSize="14" Click="btnArtistPage_Click">
+                                </Button>
+
+                                <Button x:Name="btnLike" Margin="5"
+                            Content="Me Gusta" FontWeight="Bold" FontSize="14" Click="btnLike_Click">
+                                </Button>
+
+                                <Button x:Name="btnBuy" Margin="5"
+                            Content="Comprar Álbum" FontWeight="Bold" FontSize="14">
+                                </Button>
+
+                            </DockPanel>
+
+                            <Label FontWeight="Bold">PVP:</Label>
+                            <Label x:Name="lblPvp"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Pvp}"/>
+
+                            <Label FontWeight="Bold">Año de Lanzamiento:</Label>
+                            <Label x:Name="lblLaunchYear"
                                Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.LaunchYear}"/>
 
-                        <DockPanel x:Name="spButtons" LastChildFill="False">
-                            <Button x:Name="btnAlbumPage" Margin="5" DockPanel.Dock="Left"
-                                    Content="Página del Álbum" Click="btnAlbumPage_Click" FontSize="14">
-                            </Button>
+                            <Label FontWeight="Bold">Puntuación:</Label>
+                            <Label x:Name="lblPuntuation"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Puntuation}"/>
 
-                            <Button x:Name="btnArtistPage" Margin="5" DockPanel.Dock="Right"
-                                    Content="Página del Artista" FontSize="14">
-                            </Button>
+                            <Label FontWeight="Bold">Género:</Label>
+                            <Label x:Name="lblGenre"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Genre}"/>
 
-                            <Button x:Name="btnBuy" Margin="5" DockPanel.Dock="Bottom"
-                                    Content="Comprar Álbum" FontWeight="Bold" FontSize="16">
-                            </Button>
+                            <Label FontWeight="Bold">Sello Discográfico:</Label>
+                            <Label x:Name="lblRecordLabel"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.RecordLabel}"/>
 
-                        </DockPanel>
+                            <Label FontWeight="Bold">Formato:</Label>
+                            <Label x:Name="lblFormat"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Format}"/>
+
+                            <Label FontWeight="Bold">Pais:</Label>
+                            <Label x:Name="lblPais"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Country}"/>
+
+                            <Label FontWeight="Bold">Número de "Me Gusta":</Label>
+                            <Label x:Name="lblLikes"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Likes}"/>
+
+                            <Label FontWeight="Bold">Unidades Disponibles:</Label>
+                            <Label x:Name="lblStock"
+                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Stock}"/>
 
 
-                    </StackPanel>
+                        </StackPanel>
+
+                    </ScrollViewer>
 
                     <StackPanel x:Name="spSongs" Width="275" Orientation="Vertical" Margin="5">
 
@@ -136,7 +179,7 @@
                                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                Content="Listado de Canciones:"/>
 
-                        <ListBox x:Name="lstSongLists" Height="534" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.Songs}"/>
+                        <ListBox x:Name="lstSongLists" Height="528" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.Songs}"/>
 
                     </StackPanel>
 
@@ -146,10 +189,11 @@
                                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                Content="Favoritos:"/>
 
-                        <ListBox x:Name="lstFavorites" Height="534">
-                            <ListBoxItem>Arttículo Favorito 1</ListBoxItem>
-                            <ListBoxItem>Arttículo Favorito 2</ListBoxItem>
-                            <ListBoxItem>Arttículo Favorito 3</ListBoxItem>
+                        <Button x:Name="btnDeleteFav" Margin="5"
+                                Content="Eliminar Seleccionado" Click="btnDeleteFav_Click" Width="312" >
+                        </Button>
+
+                        <ListBox x:Name="lstFavorites" Height="497" Width="312">
 
                         </ListBox>
 

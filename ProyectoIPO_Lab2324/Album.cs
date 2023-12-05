@@ -8,21 +8,40 @@ namespace ProyectoIPO_Lab2324
 {
     class Album
     {
-        public string Name { set; get; }
-        public string Author { set; get; }
+        public String Name { set; get; }
+        public String Author { set; get; }
         public Uri Cover { set; get; }
-        public string Genre { set; get; }
+        public String Genre { set; get; }
         public List<string> Songs { set; get; }
         public String LaunchYear { set; get; }
+        public String RecordLabel { set; get; }
+        public String Format { set; get; }
+        public String Country { set; get; }
+        public String Likes { set; get; }
+        public String Puntuation { set; get; }
+        public String Pvp { set; get; }
+        public String Stock { set; get; }
+        public String ArtistBio {  set; get; }
+        public  Uri ArtistImage { set; get; }
 
-        public Album(string name, string author, Uri cover, string genre, string launchYear)
+
+        public Album()
         {
-            Name = name;
-            Author = author;
-            Cover = cover;
-            Genre = genre;
-            LaunchYear = launchYear;
+            Name = "";
+            Author = "";
+            Cover = null;
+            Genre = "";
+            LaunchYear = "";
             Songs = new List<string>();
+            RecordLabel = "";
+            Format = "";
+            Country = "";
+            Likes = "";
+            Puntuation = "";
+            Pvp = "";
+            Stock = "";
+            ArtistBio = "";
+            ArtistImage = null;
         }
     }
 }
