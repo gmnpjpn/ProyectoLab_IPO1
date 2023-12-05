@@ -156,5 +156,13 @@ namespace ProyectoIPO_Lab2324
                 MessageBox.Show("Por favor, selecciona un álbum para ver información del artista.", "Error al acceder a la página del artista");
             }
         }
+
+        private void btnContact_Click(object sender, RoutedEventArgs e)
+        {
+            ContactWindow contactWindow = new ContactWindow(textbox_user_local, dateTime_local);
+            WindowManager.ContactWindowInstance = contactWindow;
+            contactWindow.Show();
+            this.Hide();
+        }
     }
 }

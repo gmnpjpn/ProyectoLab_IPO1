@@ -31,7 +31,7 @@
         </Button>
         <TextBlock x:Name="textblock_username" Margin="4,12,84,40" TextWrapping="Wrap" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White" Grid.Column="1" Grid.RowSpan="2"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
         <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="4,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White" Height="20" Width="220" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
-        <Button x:Name="Contact" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="3" Foreground="{x:Null}" Grid.RowSpan="2">
+        <Button x:Name="Contact" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="3" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnContact_Click">
             <StackPanel>
                 <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="37.8" />
                 <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
