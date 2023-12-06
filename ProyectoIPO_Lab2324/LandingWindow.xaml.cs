@@ -21,20 +21,20 @@ namespace ProyectoIPO_Lab2324
     public partial class LandingWindow : Window
     {
 
-        private string textbox_user_local;
-        private string dateTime_local;
+        private string userNameLocal;
+        private string dateTimeLocal;
 
         List<Album> albumList;
 
 
-        public LandingWindow(String textbox_user, String dateTime)
+        public LandingWindow(String userName, String dateTime)
         {
             InitializeComponent();
-            textbox_user_local = textbox_user;
-            dateTime_local = dateTime;
+            userNameLocal = userName;
+            dateTimeLocal = dateTime;
 
             textblock_lastTime.Text = "Ultimo Acceso: " + dateTime;
-            textblock_username.Text = textbox_user_local;
+            textblock_username.Text = userNameLocal;
 
             // Create album list
             albumList = new List<Album>();
@@ -94,7 +94,7 @@ namespace ProyectoIPO_Lab2324
 
         private void clickFaqs(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(textbox_user_local, dateTime_local);
+            FaqsWindow faqsWindow = new FaqsWindow(userNameLocal, dateTimeLocal);
             faqsWindow.Show();
             this.Hide();
         }
@@ -146,7 +146,7 @@ namespace ProyectoIPO_Lab2324
                 string selectedArtistBio = selectedAlbum.ArtistBio;
                 Uri selectedArtistImage = selectedAlbum.ArtistImage;
 
-                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, textbox_user_local, dateTime_local, selectedArtistImage);
+                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, userNameLocal, dateTimeLocal, selectedArtistImage);
                 artistWindow.Show();
                 this.Hide();
             }
@@ -159,10 +159,40 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(textbox_user_local, dateTime_local);
+            ContactWindow contactWindow = new ContactWindow(userNameLocal, dateTimeLocal);
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userwindow = new UserWindow(userNameLocal, dateTimeLocal);
+        }
+
+        private void btnDeleteAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            Album selectedAlbum = lstAlbumList.SelectedItem as Album;
+
+            if (selectedAlbum != null)
+            {
+                // Eliminar el álbum seleccionado de la lista
+                albumList.Remove(selectedAlbum);
+
+                // Actualizar la vista del ListBox
+                lstAlbumList.ItemsSource = null;
+                lstAlbumList.ItemsSource = albumList;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un álbum para eliminar.", "Álbum no seleccionado");
+            }
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            WindowManager.LandingWindowInstance.Show();
         }
     }
 }

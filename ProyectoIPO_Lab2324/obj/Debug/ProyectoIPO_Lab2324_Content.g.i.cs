@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/contact/map.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/contact/pin.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/contact/square.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/toolbar/add_c.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/toolbar/remove_c.png")]
 
 
