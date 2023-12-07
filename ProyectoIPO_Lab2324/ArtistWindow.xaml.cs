@@ -60,5 +60,45 @@ namespace ProyectoIPO_Lab2324
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userwindow = new UserWindow(usernameLocal, datetimeLocal);
+            WindowManager.UserWindowInstance = userwindow;
+            userwindow.Show();
+            this.Hide();
+
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LoginWindowInstance.Show();
+            this.Hide();
+        }
+
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            WindowManager.ShoppingCartWindowInstance = shoppingCart;
+            shoppingCart.Show();
+            this.Hide();
+
+        }
+
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
+        {
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            WindowManager.FaqsWindowInstance = faqsWindow;
+            faqsWindow.Show();
+            this.Hide();
+        }
+
+        private void btnContact_Click(object sender, RoutedEventArgs e)
+        {
+            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            WindowManager.ContactWindowInstance = contactWindow;
+            contactWindow.Show();
+            this.Hide();
+        }
     }
 }

@@ -50,7 +50,7 @@
                 <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Margin="1,1,1,1"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnLogout" Click="Logout_Click" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="6" Foreground="{x:Null}" Grid.RowSpan="2">
+        <Button x:Name="btnLogout" Click="btnLogout_Click" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="6" Foreground="{x:Null}" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="image_logout" Source="\Resources\logout_icon.png" Width="49" Height="38" />
                 <TextBlock x:Name="TextBlock_Logout" Text="Cerrar Sesión" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>

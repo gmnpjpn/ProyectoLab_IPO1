@@ -20,14 +20,14 @@ namespace ProyectoIPO_Lab2324
     public partial class ContactWindow : Window
     {
 
-        private string textbox_user_local;
-        private string dateTime_local;
+        private string usernameLocal;
+        private string datetimeLocal;
 
-        public ContactWindow(String textbox_user, String dateTime)
+        public ContactWindow(String username, String datetime)
         {
             InitializeComponent();
-            textbox_user_local = textbox_user;
-            dateTime_local = dateTime;
+            usernameLocal = username;
+            datetimeLocal = datetime;
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -45,11 +45,20 @@ namespace ProyectoIPO_Lab2324
             // TODO
         }
 
-        private void clickFaqs(object sender, RoutedEventArgs e)
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(textbox_user_local, dateTime_local);
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
             faqsWindow.Show();
             this.Hide();
+        }
+
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            WindowManager.ShoppingCartWindowInstance = shoppingCart;
+            shoppingCart.Show();
+            this.Hide();
+
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)

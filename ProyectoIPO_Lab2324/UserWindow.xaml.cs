@@ -37,7 +37,10 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            WindowManager.ContactWindowInstance = contactWindow;
+            contactWindow.Show();
+            this.Hide();
         }
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
@@ -49,7 +52,10 @@ namespace ProyectoIPO_Lab2324
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            WindowManager.ShoppingCartWindowInstance = shoppingCart;
+            shoppingCart.Show();
+            this.Hide();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)

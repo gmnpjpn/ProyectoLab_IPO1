@@ -114,7 +114,7 @@ namespace ProyectoIPO_Lab2324
             this.Hide();
         }
 
-        private void Logout_Click(object sender, RoutedEventArgs e)
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             WindowManager.LoginWindowInstance.Show();
             this.Hide();
