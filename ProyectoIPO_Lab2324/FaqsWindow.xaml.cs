@@ -23,18 +23,18 @@ namespace ProyectoIPO_Lab2324
 
         List<Faq> faqList;
 
-        private string userName_local;
-        private string dateTime_local;
+        private string usernameLocal;
+        private string datetimeLocal;
 
-        public FaqsWindow(String userName, String dateTime)
+        public FaqsWindow(String username, String datetime)
         {
             InitializeComponent();
 
-            userName_local = userName;
-            dateTime_local = dateTime;
+            usernameLocal = username;
+            datetimeLocal = datetime;
 
-            textblock_lastTime.Text = "Ultimo Acceso: " + dateTime;
-            textblock_username.Text = userName_local;
+            textblock_lastTime.Text = "Ultimo Acceso: " + datetimeLocal;
+            textblock_username.Text = usernameLocal;
 
             // Create faq list
             faqList = new List<Faq>();
@@ -44,9 +44,6 @@ namespace ProyectoIPO_Lab2324
             // Indicate that the lstFaqList items origin is faqList
             lstFaqList.ItemsSource = faqList;
         }
-
-
-
         private void LoadContentXML()
         {
             // Load test data
@@ -65,14 +62,26 @@ namespace ProyectoIPO_Lab2324
             }
         }
 
-        private void clickHome(object sender, RoutedEventArgs e)
+        private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            if (WindowManager.LandingWindowInstance != null && !WindowManager.LandingWindowInstance.IsVisible)
-            {
-                WindowManager.LandingWindowInstance.Show();
-            }
+            WindowManager.LandingWindowInstance.Show();
             this.Hide();
+        }
 
+        private void btnContact_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LoginWindowInstance.Show();
+            this.Hide();
         }
 
         private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)

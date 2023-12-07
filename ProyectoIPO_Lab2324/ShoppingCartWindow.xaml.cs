@@ -19,54 +19,51 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class ShoppingCartWindow : Window
     {
-
-        private String userNameLocal;
-        private String dateTimeLocal;
-        public ShoppingCartWindow(String userName, String dateTime)
+        private String usernameLocal;
+        private String datetimeLocal;
+        public ShoppingCartWindow(String username, String dateTime)
         {
             InitializeComponent();
 
-            userNameLocal = userName;
-            dateTimeLocal = dateTime;
+            usernameLocal = username;
+            datetimeLocal = dateTime;
+        }
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LandingWindowInstance.Show();
+            this.Hide();
         }
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(userNameLocal, dateTimeLocal);
-            WindowManager.ContactWindowInstance = contactWindow;
-            contactWindow.Show();
-            this.Hide();
+            // TODO
         }
 
-        private void clickFaqs(object sender, RoutedEventArgs e)
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(userNameLocal, dateTimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
             faqsWindow.Show();
             this.Hide();
         }
 
-        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LoginWindowInstance.Show();
+            this.Hide();
+        }
+
+        private void StopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
-
-        private void Logout_Click(object sender, RoutedEventArgs e)
+        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (WindowManager.LoginWindowInstance != null && !WindowManager.LoginWindowInstance.IsVisible)
-            {
-                WindowManager.LoginWindowInstance.Show();
-            }
-            this.Hide();
-
-        }
-
-        private void btnHome_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowManager.LandingWindowInstance != null && !WindowManager.LandingWindowInstance.IsVisible)
-            {
-                WindowManager.LandingWindowInstance.Show();
-            }
-            this.Hide();
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

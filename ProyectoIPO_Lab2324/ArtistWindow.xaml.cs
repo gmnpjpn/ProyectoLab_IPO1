@@ -19,14 +19,14 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class ArtistWindow : Window
     {
-        private string textbox_user_local;
-        private string dateTime_local;
+        private string usernameLocal;
+        private string datetimeLocal;
 
-        public ArtistWindow(String selectedAartistName, String selectedArtistBio, String textbox_user, String dateTime, Uri selectedArtistImage)
+        public ArtistWindow(String selectedAartistName, String selectedArtistBio, String username, String datetime, Uri selectedArtistImage)
         {
             InitializeComponent();
-            textbox_user_local = textbox_user;
-            dateTime_local = dateTime;
+            usernameLocal = username;
+            datetimeLocal = datetime;
 
             lblArtistName.Content = selectedAartistName;
             tbBio.Text = selectedArtistBio;
@@ -41,14 +41,9 @@ namespace ProyectoIPO_Lab2324
 
         private void clickFaqs(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(textbox_user_local, dateTime_local);
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
             faqsWindow.Show();
             this.Hide();
-        }
-
-        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -59,6 +54,11 @@ namespace ProyectoIPO_Lab2324
                 WindowManager.LandingWindowInstance.Show();
             }
             this.Hide();
+        }
+
+        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

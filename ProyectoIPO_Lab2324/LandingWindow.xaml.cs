@@ -23,9 +23,7 @@ namespace ProyectoIPO_Lab2324
 
         private string userNameLocal;
         private string dateTimeLocal;
-
         List<Album> albumList;
-
 
         public LandingWindow(String userName, String dateTime)
         {
@@ -43,12 +41,10 @@ namespace ProyectoIPO_Lab2324
 
             // Indicate that the lstAlbumList items origin is albumList
             lstAlbumList.ItemsSource = albumList;
-
         }
 
         private void LoadContentXML()
         {
-            // Load test data
             XmlDocument doc = new XmlDocument();
             var file = Application.GetResourceStream(new Uri("/Resources/Data/Albums.xml", UriKind.Relative));
             doc.Load(file.Stream);
@@ -77,61 +73,77 @@ namespace ProyectoIPO_Lab2324
                 {
                     newAlbum.Songs.Add(songNode.InnerText);
                 }
-
                 albumList.Add(newAlbum);
             }
         }
 
-        private void Logout_Click(object sender, RoutedEventArgs e)
+        private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            if (WindowManager.LoginWindowInstance != null && !WindowManager.LoginWindowInstance.IsVisible)
-            {
-                WindowManager.LoginWindowInstance.Show();
-            }
-            this.Hide();
-
+            //TODO (Some bugs encountered)
         }
 
-        private void clickFaqs(object sender, RoutedEventArgs e)
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userwindow = new UserWindow(userNameLocal, dateTimeLocal);
+            WindowManager.UserWindowInstance = userwindow;
+            userwindow.Show();
+            this.Hide();
+        }
+
+        private void btnContact_Click(object sender, RoutedEventArgs e)
+        {
+            ContactWindow contactWindow = new ContactWindow(userNameLocal, dateTimeLocal);
+            WindowManager.ContactWindowInstance = contactWindow;
+            contactWindow.Show();
+            this.Hide();
+        }
+
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
             FaqsWindow faqsWindow = new FaqsWindow(userNameLocal, dateTimeLocal);
+            WindowManager.FaqsWindowInstance = faqsWindow;
             faqsWindow.Show();
             this.Hide();
         }
 
-        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(userNameLocal, dateTimeLocal);
+            WindowManager.ShoppingCartWindowInstance = shoppingCart;
+            shoppingCart.Show();
+            this.Hide();
         }
 
-        private void btnLike_Click(object sender, RoutedEventArgs e)
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LoginWindowInstance.Show();
+            this.Hide();
+        }
+
+        private void btnFav_Click(object sender, RoutedEventArgs e)
         {
             string albumPlusArtist = lblName.Content.ToString() + " - " + lblAuthor.Content.ToString();
 
-            // Verificar si el contenido ya existe en la lista
+            // Verify if it exists on the favs list
             if (!lstFavorites.Items.Contains(albumPlusArtist))
             {
-                // Agregar el contenido de lblName a la lista lstFavorites
                 lstFavorites.Items.Add(albumPlusArtist);
             }
             else
             {
-                // Si ya existe, puedes manejar esto como desees (por ejemplo, mostrar un mensaje)
                 MessageBox.Show("Este álbum ya está en tus favoritos.", "Error al añadir a favoritos");
             }
         }
 
         private void btnDeleteFav_Click(object sender, RoutedEventArgs e)
         {
-            // Verificar si hay un elemento seleccionado en lstFavorites
+            // Check if the selected item is in the favs list
             if (lstFavorites.SelectedItem != null)
             {
-                // Eliminar el elemento seleccionado de lstFavorites
                 lstFavorites.Items.Remove(lstFavorites.SelectedItem);
             }
             else
             {
-                // Manejar el caso en el que no se haya seleccionado ningún elemento para eliminar
                 MessageBox.Show("Por favor, selecciona un elemento de la lista para eliminarlo.", "Error al eliminar un favorito");
             }
         }
@@ -147,39 +159,25 @@ namespace ProyectoIPO_Lab2324
                 Uri selectedArtistImage = selectedAlbum.ArtistImage;
 
                 ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, userNameLocal, dateTimeLocal, selectedArtistImage);
+                WindowManager.ArtistWindowInstance = artistWindow;
                 artistWindow.Show();
                 this.Hide();
             }
             else
             {
-                // Manejar el caso en el que no se ha seleccionado ningún álbum
                 MessageBox.Show("Por favor, selecciona un álbum para ver información del artista.", "Error al acceder a la página del artista");
             }
         }
 
-        private void btnContact_Click(object sender, RoutedEventArgs e)
-        {
-            ContactWindow contactWindow = new ContactWindow(userNameLocal, dateTimeLocal);
-            WindowManager.ContactWindowInstance = contactWindow;
-            contactWindow.Show();
-            this.Hide();
-        }
-
-        private void btnUser_Click(object sender, RoutedEventArgs e)
-        {
-            UserWindow userwindow = new UserWindow(userNameLocal, dateTimeLocal);
-        }
-
+        ////////// ALBUM LIST MANAGEMENT //////////
         private void btnDeleteAlbum_Click(object sender, RoutedEventArgs e)
         {
             Album selectedAlbum = lstAlbumList.SelectedItem as Album;
 
             if (selectedAlbum != null)
             {
-                // Eliminar el álbum seleccionado de la lista
                 albumList.Remove(selectedAlbum);
 
-                // Actualizar la vista del ListBox
                 lstAlbumList.ItemsSource = null;
                 lstAlbumList.ItemsSource = albumList;
             }
@@ -189,10 +187,24 @@ namespace ProyectoIPO_Lab2324
             }
         }
 
-        private void btnHome_Click(object sender, RoutedEventArgs e)
+        private void btnEditAlbum_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            WindowManager.LandingWindowInstance.Show();
+            // TODO
+        }
+
+        private void btnAddAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnBuyAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

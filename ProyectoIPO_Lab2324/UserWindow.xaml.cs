@@ -20,47 +20,47 @@ namespace ProyectoIPO_Lab2324
     public partial class UserWindow : Window
     {
 
-        private string textbox_user_local;
-        private string dateTime_local;
+        private string usernameLocal;
+        private string datetimeLocal;
 
-        public UserWindow(String textbox_user, String dateTime)
+        public UserWindow(String username, String dateTime)
         {
             InitializeComponent();
-            textbox_user_local = textbox_user;
-            dateTime_local = dateTime;
+            usernameLocal = username;
+            datetimeLocal = dateTime;
+        }
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LandingWindowInstance.Show();
+            this.Hide();
+        }
+
+        private void btnContact_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
+        {
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            faqsWindow.Show();
+            this.Hide();
+        }
+
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LoginWindowInstance.Show();
+            this.Hide();
         }
 
         private void StopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
-
-        }
-
-        private void clickFaqs(object sender, RoutedEventArgs e)
-        {
-            FaqsWindow faqsWindow = new FaqsWindow(textbox_user_local, dateTime_local);
-            faqsWindow.Show();
-            this.Hide();
-        }
-
-        private void btnHome_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (WindowManager.LandingWindowInstance != null && !WindowManager.LandingWindowInstance.IsVisible)
-            {
-                WindowManager.LandingWindowInstance.Show();
-            }
-            this.Hide();
-        }
-
-        private void Logout_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowManager.LoginWindowInstance != null && !WindowManager.LoginWindowInstance.IsVisible)
-            {
-                WindowManager.LoginWindowInstance.Show();
-            }
-            this.Hide();
-
         }
     }
 }
