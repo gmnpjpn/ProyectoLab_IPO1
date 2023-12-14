@@ -19,14 +19,14 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class ArtistWindow : Window
     {
-        private string textbox_user_local;
-        private string dateTime_local;
+        private string usernameLocal;
+        private string datetimeLocal;
 
-        public ArtistWindow(String selectedAartistName, String selectedArtistBio, String textbox_user, String dateTime, Uri selectedArtistImage)
+        public ArtistWindow(String selectedAartistName, String selectedArtistBio, String username, String datetime, Uri selectedArtistImage)
         {
             InitializeComponent();
-            textbox_user_local = textbox_user;
-            dateTime_local = dateTime;
+            usernameLocal = username;
+            datetimeLocal = datetime;
 
             lblArtistName.Content = selectedAartistName;
             tbBio.Text = selectedArtistBio;
@@ -41,14 +41,9 @@ namespace ProyectoIPO_Lab2324
 
         private void clickFaqs(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(textbox_user_local, dateTime_local);
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
             faqsWindow.Show();
             this.Hide();
-        }
-
-        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -58,6 +53,51 @@ namespace ProyectoIPO_Lab2324
             {
                 WindowManager.LandingWindowInstance.Show();
             }
+            this.Hide();
+        }
+
+        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userwindow = new UserWindow(usernameLocal, datetimeLocal);
+            WindowManager.UserWindowInstance = userwindow;
+            userwindow.Show();
+            this.Hide();
+
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            WindowManager.LoginWindowInstance.Show();
+            this.Hide();
+        }
+
+        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            WindowManager.ShoppingCartWindowInstance = shoppingCart;
+            shoppingCart.Show();
+            this.Hide();
+
+        }
+
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
+        {
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            WindowManager.FaqsWindowInstance = faqsWindow;
+            faqsWindow.Show();
+            this.Hide();
+        }
+
+        private void btnContact_Click(object sender, RoutedEventArgs e)
+        {
+            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            WindowManager.ContactWindowInstance = contactWindow;
+            contactWindow.Show();
             this.Hide();
         }
     }

@@ -60,6 +60,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ContactWindow.xaml.cs">
+      <DependentUpon>ContactWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCartWindow.xaml.cs">
+      <DependentUpon>ShoppingCartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +115,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ContactWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FaqsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +128,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShoppingCartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,9 +192,7 @@
   <ItemGroup>
     <Resource Include="Resources\Data\Albums.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Documents\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Album\MyWay_FrankSinatra.jpg" />
   </ItemGroup>
@@ -182,6 +201,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Artist\TaylorSwift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Contact\map.jpg" />
+    <Resource Include="Resources\Contact\pin.png" />
+    <Resource Include="Resources\Contact\square.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Toolbar\add_c.png" />
+    <Resource Include="Resources\Toolbar\remove_c.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

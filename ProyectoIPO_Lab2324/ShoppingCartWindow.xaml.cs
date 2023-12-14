@@ -11,57 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Xml;
 
 namespace ProyectoIPO_Lab2324
 {
     /// <summary>
-    /// Lógica de interacción para FaqsWindow.xaml
+    /// Lógica de interacción para ShoppingCartWindow.xaml
     /// </summary>
-    public partial class FaqsWindow : Window
+    public partial class ShoppingCartWindow : Window
     {
-
-        List<Faq> faqList;
-
-        private string usernameLocal;
-        private string datetimeLocal;
-
-        public FaqsWindow(String username, String datetime)
+        private String usernameLocal;
+        private String datetimeLocal;
+        public ShoppingCartWindow(String username, String dateTime)
         {
             InitializeComponent();
 
             usernameLocal = username;
-            datetimeLocal = datetime;
-
-            textblock_lastTime.Text = "Ultimo Acceso: " + datetimeLocal;
-            textblock_username.Text = usernameLocal;
-
-            // Create faq list
-            faqList = new List<Faq>();
-            // Load data
-            LoadContentXML();
-
-            // Indicate that the lstFaqList items origin is faqList
-            lstFaqList.ItemsSource = faqList;
+            datetimeLocal = dateTime;
         }
-        private void LoadContentXML()
-        {
-            // Load test data
-            XmlDocument doc = new XmlDocument();
-            var file = Application.GetResourceStream(new Uri("/Resources/Data/Faqs.xml", UriKind.Relative));
-            doc.Load(file.Stream);
-
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                var newFaq = new Faq("", "");
-
-                newFaq.Title = node.Attributes["Title"].Value;
-                newFaq.Content = node.Attributes["Content"].Value;
-
-                faqList.Add(newFaq);
-            }
-        }
-
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             WindowManager.LandingWindowInstance.Show();
@@ -84,11 +50,10 @@ namespace ProyectoIPO_Lab2324
             this.Hide();
         }
 
-        private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
-            WindowManager.ShoppingCartWindowInstance = shoppingCart;
-            shoppingCart.Show();
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            faqsWindow.Show();
             this.Hide();
         }
 

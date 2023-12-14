@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\pilar\Documents\GitHub\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\
 ProyectoIPO_Lab2324
 none
 false
 DEBUG;TRACE
-C:\Users\pilar\Documents\GitHub\ProyectoLab_IPO1\ProyectoIPO_Lab2324\App.xaml
-41147955806
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\App.xaml
+7504689273
 
-111139672218
-13-1505183044
-ArtistWindow.xaml;FaqsWindow.xaml;LandingWindow.xaml;LoginWindow.xaml;
+14712364285
+13-1310406943
+ArtistWindow.xaml;ContactWindow.xaml;FaqsWindow.xaml;LandingWindow.xaml;LoginWindow.xaml;ShoppingCartWindow.xaml;UserWindow.xaml;
 
-True
+False
 

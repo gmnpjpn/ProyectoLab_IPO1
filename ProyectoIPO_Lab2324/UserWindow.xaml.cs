@@ -11,68 +11,27 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Xml;
 
 namespace ProyectoIPO_Lab2324
 {
     /// <summary>
-    /// Lógica de interacción para FaqsWindow.xaml
+    /// Lógica de interacción para UserWindow.xaml
     /// </summary>
-    public partial class FaqsWindow : Window
+    public partial class UserWindow : Window
     {
-
-        List<Faq> faqList;
 
         private string usernameLocal;
         private string datetimeLocal;
 
-        public FaqsWindow(String username, String datetime)
+        public UserWindow(String username, String dateTime)
         {
             InitializeComponent();
-
             usernameLocal = username;
-            datetimeLocal = datetime;
-
-            textblock_lastTime.Text = "Ultimo Acceso: " + datetimeLocal;
-            textblock_username.Text = usernameLocal;
-
-            // Create faq list
-            faqList = new List<Faq>();
-            // Load data
-            LoadContentXML();
-
-            // Indicate that the lstFaqList items origin is faqList
-            lstFaqList.ItemsSource = faqList;
+            datetimeLocal = dateTime;
         }
-        private void LoadContentXML()
-        {
-            // Load test data
-            XmlDocument doc = new XmlDocument();
-            var file = Application.GetResourceStream(new Uri("/Resources/Data/Faqs.xml", UriKind.Relative));
-            doc.Load(file.Stream);
-
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                var newFaq = new Faq("", "");
-
-                newFaq.Title = node.Attributes["Title"].Value;
-                newFaq.Content = node.Attributes["Content"].Value;
-
-                faqList.Add(newFaq);
-            }
-        }
-
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             WindowManager.LandingWindowInstance.Show();
-            this.Hide();
-        }
-
-        private void btnUser_Click(object sender, RoutedEventArgs e)
-        {
-            UserWindow userwindow = new UserWindow(usernameLocal, datetimeLocal);
-            WindowManager.UserWindowInstance = userwindow;
-            userwindow.Show();
             this.Hide();
         }
 
@@ -81,6 +40,13 @@ namespace ProyectoIPO_Lab2324
             ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
+            this.Hide();
+        }
+
+        private void btnFaqs_Click(object sender, RoutedEventArgs e)
+        {
+            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            faqsWindow.Show();
             this.Hide();
         }
 
@@ -98,7 +64,7 @@ namespace ProyectoIPO_Lab2324
             this.Hide();
         }
 
-        private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
+        private void StopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }

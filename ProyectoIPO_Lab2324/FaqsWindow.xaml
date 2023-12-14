@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
         Title="VinylShop - FAQS" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" Closing="stopAtClose" WindowStartupLocation="CenterScreen">
-    <Grid x:Name="grid_landing" HorizontalAlignment="Left" Width="1280" Height="704" VerticalAlignment="Center">
+    <Grid x:Name="gridFaqs" HorizontalAlignment="Left" Width="1280" Height="704" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="69*"/>
             <RowDefinition Height="635*"/>
@@ -16,13 +16,13 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1280" Source="/Resources/wallpaper.png" Stretch="Fill" Height="704" Grid.RowSpan="2"/>
         <Rectangle x:Name="rectangle_up" Height="70" Stroke="Black" VerticalAlignment="Center" Fill="#FF3A3A3A"/>
-        <Button x:Name="Home" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="clickHome">
+        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnHome_Click">
             <Image x:Name="image_home" Source="\Resources\home_icon.png" Width="49" Height="40" />
         </Button>
-        <Button x:Name="User" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="81,0,0,0" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="btnUser" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="81,0,0,0" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnUser_Click">
             <Image x:Name="image_user" Source="\Resources\user_icon.png" Width="49" Height="40" />
         </Button>
-        <Button x:Name="Logout" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1210,12,0,0" Height="55" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="btnLogout" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1210,12,0,0" Height="55" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnLogout_Click">
             <StackPanel>
                 <Image x:Name="image_logout" Source="\Resources\logout_icon.png" Width="49" Height="38" />
                 <TextBlock x:Name="TextBlock_Logout" Text="Cerrar Sesión" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
@@ -31,26 +31,26 @@
         </Button>
         <TextBlock x:Name="textblock_username" HorizontalAlignment="Left" Margin="146,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
         <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="146,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
-        <Button x:Name="ShoppingCart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1114,10,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="btnShoppingCart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1114,10,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnShoppingCart_Click">
             <StackPanel>
                 <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="49" Height="40" />
                 <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito de la compra" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="FAQS" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1056,7,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="btnFaqs" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1056,7,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
             <StackPanel>
                 <Image x:Name="FAQS_image" Source="\Resources\faqs_icon.ico" Width="49" Height="43" />
                 <TextBlock x:Name="TextBlock_FAQS" Text="FAQS" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Contact" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="988,7,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A">
+        <Button x:Name="btnContact" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="988,7,0,0" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnContact_Click">
             <StackPanel>
                 <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="43" />
                 <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
 
-        <TabControl Margin="10,3,10,10" Grid.Row="1">
+        <TabControl x:Name="tcFaqs" Margin="10,3,10,10" Grid.Row="1">
             <TabItem Header="" IsSelected="True">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <ListBox x:Name="lstFaqList"
