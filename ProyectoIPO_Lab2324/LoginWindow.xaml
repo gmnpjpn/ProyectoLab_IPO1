@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - Inicio de Sesión" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" Closing="stopAtClose">
+        Title="{DynamicResource WindowTitleLogin}" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" Closing="stopAtClose">
     <Grid x:Name="grid_login">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="123*"/>
@@ -39,15 +39,15 @@
         <Image x:Name="wallpaper" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.ColumnSpan="11" Grid.Row="1" Grid.RowSpan="11"/>
         <Rectangle x:Name="rectangle_grey" Grid.Row="3" Stroke="Black" Fill="#FF3A3A3A" RadiusY="20" RadiusX="20" Margin="10,10,10,1" Grid.Column="4" Grid.RowSpan="6" Grid.ColumnSpan="7"/>
         <TextBlock x:Name="label_tittle" Grid.Column="6" Grid.Row="3" TextWrapping="Wrap" FontFamily="Berlin Sans FB" Foreground="White" FontSize="72" RenderTransformOrigin="0.38,0.067" Margin="94,9,26,12" Grid.ColumnSpan="3"><Run Language="es-es" Text="VinylShop"/></TextBlock>
-        <TextBlock x:Name="label_user" Grid.Column="6" Margin="10,10,15,15" Grid.Row="4" TextWrapping="Wrap" Text="Nombre de Usuario:" Foreground="White" FontFamily="Berlin Sans FB" FontSize="30" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="label_user" Grid.Column="6" Margin="10,10,15,15" Grid.Row="4" TextWrapping="Wrap" Text="{DynamicResource label_user}" Foreground="White" FontFamily="Berlin Sans FB" FontSize="30" Grid.ColumnSpan="2"/>
         <TextBox x:Name="textbox_user" Grid.Column="6" Margin="10,9,10,9" Grid.Row="5" TextWrapping="Wrap" FontFamily="Berlin Sans FB" FontSize="30" TabIndex="0" Grid.ColumnSpan="4"/>
-        <TextBlock x:Name="label_password" Grid.Column="6" Margin="10,0,97,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Berlin Sans FB" FontSize="30" Foreground="White" Height="33" Grid.ColumnSpan="2"><Run Language="es-es" Text="Contraseña:"/></TextBlock>
-        <Button x:Name="button_login" Grid.Column="6" Content="Iniciar Sesión" Margin="130,10,61,10" Grid.Row="8" FontFamily="Berlin Sans FB" FontSize="35" Grid.ColumnSpan="3" RenderTransformOrigin="0.343,0.357" TabIndex="2" Click="click_login"/>
-        <ComboBox x:Name="combobox_language" Margin="10,10,22,16" TabIndex="3" SelectionChanged="combobox_language_SelectionChanged" FontFamily="Berlin Sans FB" FontSize="35" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">
-            <ComboBoxItem Content="Español"/>
-            <ComboBoxItem Content="Inglés"/>
+        <TextBlock x:Name="label_password" Grid.Column="6" Margin="10,0,97,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Berlin Sans FB" FontSize="30" Foreground="White" Height="33" Grid.ColumnSpan="2"><Run Language="es-es" Text="{DynamicResource label_password}"/></TextBlock>
+        <Button x:Name="button_login" Grid.Column="6" Content="{DynamicResource button_login}" Margin="130,10,61,10" Grid.Row="8" FontFamily="Berlin Sans FB" FontSize="35" Grid.ColumnSpan="3" RenderTransformOrigin="0.343,0.357" TabIndex="2" Click="click_login"/>
+        <ComboBox x:Name="cbIdiomas" Margin="10,10,22,16" TabIndex="3" SelectionChanged="combobox_language_SelectionChanged" FontFamily="Berlin Sans FB" FontSize="35" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="Español" IsSelected="True"/>
+            <ComboBoxItem Content="English" IsSelected="True"/>
         </ComboBox>
-        <Label x:Name="label_warning" Grid.Column="5" Content="Credenciales Incorrectas" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="5" Width="526" FontFamily="Berlin Sans FB" FontSize="35" Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="48"/>
+        <Label x:Name="label_warning" Grid.Column="5" Content="{DynamicResource label_warning}" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="5" Width="526" FontFamily="Berlin Sans FB" FontSize="35" Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="48"/>
         <Image x:Name="Ad_image" Grid.Column="1" Margin="10,10,16,11" Grid.RowSpan="6" Grid.Row="3" Grid.ColumnSpan="2" Source="/Resources/Album/AbbeyRoad_TheBeatles.jpg" Stretch="Fill"/>
         <PasswordBox x:Name="passBox" Grid.Column="6" Grid.Row="7" FontFamily="Berlin Sans FB" TabIndex="1" Margin="10,10,10,10" Grid.ColumnSpan="4" FontSize="30"/>
 

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+
+    <sys:String x:Key="WindowTitleLogin">VinylShop - Inicio de sesión</sys:String>
+    <sys:String x:Key="label_user">Nombre de usuario:</sys:String>
+    <sys:String x:Key="label_password">Contraseña:</sys:String>
+    <sys:String x:Key="button_login">Iniciar Sesión</sys:String>
+    <sys:String x:Key="label_warning">Credenciales Incorrectas</sys:String>
+
+
+
+</ResourceDictionary>
