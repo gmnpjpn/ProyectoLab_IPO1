@@ -43,9 +43,21 @@
         <TextBox x:Name="textbox_user" Grid.Column="6" Margin="10,9,10,9" Grid.Row="5" TextWrapping="Wrap" FontFamily="Berlin Sans FB" FontSize="30" TabIndex="0" Grid.ColumnSpan="4"/>
         <TextBlock x:Name="label_password" Grid.Column="6" Margin="10,0,97,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Berlin Sans FB" FontSize="30" Foreground="White" Height="33" Grid.ColumnSpan="2"><Run Language="es-es" Text="Contraseña:"/></TextBlock>
         <Button x:Name="button_login" Grid.Column="6" Content="Iniciar Sesión" Margin="130,10,61,10" Grid.Row="8" FontFamily="Berlin Sans FB" FontSize="35" Grid.ColumnSpan="3" RenderTransformOrigin="0.343,0.357" TabIndex="2" Click="click_login"/>
-        <ComboBox x:Name="combobox_language" Margin="10,10,22,16" TabIndex="3" SelectionChanged="combobox_language_SelectionChanged" FontFamily="Berlin Sans FB" FontSize="35" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2">
-            <ComboBoxItem Content="Español"/>
-            <ComboBoxItem Content="Inglés"/>
+        
+        <ComboBox x:Name="combobox_language"
+                  Margin="10,10,22,16"
+                  TabIndex="3"
+                  SelectionChanged="combobox_language_SelectionChanged"
+                  FontFamily="Berlin Sans FB" FontSize="35"
+                  SelectedIndex="0"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                  Grid.Row="1" Grid.ColumnSpan="2"
+                  Opacity="0.6">
+            <ComboBoxItem x:Name="cbItem1"
+                          Content="ES"/>
+            <ComboBoxItem x:Name="cbItem2"
+                          Content="EN"/>
+        
         </ComboBox>
         <Label x:Name="label_warning" Grid.Column="5" Content="Credenciales Incorrectas" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="5" Width="526" FontFamily="Berlin Sans FB" FontSize="35" Foreground="Red" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="48"/>
         <Image x:Name="Ad_image" Grid.Column="1" Margin="10,10,16,11" Grid.RowSpan="6" Grid.Row="3" Grid.ColumnSpan="2" Source="/Resources/Album/AbbeyRoad_TheBeatles.jpg" Stretch="Fill"/>
