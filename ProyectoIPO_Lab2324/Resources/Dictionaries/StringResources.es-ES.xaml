@@ -4,5 +4,9 @@
 
     <sys:String x:Key="WindowTitle">VinylShop ES</sys:String>
     <sys:String x:Key="label_loginTitle">VinylShop ES</sys:String>
+    <sys:String x:Key="label_userTitle">Nombre de Usuario</sys:String>
+    <sys:String x:Key="label_passwordTitle">Contraseña</sys:String>
+    <sys:String x:Key="button_login">Iniciar Sesion</sys:String>
+    <sys:String x:Key="label_warning">Credenciales Incorrectas</sys:String>
 
 </ResourceDictionary>

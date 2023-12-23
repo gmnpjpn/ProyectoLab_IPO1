@@ -2,10 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-
     <sys:String x:Key="WindowTitle">VinylShop USA</sys:String>
     <sys:String x:Key="label_loginTitle">VinylShop USA</sys:String>
-
+    <sys:String x:Key="label_userTitle">Username</sys:String>
+    <sys:String x:Key="label_passwordTitle">Password</sys:String>
+    <sys:String x:Key="button_login">Sign In</sys:String>
+    <sys:String x:Key="label_warning">Wrong Credentials</sys:String>
 
 
 </ResourceDictionary>
