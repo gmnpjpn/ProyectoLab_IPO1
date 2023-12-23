@@ -30,15 +30,15 @@ namespace ProyectoIPO_Lab2324
             {
                 case "en-US":
                     resourceDictionary.Source =
-                    new Uri("/resources/StringResources.en-US.xaml", UriKind.Relative);
+                    new Uri("/Resources/Dictionaries/StringResources.en-US.xaml", UriKind.Relative);
                     break;
                 case "es-ES":
                     resourceDictionary.Source =
-                    new Uri("/resources/StringResources.es-ES.xaml", UriKind.Relative);
+                    new Uri("/Resources/Dictionaries/StringResources.es-ES.xaml", UriKind.Relative);
                     break;
                 default:
                     resourceDictionary.Source =
-                    new Uri("/resources/StringResources.es-ES.xaml", UriKind.Relative);
+                    new Uri("/Resources/Dictionaries/StringResources.es-ES.xaml", UriKind.Relative);
                     break;
             }
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
