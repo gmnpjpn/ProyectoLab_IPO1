@@ -14,20 +14,14 @@ using System.Windows.Shapes;
 
 namespace ProyectoIPO_Lab2324
 {
-    /// <summary>
-    /// Lógica de interacción para ContactWindow.xaml
-    /// </summary>
     public partial class ContactWindow : Window
     {
-
-        private string usernameLocal;
-        private string datetimeLocal;
-
-        public ContactWindow(String username, String datetime)
+        public ContactWindow()
         {
             InitializeComponent();
-            usernameLocal = username;
-            datetimeLocal = datetime;
+
+            textblock_username.Text = GlobalData.Username;
+            textblock_lastTime.Text = GlobalData.CurrentDateTime;
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
@@ -47,14 +41,14 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             faqsWindow.Show();
             this.Hide();
         }
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
             WindowManager.ShoppingCartWindowInstance = shoppingCart;
             shoppingCart.Show();
             this.Hide();

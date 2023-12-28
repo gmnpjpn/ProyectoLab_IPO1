@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/toolbar/add_c.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/toolbar/remove_c.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/flags/spainflag.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/flags/usaflag.png")]
 
 

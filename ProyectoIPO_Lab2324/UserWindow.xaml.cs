@@ -19,15 +19,17 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class UserWindow : Window
     {
+        private List<Album> FavoriteAlbums;
 
-        private string usernameLocal;
-        private string datetimeLocal;
-
-        public UserWindow(String username, String dateTime)
+        public UserWindow()
         {
             InitializeComponent();
-            usernameLocal = username;
-            datetimeLocal = dateTime;
+
+            textblock_username.Text = GlobalData.Username;
+            textblock_lastTime.Text = GlobalData.CurrentDateTime;
+
+            listbox_favorites.ItemsSource = GlobalData.FavoritesList;
+            listbox_favorites.DisplayMemberPath = "Name";
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
@@ -37,7 +39,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            ContactWindow contactWindow = new ContactWindow();
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();
@@ -45,14 +47,14 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             faqsWindow.Show();
             this.Hide();
         }
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
             WindowManager.ShoppingCartWindowInstance = shoppingCart;
             shoppingCart.Show();
             this.Hide();

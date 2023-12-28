@@ -59,10 +59,9 @@
         </Button>
 
         <TabControl Margin="10,3,10,10" Grid.Row="2" Opacity="0.9" Grid.ColumnSpan="7">
-            <TabItem Header="Catálogo" IsSelected="True">
+            <TabItem Header="Álbumes" IsSelected="True">
                 <StackPanel Orientation="Horizontal" Margin="5">
-                    <StackPanel Orientation="Vertical" Margin="5">
-
+                    <StackPanel Orientation="Vertical" Margin="5" Width="287">
                         <StackPanel x:Name="spAlbumEdition" Orientation="Horizontal"
                                  Grid.Row="0" Grid.ColumnSpan="2"
                                  Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -117,87 +116,83 @@
                         </ListBox>
 
                     </StackPanel>
-                    
+                    <ScrollViewer Width="526">
 
-
-                    <ScrollViewer>
-
-                        <StackPanel x:Name="spDetail" Width="400" Orientation="Vertical">
+                        <StackPanel x:Name="spDetail" Width="462" Orientation="Vertical">
 
 
                             <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Name}"/>
+                               Content="{Binding SelectedItem.Name, ElementName=lstAlbumList}"/>
                             <Label x:Name="lblAuthor" FontWeight="Regular" FontSize="18"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Author}"/>
+                               Content="{Binding SelectedItem.Author, ElementName=lstAlbumList}"/>
 
                             <Image x:Name="imgCover"
                                Height="220" Width="200"
                                HorizontalAlignment="Left"
                                Margin="5" Stretch="Fill"
-                               Source="{Binding ElementName=lstAlbumList, Path= SelectedItem.Cover}"/>
+                               Source="{Binding SelectedItem.Cover, ElementName=lstAlbumList}"/>
 
                             <DockPanel x:Name="spButtons" LastChildFill="False">
 
                                 <Button x:Name="btnArtistPage" Margin="5"
-                                Content="Página del Artista" FontSize="14" Click="btnArtistPage_Click">
-                                </Button>
+                                Content="Página del Artista" FontSize="14" Click="btnArtistPage_Click"/>
 
                                 <Button x:Name="btnFav" Margin="5"
-                            Content="Añadir a Favoritos" FontWeight="Bold" FontSize="14" Click="btnFav_Click">
-                                </Button>
+                            Content="Añadir a Favoritos" FontWeight="Bold" FontSize="14" Click="btnFav_Click"/>
 
                                 <Button x:Name="btnBuyAlbum" Margin="5"
-                            Content="Comprar Álbum" FontWeight="Bold" FontSize="14" Click="btnBuyAlbum_Click">
-                                </Button>
+                            Content="Comprar Álbum" FontWeight="Bold" FontSize="14" Click="btnBuyAlbum_Click"/>
 
                             </DockPanel>
 
-                            <Label FontWeight="Bold">PVP:</Label>
+                            <Label FontWeight="Bold" Content="PVP:"/>
                             <Label x:Name="lblPvp"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Pvp}"/>
+                               Content="{Binding SelectedItem.Pvp, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">¿Oferta?:</Label>
+                            <Label FontWeight="Bold" Content="¿Oferta?:"/>
                             <Label x:Name="lblOffer"
                                Content="Contenido Oferta"/>
 
-                            <Label FontWeight="Bold">Año de Lanzamiento:</Label>
+                            <Label FontWeight="Bold" Content="Año de Lanzamiento:"/>
                             <Label x:Name="lblLaunchYear"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.LaunchYear}"/>
+                               Content="{Binding SelectedItem.LaunchYear, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Puntuación:</Label>
+                            <Label FontWeight="Bold" Content="Puntuación:"/>
                             <Label x:Name="lblPuntuation"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Puntuation}"/>
+                               Content="{Binding SelectedItem.Puntuation, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Género:</Label>
+                            <Label FontWeight="Bold" Content="Género:"/>
                             <Label x:Name="lblGenre"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Genre}"/>
+                               Content="{Binding SelectedItem.Genre, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Sello Discográfico:</Label>
+                            <Label FontWeight="Bold" Content="Sello Discográfico:"/>
                             <Label x:Name="lblRecordLabel"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.RecordLabel}"/>
+                               Content="{Binding SelectedItem.RecordLabel, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Formato:</Label>
+                            <Label FontWeight="Bold" Content="Formato:"/>
                             <Label x:Name="lblFormat"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Format}"/>
+                               Content="{Binding SelectedItem.Format, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Pais:</Label>
+                            <Label FontWeight="Bold" Content="Pais:"/>
                             <Label x:Name="lblPais"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Country}"/>
+                               Content="{Binding SelectedItem.Country, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Número de "Me Gusta":</Label>
+                            <Label FontWeight="Bold" Content="Número de &quot;Me Gusta&quot;:"/>
                             <Label x:Name="lblLikes"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Likes}"/>
+                               Content="{Binding SelectedItem.Likes, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Unidades Disponibles:</Label>
+                            <Label FontWeight="Bold" Content="Unidades Disponibles:"/>
                             <Label x:Name="lblStock"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Stock}"/>
+                               Content="{Binding SelectedItem.Stock, ElementName=lstAlbumList}"/>
 
 
                         </StackPanel>
 
+
+
                     </ScrollViewer>
 
-                    <StackPanel x:Name="spSongs" Width="275" Orientation="Vertical" Margin="5">
+                    <StackPanel x:Name="spSongs" Width="349" Orientation="Vertical" Margin="5" HorizontalAlignment="Right">
 
                         <Label x:Name="lblListSongTitle" FontWeight="Bold" FontSize="20"
                                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
@@ -207,30 +202,43 @@
 
                     </StackPanel>
 
-                    <StackPanel x:Name="spFavorites" Width="340" Orientation="Vertical" Margin="5">
-
-                        <Label x:Name="lblFavoritesTitle" FontWeight="Bold" FontSize="20"
-                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                               Content="Favoritos:"/>
-
-                        <Button x:Name="btnDeleteFav" Margin="5"
-                                Content="Eliminar Seleccionado" Click="btnDeleteFav_Click" Width="312" >
-                        </Button>
-
-                        <ListBox x:Name="lstFavorites" Height="497" Width="312">
-
-                        </ListBox>
-
-
-                    </StackPanel>
-
                 </StackPanel>
 
             </TabItem>
 
             <TabItem Header="Artistas">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <!-- Columna izquierda para la lista de artistas -->
+                        <ColumnDefinition Width="3*"/>
+                        <!-- Columna derecha para la información del artista -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Lista de artistas a la izquierda -->
+                    <ListBox x:Name="lstArtists" Grid.Column="0" Margin="10">
+                        <!-- Define la apariencia de cada elemento de la lista -->
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"/>
+                                <!-- Se enlaza directamente al campo Author -->
+                                <!-- Si la lista contiene cadenas (autores), no se especifica un Path -->
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <!-- Sección de información del artista a la derecha -->
+                    <StackPanel Grid.Column="1" Margin="10">
+                        <!-- Aquí muestra la información del artista -->
+                        <!-- Por ejemplo, etiquetas como Nombre, Género, Nacionalidad, etc. -->
+                        <TextBlock x:Name="txtArtistName" FontWeight="Bold" FontSize="20"/>
+                        <TextBlock x:Name="txtArtistGenre" FontSize="16"/>
+                        <TextBlock x:Name="txtArtistNationality" FontSize="16"/>
+                        <!-- Agrega más elementos según la información que desees mostrar -->
+                    </StackPanel>
+                </Grid>
             </TabItem>
+
 
         </TabControl>
 

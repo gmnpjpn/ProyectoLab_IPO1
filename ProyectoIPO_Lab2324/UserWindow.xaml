@@ -57,6 +57,16 @@
 
             </StackPanel>
         </Button>
+        <StackPanel x:Name="stackPanel_Favorites" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" Margin="10,10,10,10">
+            
+            <Label x:Name="label_favorites"  Content="Lista de Deseos" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Foreground="White"/>
+            <ListBox x:Name="listbox_favorites" Height="545" Opacity="0.6" FontSize="18"/>
+
+
+
+        </StackPanel>
+
+
 
     </Grid>
 </Window>

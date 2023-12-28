@@ -19,14 +19,13 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class ArtistWindow : Window
     {
-        private string usernameLocal;
-        private string datetimeLocal;
 
-        public ArtistWindow(String selectedAartistName, String selectedArtistBio, String username, String datetime, Uri selectedArtistImage)
+        public ArtistWindow(String selectedAartistName, String selectedArtistBio, Uri selectedArtistImage)
         {
             InitializeComponent();
-            usernameLocal = username;
-            datetimeLocal = datetime;
+
+            tbUsername.Text = GlobalData.Username;
+            tbLastTime.Text = GlobalData.CurrentDateTime;
 
             lblArtistName.Content = selectedAartistName;
             tbBio.Text = selectedArtistBio;
@@ -41,7 +40,7 @@ namespace ProyectoIPO_Lab2324
 
         private void clickFaqs(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             faqsWindow.Show();
             this.Hide();
         }
@@ -63,7 +62,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userwindow = new UserWindow(usernameLocal, datetimeLocal);
+            UserWindow userwindow = new UserWindow();
             WindowManager.UserWindowInstance = userwindow;
             userwindow.Show();
             this.Hide();
@@ -78,7 +77,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
             WindowManager.ShoppingCartWindowInstance = shoppingCart;
             shoppingCart.Show();
             this.Hide();
@@ -87,7 +86,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             WindowManager.FaqsWindowInstance = faqsWindow;
             faqsWindow.Show();
             this.Hide();
@@ -95,7 +94,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            ContactWindow contactWindow = new ContactWindow();
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();

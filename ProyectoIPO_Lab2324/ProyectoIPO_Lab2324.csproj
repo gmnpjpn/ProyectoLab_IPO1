@@ -63,6 +63,7 @@
     <Compile Include="ContactWindow.xaml.cs">
       <DependentUpon>ContactWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlobalData.cs" />
     <Compile Include="ShoppingCartWindow.xaml.cs">
       <DependentUpon>ShoppingCartWindow.xaml</DependentUpon>
     </Compile>
@@ -200,7 +201,10 @@
   <ItemGroup>
     <Resource Include="Resources\Data\Albums.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Flags\spainFlag.png" />
+    <Resource Include="Resources\Flags\usaFlag.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Album\MyWay_FrankSinatra.jpg" />
   </ItemGroup>

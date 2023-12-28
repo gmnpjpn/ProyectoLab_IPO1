@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoIPO_Lab2324
 {
-    class Album
+    public class Album
     {
         public String Name { set; get; }
         public String Author { set; get; }

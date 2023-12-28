@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,27 +21,26 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class LandingWindow : Window
     {
-
-        private string userNameLocal;
-        private string dateTimeLocal;
-        List<Album> albumList;
-
-        public LandingWindow(String userName, String dateTime)
+        public LandingWindow()
         {
             InitializeComponent();
-            userNameLocal = userName;
-            dateTimeLocal = dateTime;
 
-            textblock_lastTime.Text = "Ultimo Acceso: " + dateTime;
-            textblock_username.Text = userNameLocal;
+            textblock_username.Text = GlobalData.Username;
+            textblock_lastTime.Text = "Ultimo Acceso: " + GlobalData.CurrentDateTime;
 
-            // Create album list
-            albumList = new List<Album>();
             // Load data
             LoadContentXML();
 
             // Indicate that the lstAlbumList items origin is albumList
-            lstAlbumList.ItemsSource = albumList;
+            lstAlbumList.ItemsSource = GlobalData.AlbumList;
+
+            var artistNames = GlobalData.AlbumList.Select(album => album.Author).Distinct().ToList();
+            lstArtists.ItemsSource = artistNames;
+
+            if (GlobalData.Username != "admin")
+            {
+                spAlbumEdition.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void LoadContentXML()
@@ -73,7 +73,7 @@ namespace ProyectoIPO_Lab2324
                 {
                     newAlbum.Songs.Add(songNode.InnerText);
                 }
-                albumList.Add(newAlbum);
+                GlobalData.AlbumList.Add(newAlbum);
             }
         }
 
@@ -84,7 +84,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userwindow = new UserWindow(userNameLocal, dateTimeLocal);
+            UserWindow userwindow = new UserWindow();
             WindowManager.UserWindowInstance = userwindow;
             userwindow.Show();
             this.Hide();
@@ -92,7 +92,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(userNameLocal, dateTimeLocal);
+            ContactWindow contactWindow = new ContactWindow();
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();
@@ -100,7 +100,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(userNameLocal, dateTimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             WindowManager.FaqsWindowInstance = faqsWindow;
             faqsWindow.Show();
             this.Hide();
@@ -108,7 +108,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(userNameLocal, dateTimeLocal);
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
             WindowManager.ShoppingCartWindowInstance = shoppingCart;
             shoppingCart.Show();
             this.Hide();
@@ -122,31 +122,26 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFav_Click(object sender, RoutedEventArgs e)
         {
-            string albumPlusArtist = lblName.Content.ToString() + " - " + lblAuthor.Content.ToString();
+            if (lstAlbumList.SelectedItem != null && lstAlbumList.SelectedItem is Album selectedAlbum)
+            {
+                bool existsInFavorites = GlobalData.FavoritesList.Any(a =>
+                    a.Name == selectedAlbum.Name &&
+                    a.Author == selectedAlbum.Author
+                );
 
-            // Verify if it exists on the favs list
-            if (!lstFavorites.Items.Contains(albumPlusArtist))
-            {
-                lstFavorites.Items.Add(albumPlusArtist);
-            }
-            else
-            {
-                MessageBox.Show("Este álbum ya está en tus favoritos.", "Error al añadir a favoritos");
+                if (!existsInFavorites)
+                {
+                    GlobalData.FavoritesList.Add(selectedAlbum);
+                    MessageBox.Show("Añadido correctamente a la lista de favoritos.", "Añadido a favoritos");
+                    // Realizar otras acciones necesarias (actualizar interfaz, etc.)
+                }
+                else
+                {
+                    MessageBox.Show("El álbum ya está en la lista de favoritos.", "Error al añadir a favoritos");
+                }
             }
         }
 
-        private void btnDeleteFav_Click(object sender, RoutedEventArgs e)
-        {
-            // Check if the selected item is in the favs list
-            if (lstFavorites.SelectedItem != null)
-            {
-                lstFavorites.Items.Remove(lstFavorites.SelectedItem);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un elemento de la lista para eliminarlo.", "Error al eliminar un favorito");
-            }
-        }
 
         private void btnArtistPage_Click(object sender, RoutedEventArgs e)
         {
@@ -158,7 +153,7 @@ namespace ProyectoIPO_Lab2324
                 string selectedArtistBio = selectedAlbum.ArtistBio;
                 Uri selectedArtistImage = selectedAlbum.ArtistImage;
 
-                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, userNameLocal, dateTimeLocal, selectedArtistImage);
+                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, selectedArtistImage);
                 WindowManager.ArtistWindowInstance = artistWindow;
                 artistWindow.Show();
                 this.Hide();
@@ -176,16 +171,26 @@ namespace ProyectoIPO_Lab2324
 
             if (selectedAlbum != null)
             {
-                albumList.Remove(selectedAlbum);
+                // Eliminar el álbum seleccionado
+                GlobalData.AlbumList.Remove(selectedAlbum);
 
+                // Actualizar lstAlbumList con la nueva lista de álbumes
                 lstAlbumList.ItemsSource = null;
-                lstAlbumList.ItemsSource = albumList;
+                lstAlbumList.ItemsSource = GlobalData.AlbumList;
+
+                // Recalcular la lista de artistas después de eliminar el álbum
+                var artistNames = GlobalData.AlbumList.Select(album => album.Author).Distinct().ToList();
+
+                // Actualizar lstArtists con la lista de autores actualizada
+                lstArtists.ItemsSource = null;
+                lstArtists.ItemsSource = artistNames;
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un álbum para eliminar.", "Álbum no seleccionado");
             }
         }
+
 
         private void btnEditAlbum_Click(object sender, RoutedEventArgs e)
         {
