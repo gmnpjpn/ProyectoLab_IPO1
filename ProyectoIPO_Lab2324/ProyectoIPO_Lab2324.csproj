@@ -60,6 +60,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Artist.cs" />
     <Compile Include="ContactWindow.xaml.cs">
       <DependentUpon>ContactWindow.xaml</DependentUpon>
     </Compile>
@@ -222,6 +223,9 @@
   <ItemGroup>
     <Resource Include="Resources\Toolbar\add_c.png" />
     <Resource Include="Resources\Toolbar\remove_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artist\defaultArtistImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

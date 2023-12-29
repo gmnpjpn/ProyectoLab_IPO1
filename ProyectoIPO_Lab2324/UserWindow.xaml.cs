@@ -19,7 +19,6 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class UserWindow : Window
     {
-        private List<Album> FavoriteAlbums;
 
         public UserWindow()
         {

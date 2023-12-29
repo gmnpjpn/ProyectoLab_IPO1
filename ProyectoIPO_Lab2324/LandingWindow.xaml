@@ -207,36 +207,79 @@
             </TabItem>
 
             <TabItem Header="Artistas">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <!-- Columna izquierda para la lista de artistas -->
-                        <ColumnDefinition Width="3*"/>
-                        <!-- Columna derecha para la información del artista -->
-                    </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <StackPanel Orientation="Vertical" Margin="5" Width="287">
+                        <StackPanel x:Name="spArtistsEdition" Orientation="Horizontal"
+                 Grid.Row="0" Grid.ColumnSpan="2"
+                 Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                    <!-- Lista de artistas a la izquierda -->
-                    <ListBox x:Name="lstArtists" Grid.Column="0" Margin="10">
-                        <!-- Define la apariencia de cada elemento de la lista -->
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}"/>
-                                <!-- Se enlaza directamente al campo Author -->
-                                <!-- Si la lista contiene cadenas (autores), no se especifica un Path -->
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                            <Button x:Name="btnAddArtist" Width="50" Height="50">
+                                <Image Source="/Resources/Toolbar/add_c.png" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
 
-                    <!-- Sección de información del artista a la derecha -->
-                    <StackPanel Grid.Column="1" Margin="10">
-                        <!-- Aquí muestra la información del artista -->
-                        <!-- Por ejemplo, etiquetas como Nombre, Género, Nacionalidad, etc. -->
-                        <TextBlock x:Name="txtArtistName" FontWeight="Bold" FontSize="20"/>
-                        <TextBlock x:Name="txtArtistGenre" FontSize="16"/>
-                        <TextBlock x:Name="txtArtistNationality" FontSize="16"/>
-                        <!-- Agrega más elementos según la información que desees mostrar -->
+                            <Button x:Name="btnDeleteArtist" Width="50" Height="50">
+                                <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+
+                            <Button x:Name="btnEditArtist" Width="50" Height="50" Content="Editar">
+                            </Button>
+
+                        </StackPanel>
+
+                        <ListBox x:Name="lstArtistList"
+                                 SelectedIndex="0"
+                                 AlternationCount="2">
+
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Height="30" Orientation="Horizontal">
+                                        <Image Width="32" Height="32" Stretch="Fill"
+                               Source="{Binding ArtistImage}"/>
+                                        <TextBlock Padding="2" Margin="10, 0, 0, 0"
+                                   Text="{Binding Author}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListBoxItem}">
+                                    <Setter Property="Margin" Value="2"/>
+
+                                    <Style.Triggers>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="LightGray"/>
+                                        </Trigger>
+
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Foreground" Value="Blue"/>
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                            <Setter Property="BorderBrush" Value="Blue"/>
+                                            <Setter Property="BorderThickness" Value="3"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+
+                        </ListBox>
+
                     </StackPanel>
-                </Grid>
+                    <ScrollViewer Width="526">
+
+                        <StackPanel x:Name="spDetailArtist" Width="462" Orientation="Vertical">
+
+
+                            <Label x:Name="lblNameArtist" FontWeight="Bold" FontSize="20"
+                                   Content="{Binding SelectedItem.Author, ElementName=lstArtistList}"/>
+
+                            <Image x:Name="imgArtist"
+                                   Height="220" Width="200"
+                                   HorizontalAlignment="Left"
+                                   Margin="5" Stretch="Fill"
+                                   Source="{Binding SelectedItem.ArtistImage, ElementName=lstArtistList}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                </StackPanel>
             </TabItem>
 
 

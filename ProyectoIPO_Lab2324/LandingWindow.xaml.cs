@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -21,6 +22,7 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class LandingWindow : Window
     {
+
         public LandingWindow()
         {
             InitializeComponent();
@@ -34,14 +36,17 @@ namespace ProyectoIPO_Lab2324
             // Indicate that the lstAlbumList items origin is albumList
             lstAlbumList.ItemsSource = GlobalData.AlbumList;
 
-            var artistNames = GlobalData.AlbumList.Select(album => album.Author).Distinct().ToList();
-            lstArtists.ItemsSource = artistNames;
+            // Convert URI to ImageSource for lstArtistList
+            var artists = GlobalData.AlbumList.Select(album => new { Author = album.Author, ArtistImage = new BitmapImage(album.ArtistImage) }).Distinct().ToList();
+            lstArtistList.ItemsSource = artists;
 
             if (GlobalData.Username != "admin")
             {
                 spAlbumEdition.Visibility = Visibility.Collapsed;
             }
+
         }
+
 
         private void LoadContentXML()
         {
@@ -171,25 +176,30 @@ namespace ProyectoIPO_Lab2324
 
             if (selectedAlbum != null)
             {
-                // Eliminar el álbum seleccionado
+                // Eliminar el álbum seleccionado de la lista de álbumes
                 GlobalData.AlbumList.Remove(selectedAlbum);
 
-                // Actualizar lstAlbumList con la nueva lista de álbumes
+                // Actualizar la lista de álbumes
                 lstAlbumList.ItemsSource = null;
                 lstAlbumList.ItemsSource = GlobalData.AlbumList;
 
-                // Recalcular la lista de artistas después de eliminar el álbum
-                var artistNames = GlobalData.AlbumList.Select(album => album.Author).Distinct().ToList();
+                // Actualizar la lista de artistas
+                UpdateArtistsList();
 
-                // Actualizar lstArtists con la lista de autores actualizada
-                lstArtists.ItemsSource = null;
-                lstArtists.ItemsSource = artistNames;
+                // ...
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un álbum para eliminar.", "Álbum no seleccionado");
             }
         }
+
+        private void UpdateArtistsList()
+        {
+            var artistNames = GlobalData.AlbumList.Select(album => new { Author = album.Author, ArtistImage = new BitmapImage(album.ArtistImage) }).Distinct().ToList();
+            lstArtistList.ItemsSource = artistNames;
+        }
+
 
 
         private void btnEditAlbum_Click(object sender, RoutedEventArgs e)
