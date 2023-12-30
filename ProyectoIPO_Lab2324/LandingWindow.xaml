@@ -58,14 +58,14 @@
             </StackPanel>
         </Button>
 
-        <TabControl Margin="10,3,10,10" Grid.Row="2" Opacity="0.9" Grid.ColumnSpan="7">
+        <TabControl x:Name="tcLanding" Margin="10,3,10,10" Grid.Row="2" Opacity="0.9" Grid.ColumnSpan="7">
             <TabItem Header="Álbumes" IsSelected="True">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <StackPanel Orientation="Vertical" Margin="5" Width="287">
                         <StackPanel x:Name="spAlbumEdition" Orientation="Horizontal"
                                  Grid.Row="0" Grid.ColumnSpan="2"
                                  Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            
+
                             <Button x:Name="btnAddAlbum" Width="50" Height="50" Click="btnAddAlbum_Click">
                                 <Image Source="/Resources/Toolbar/add_c.png" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
@@ -206,12 +206,12 @@
 
             </TabItem>
 
-            <TabItem Header="Artistas">
+            <TabItem Header="Artistas" Margin="0,-1,-4,1">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <StackPanel Orientation="Vertical" Margin="5" Width="287">
                         <StackPanel x:Name="spArtistsEdition" Orientation="Horizontal"
-                 Grid.Row="0" Grid.ColumnSpan="2"
-                 Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    Grid.Row="0" Grid.ColumnSpan="2"
+                                    Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                             <Button x:Name="btnAddArtist" Width="50" Height="50">
                                 <Image Source="/Resources/Toolbar/add_c.png" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -236,7 +236,7 @@
                                         <Image Width="32" Height="32" Stretch="Fill"
                                Source="{Binding ArtistImage}"/>
                                         <TextBlock Padding="2" Margin="10, 0, 0, 0"
-                                   Text="{Binding Author}" />
+                                   Text="{Binding ArtisticName}" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -263,25 +263,71 @@
                         </ListBox>
 
                     </StackPanel>
-                    <ScrollViewer Width="526">
-
-                        <StackPanel x:Name="spDetailArtist" Width="462" Orientation="Vertical">
 
 
-                            <Label x:Name="lblNameArtist" FontWeight="Bold" FontSize="20"
-                                   Content="{Binding SelectedItem.Author, ElementName=lstArtistList}"/>
+                    <ScrollViewer Width="526" HorizontalScrollBarVisibility="Auto">
+
+                        <StackPanel x:Name="spArtistDetail" Width="521" Orientation="Vertical">
+
+                            <Label x:Name="lblArtisticName" FontWeight="Bold" FontSize="20"
+                                   Content="{Binding SelectedItem.ArtisticName, ElementName=lstArtistList}"/>
+
+                            <Label x:Name="lblRealName" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.RealName, ElementName=lstArtistList}"/>
 
                             <Image x:Name="imgArtist"
-                                   Height="220" Width="200"
+                                   Height="200" Width="180"
                                    HorizontalAlignment="Left"
                                    Margin="5" Stretch="Fill"
-                                   Source="{Binding SelectedItem.ArtistImage, ElementName=lstArtistList}"/>
+                                   Source="{Binding SelectedItem.ArtistImage, ElementName=lstArtistList}" VerticalAlignment="Top"/>
+
+
+                            <Label FontWeight="Bold" FontSize="15" Content="Descripción:"/>
+
+                            <Label x:Name="lblDescription" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.Description, ElementName=lstArtistList}"/>
+
+
+                            <Label FontWeight="Bold" FontSize="15" Content="Cumpleaños:"/>
+
+                            <Label x:Name="lblBirthday" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.Birthday, ElementName=lstArtistList}"/>
+
+
+
+
+                            <Label FontWeight="Bold" FontSize="15" Content="Género:"/>
+
+                            <Label x:Name="lblArtistGenre" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.Genre, ElementName=lstArtistList}"/>
+
+                            <Label FontWeight="Bold" FontSize="15" Content="Usuario de Instagram:"/>
+
+                            <Label x:Name="lblInstagram" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.Instagram, ElementName=lstArtistList}"/>
+
+                            <Label FontWeight="Bold" FontSize="15" Content="Usuario de X/Twitter:"/>
+
+                            <Label x:Name="lblX_Twitter" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.X_Twitter, ElementName=lstArtistList}"/>
                         </StackPanel>
                     </ScrollViewer>
 
-                </StackPanel>
-            </TabItem>
+                    <StackPanel x:Name="spAlbums" Width="349" Orientation="Vertical" Margin="5" HorizontalAlignment="Right">
 
+                        <Label x:Name="lblListAlbumTitle" FontWeight="Bold" FontSize="20"
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                               Content="Albumes del Autor/a:"/>
+
+                        <ListBox x:Name="lstAlbumLists" Height="528" ItemsSource="{Binding ElementName=lstArtistList, Path=SelectedItem.AlbumList}"/>
+
+                    </StackPanel>
+
+
+                </StackPanel>
+                
+                
+            </TabItem>
 
         </TabControl>
 

@@ -10,6 +10,7 @@ namespace ProyectoIPO_Lab2324
     {
         public static List<Album> FavoritesList { get; set; }
         public static List<Album> AlbumList { get; set; }
+        public static List<Artist> ArtistList { get; set; }
         public static String Username { get; set; }
         public static String CurrentDateTime { get; set; }
         public static Boolean isDataLoaded { get; set; } = false;
@@ -18,6 +19,7 @@ namespace ProyectoIPO_Lab2324
         {
             FavoritesList = new List<Album>();
             AlbumList = new List<Album>();
+            ArtistList = new List<Artist>();
         }
     }
 }

@@ -17,9 +17,6 @@ using System.Xml;
 
 namespace ProyectoIPO_Lab2324
 {
-    /// <summary>
-    /// Lógica de interacción para LandingWindow.xaml
-    /// </summary>
     public partial class LandingWindow : Window
     {
 
@@ -27,28 +24,48 @@ namespace ProyectoIPO_Lab2324
         {
             InitializeComponent();
 
+            setUsername_LastDate();
+
+            setAlbumInitialContent();
+
+            setArtistInitialContent();
+
+            changeView_UserAdmin();
+        }
+
+        private void setUsername_LastDate()
+        {
             textblock_username.Text = GlobalData.Username;
             textblock_lastTime.Text = "Ultimo Acceso: " + GlobalData.CurrentDateTime;
+        }
 
+        private void setAlbumInitialContent()
+        {
             // Load data
-            LoadContentXML();
+            LoadContentAlbumXML();
 
             // Indicate that the lstAlbumList items origin is albumList
             lstAlbumList.ItemsSource = GlobalData.AlbumList;
+        }
 
-            // Convert URI to ImageSource for lstArtistList
-            var artists = GlobalData.AlbumList.Select(album => new { Author = album.Author, ArtistImage = new BitmapImage(album.ArtistImage) }).Distinct().ToList();
-            lstArtistList.ItemsSource = artists;
-
-            if (GlobalData.Username != "admin")
-            {
-                spAlbumEdition.Visibility = Visibility.Collapsed;
-            }
+        private void setArtistInitialContent()
+        {
+            LoadContentArtistXML();
+            lstArtistList.ItemsSource = GlobalData.ArtistList;
 
         }
 
 
-        private void LoadContentXML()
+        private void changeView_UserAdmin()
+        {
+            if (GlobalData.Username != "admin")
+            {
+                spAlbumEdition.Visibility = Visibility.Collapsed;
+            }
+        }
+
+
+        private void LoadContentAlbumXML()
         {
             XmlDocument doc = new XmlDocument();
             var file = Application.GetResourceStream(new Uri("/Resources/Data/Albums.xml", UriKind.Relative));
@@ -79,6 +96,42 @@ namespace ProyectoIPO_Lab2324
                     newAlbum.Songs.Add(songNode.InnerText);
                 }
                 GlobalData.AlbumList.Add(newAlbum);
+            }
+        }
+
+        private void LoadContentArtistXML()
+        {
+            XmlDocument doc = new XmlDocument();
+            var file = Application.GetResourceStream(new Uri("/Resources/Data/Artists.xml", UriKind.Relative));
+            doc.Load(file.Stream);
+
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                var newArtist = new Artist();
+
+                newArtist.ArtisticName = node.Attributes["ArtisticName"].Value;
+                newArtist.RealName = node.Attributes["RealName"].Value;
+                newArtist.Birthday = node.Attributes["Birthday"].Value;
+                newArtist.Description = node.Attributes["Description"].Value;
+                newArtist.Genre = node.Attributes["Genre"].Value;
+                newArtist.Instagram = node.Attributes["Instagram"].Value;
+                newArtist.X_Twitter = node.Attributes["X_Twitter"].Value;
+                newArtist.Likes = node.Attributes["Likes"].Value;
+                newArtist.ArtistImage = new Uri(node.Attributes["ArtistImage"].Value, UriKind.Relative);
+
+                // Obtener la lista de albumes
+                foreach (XmlNode albumNode in node.SelectNodes("AlbumList/Album"))
+                {
+                    newArtist.AlbumList.Add(albumNode.InnerText);
+                }
+
+                // Obtener la lista de componentes de un grupo
+                foreach (XmlNode groupComponentNode in node.SelectNodes("GroupComponents/GroupComponent"))
+                {
+                    newArtist.GroupComponents.Add(groupComponentNode.InnerText);
+                }
+
+                GlobalData.ArtistList.Add(newArtist);
             }
         }
 
@@ -154,20 +207,29 @@ namespace ProyectoIPO_Lab2324
 
             if (selectedAlbum != null)
             {
-                string selectedArtistName = selectedAlbum.Author;
-                string selectedArtistBio = selectedAlbum.ArtistBio;
-                Uri selectedArtistImage = selectedAlbum.ArtistImage;
+                // Cambiar a la pestaña "Artistas"
+                // Supongamos que tu control TabControl se llama "tabControl"
+                tcLanding.SelectedIndex = 1; // Cambiar al índice correspondiente a la pestaña "Artistas"
 
-                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, selectedArtistImage);
-                WindowManager.ArtistWindowInstance = artistWindow;
-                artistWindow.Show();
-                this.Hide();
+                // Obtener el artista que coincide con el Author del álbum seleccionado
+                var matchingArtist = lstArtistList.Items.OfType<Artist>().FirstOrDefault(artist => artist.ArtisticName == selectedAlbum.Author);
+
+                if (matchingArtist != null)
+                {
+                    // Seleccionar el artista correspondiente en lstArtistList
+                    lstArtistList.SelectedItem = matchingArtist;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el artista correspondiente al álbum seleccionado.", "Artista no encontrado");
+                }
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un álbum para ver información del artista.", "Error al acceder a la página del artista");
             }
         }
+
 
         ////////// ALBUM LIST MANAGEMENT //////////
         private void btnDeleteAlbum_Click(object sender, RoutedEventArgs e)

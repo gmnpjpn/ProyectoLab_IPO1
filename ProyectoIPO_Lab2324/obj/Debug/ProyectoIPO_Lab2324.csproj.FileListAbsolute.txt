@@ -17,8 +17,6 @@ C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\Landi
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\LandingWindow.baml
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\FaqsWindow.g.cs
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\FaqsWindow.baml
-C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ArtistWindow.g.cs
-C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ArtistWindow.baml
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ContactWindow.g.cs
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\UserWindow.g.cs
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\UserWindow.baml
