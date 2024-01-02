@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Xml;
 
 namespace ProyectoIPO_Lab2324
 {
     public partial class LandingWindow : Window
     {
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+        private static string musicPath = @"Resources/Music/HereComesTheSun.mp3"; // Ruta relativa al archivo mp3
+        string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, musicPath);
 
         public LandingWindow()
         {
@@ -60,7 +55,37 @@ namespace ProyectoIPO_Lab2324
         {
             if (GlobalData.Username != "admin")
             {
+                tbAlbumName.IsEnabled = false;
+                tbAuthor.IsEnabled = false;
                 spAlbumEdition.Visibility = Visibility.Collapsed;
+                tbFormat.IsEnabled = false;
+                tbGenre.IsEnabled = false;
+                tbLaunchYear.IsEnabled = false;
+                tbLikes.IsEnabled = false;
+                tbPais.IsEnabled = false;
+                tbPuntuacion.IsEnabled = false;
+                tbPvp.IsEnabled = false;
+                tbRecordLabel.IsEnabled = false;
+                tbStock.IsEnabled = false;
+                btnApplyChanges.Visibility = Visibility.Collapsed;
+                btnChangeCover.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                tbAlbumName.IsEnabled = true;
+                tbAuthor.IsEnabled = true;
+                spAlbumEdition.Visibility = Visibility.Visible;
+                tbFormat.IsEnabled = true;
+                tbGenre.IsEnabled = true;
+                tbLaunchYear.IsEnabled = true;
+                tbLikes.IsEnabled = true;
+                tbPais.IsEnabled = true;
+                tbPuntuacion.IsEnabled = true;
+                tbPvp.IsEnabled = true;
+                tbRecordLabel.IsEnabled = true;
+                tbStock.IsEnabled = true;
+                btnApplyChanges.Visibility = Visibility.Visible;
+                btnChangeCover.Visibility = Visibility.Visible;
             }
         }
 
@@ -87,8 +112,6 @@ namespace ProyectoIPO_Lab2324
                 newAlbum.Puntuation = node.Attributes["Puntuation"].Value;
                 newAlbum.Pvp = node.Attributes["Pvp"].Value;
                 newAlbum.Stock = node.Attributes["Stock"].Value;
-                newAlbum.ArtistBio = node.Attributes["ArtistBio"].Value;
-                newAlbum.ArtistImage = new Uri(node.Attributes["ArtistImage"].Value, UriKind.Relative);
 
                 // Obtener la lista de canciones
                 foreach (XmlNode songNode in node.SelectNodes("SongList/Song"))
@@ -133,11 +156,6 @@ namespace ProyectoIPO_Lab2324
 
                 GlobalData.ArtistList.Add(newArtist);
             }
-        }
-
-        private void btnHome_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO (Some bugs encountered)
         }
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
@@ -258,21 +276,64 @@ namespace ProyectoIPO_Lab2324
 
         private void UpdateArtistsList()
         {
-            var artistNames = GlobalData.AlbumList.Select(album => new { Author = album.Author, ArtistImage = new BitmapImage(album.ArtistImage) }).Distinct().ToList();
-            lstArtistList.ItemsSource = artistNames;
-        }
 
-
-
-        private void btnEditAlbum_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO
         }
 
         private void btnAddAlbum_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            // Crear una instancia de la ventana para agregar un álbum
+            AddAlbumWindow addAlbumWindow = new AddAlbumWindow();
+
+            // Mostrar la ventana como un diálogo modal
+            bool? result = addAlbumWindow.ShowDialog();
+
+            if (result == true)
+            {
+                // Obtener los datos ingresados por el usuario desde la ventana AddAlbumWindow
+                string albumName = addAlbumWindow.AlbumName;
+                string artistName = addAlbumWindow.Author;
+                string launchYear = addAlbumWindow.LaunchYear;
+                string genre = addAlbumWindow.Genre;
+                string recordLabel = addAlbumWindow.RecordLabel;
+                string format = addAlbumWindow.Format;
+                string country = addAlbumWindow.Country;
+                string likes = addAlbumWindow.Likes;
+                string puntuation = addAlbumWindow.Puntuation;
+                string pvp = addAlbumWindow.Pvp;
+                string stock = addAlbumWindow.Stock;
+                Uri cover = addAlbumWindow.Cover;
+
+                // Aquí puedes crear un nuevo objeto de álbum con los datos obtenidos
+                Album newAlbum = new Album
+                {
+                    Name = albumName,
+                    Author = artistName,
+                    LaunchYear = launchYear,
+                    Genre = genre,
+                    RecordLabel = recordLabel,
+                    Format = format,
+                    Country = country,
+                    Likes = likes,
+                    Puntuation = puntuation,
+                    Pvp = pvp,
+                    Stock = stock,
+                    Cover = cover
+                };
+
+                // Agregar el nuevo álbum a la lista global lstAlbumList
+                if (lstAlbumList != null) // Verificar si la lista no es nula
+                {
+                    GlobalData.AlbumList.Add(newAlbum);
+                    lstAlbumList.Items.Refresh();
+                }
+                else
+                {
+                    // Manejo de error si lstAlbumList es nula
+                }
+            }
         }
+
+
 
         private void btnBuyAlbum_Click(object sender, RoutedEventArgs e)
         {
@@ -282,6 +343,107 @@ namespace ProyectoIPO_Lab2324
         private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btnApplyChanges_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = lstAlbumList.SelectedItem as Album;
+
+            if (selectedItem != null)
+            {
+                // Actualizar cada propiedad del ítem seleccionado con los valores de los TextBox
+                selectedItem.Name = tbAlbumName.Text;
+                selectedItem.Author = tbAuthor.Text;
+                selectedItem.Pvp = tbPvp.Text;
+                selectedItem.LaunchYear = tbLaunchYear.Text;
+                selectedItem.Puntuation = tbPuntuacion.Text;
+                selectedItem.Genre = tbGenre.Text;
+                selectedItem.RecordLabel = tbRecordLabel.Text;
+                selectedItem.Format = tbFormat.Text;
+                selectedItem.Country = tbPais.Text;
+                selectedItem.Likes = tbLikes.Text;
+                selectedItem.Stock = tbStock.Text;
+
+
+                // Actualizar la vista de la lista para reflejar los cambios
+                lstAlbumList.Items.Refresh();
+
+                // Mostrar un mensaje indicando que los cambios se han aplicado correctamente
+                MessageBox.Show("Los cambios se han aplicado correctamente.", "Cambios Aplicados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void btnChangeCover_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    string imagePath = openFileDialog.FileName;
+
+                    // Asignar la nueva imagen al control Image (imgCover)
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(imagePath);
+                    bitmap.EndInit();
+                    imgCover.Source = bitmap;
+
+                    // Actualizar la imagen en el objeto del álbum seleccionado
+                    var selectedItem = lstAlbumList.SelectedItem as Album;
+                    if (selectedItem != null)
+                    {
+                        // Convertir la ruta del archivo de imagen (imagePath) a un objeto Uri
+                        Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+                        // Actualizar la propiedad de la imagen en el objeto del álbum con el Uri generado
+                        selectedItem.Cover = imageUri;
+                    }
+
+                    // Actualizar la vista de la lista para reflejar los cambios
+                    lstAlbumList.Items.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            string musicPath = "Resources/Music/HereComesTheSun.mp3";
+            Uri musicUri = new Uri(musicPath, UriKind.Relative);
+
+            var resourceInfo = Application.GetResourceStream(musicUri);
+            if (resourceInfo == null)
+            {
+                MessageBox.Show("El archivo de música no se encontró en la ruta especificada.", "Error al reproducir", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            mediaPlayer.Open(musicUri);
+            mediaPlayer.Play();
+        }
+
+
+        private void btnPause_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Pause();
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
+            mediaPlayer.Close();
+        }
+
+        private void MediaPlayer_MediaEnded(object sender, EventArgs e)
+        {
+            mediaPlayer.Stop();
+            mediaPlayer.Close();
         }
     }
 }

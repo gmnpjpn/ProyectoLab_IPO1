@@ -1,0 +1,58 @@
+﻿<Window x:Class="ProyectoIPO_Lab2324.AddAlbumWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
+        mc:Ignorable="d"
+        Title="Añadir Álbum" Height="720" Width="1000" Icon="/Resources/program_icon.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="20">
+
+            <Label Content="Nombre del Álbum:*" FontWeight="Bold" />
+            <TextBox x:Name="txtAlbumName" />
+
+            <Label Content="Nombre del Artista:*" FontWeight="Bold" />
+            <TextBox x:Name="txtArtistName" />
+
+            <Label Content="Año de Lanzamiento:" FontWeight="Bold" />
+            <TextBox x:Name="txtReleaseYear" />
+
+            <Label Content="Género:*" FontWeight="Bold" />
+            <TextBox x:Name="txtGenre" />
+
+            <Label Content="Sello Discográfico:" FontWeight="Bold" />
+            <TextBox x:Name="txtRecordLabel" />
+
+            <Label Content="Formato:*" FontWeight="Bold" />
+            <TextBox x:Name="txtFormat" />
+
+            <Label Content="País:" FontWeight="Bold" />
+            <TextBox x:Name="txtCountry" />
+
+            <Label Content="Likes:" FontWeight="Bold" />
+            <TextBox x:Name="txtLikes" />
+
+            <Label Content="Puntuación:" FontWeight="Bold" />
+            <TextBox x:Name="txtPuntuation" />
+
+            <Label Content="PVP:*" FontWeight="Bold" />
+            <TextBox x:Name="txtPvp" />
+
+            <Label Content="Stock:*" FontWeight="Bold" />
+            <TextBox x:Name="txtStock" />
+
+            <Label Content="Cover (URI):*" FontWeight="Bold" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtCover" />
+                <Button Content="Seleccionar Imagen" Click="btnSelectImage_Click" Margin="5,0,0,0"/>
+            </StackPanel>
+            
+            
+
+            <Button Content="Agregar" Click="btnAdd_Click" HorizontalAlignment="Center" Margin="10,20,10,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
+    
+    

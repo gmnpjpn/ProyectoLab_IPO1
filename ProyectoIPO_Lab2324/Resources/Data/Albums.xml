@@ -1,4 +1,4 @@
-﻿<Albums>	
+﻿<Albums>
 	<Album Name="1989 (Taylor's Version)"
 		   Author="Taylor Swift"
 		   LaunchYear="2023"
@@ -10,9 +10,7 @@
 		   Likes="12"
 		   Puntuation="8.8"
 		   Pvp="39,89€"
-		   Stock="24"
-		   ArtistImage="/Resources/Artist/TaylorSwift.png"
-		   ArtistBio="&#xA;Taylor Swift es una cantautora, productora, directora, actriz y empresaria estadounidense. Criada en Wyomissing (Pensilvania), se mudó a Nashville (Tennessee) a los 14 años para realizar una carrera de música country.&#xA;&#xA;Firmó con la compañía discográfica independiente Big Machine Records y se convirtió en la artista más joven contratada por Sony/ATV Music Publishing House.&#xA;&#xA;En 2006 lanzó su álbum debut homónimo, que la estableció como una estrella en la música Pop.&#xA;&#xA;«Our Song», su tercer sencillo, la convirtió en la persona más joven en escribir temas de forma solista e interpretar una canción número uno en la lista de Hot Country Songs.&#xA;&#xA;En 2008 recibió una nominación a mejor artista nuevo en la 50.ª edición de los Premios Grammy.">
+		   Stock="24">
 
 		<SongList>
 			<Song>Welcome to New York</Song>
@@ -50,10 +48,8 @@
 		   Likes="8"
 		   Puntuation="9.0"
 		   Pvp="34€"
-		   Stock="31"
-		   ArtistImage="/Resources/Artist/TheBeatles.jpg"
-		   ArtistBio="Biografía de los Beatles">
-		
+		   Stock="31">
+
 		<SongList>
 			<Song>Come Together</Song>
 			<Song>Something</Song>
@@ -86,9 +82,7 @@
 		   Likes="20"
 		   Puntuation="8.1"
 		   Pvp="34€"
-		   Stock="31"
-		   ArtistImage="/Resources/Artist/FrankSinatra.jpg"
-		   ArtistBio="Biografía de Frank Sinatra">
+		   Stock="31">
 
 		<SongList>
 			<Song>Watch What Happens</Song>
@@ -117,9 +111,7 @@
 		   Likes="29"
 		   Puntuation="7.5"
 		   Pvp="29€"
-		   Stock="12"
-		   ArtistImage="/Resources/Artist/RecycledJ.jpg"
-		   ArtistBio="Biografía de Recycled J">
+		   Stock="12">
 
 		<SongList>
 			<Song>150 Canciones</Song>
@@ -148,9 +140,7 @@
 		   Likes="20"
 		   Puntuation="8.1"
 		   Pvp="20€"
-		   Stock="31"
-		   ArtistImage="/Resources/Artist/Quevedo.jpg"
-		   ArtistBio="Biografía de Quevedo">
+		   Stock="31">
 
 		<SongList>
 			<Song>Intro - Speech Cruzzi</Song>

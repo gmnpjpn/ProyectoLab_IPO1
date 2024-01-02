@@ -26,3 +26,6 @@ C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\Shopp
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\Resources\Dictionaries\StringResources.en-US.baml
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\Resources\Dictionaries\StringResources.es-ES.baml
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\App.baml
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AddAlbumWindow.g.cs
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AddAlbumWindow.baml
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324_Content.g.cs

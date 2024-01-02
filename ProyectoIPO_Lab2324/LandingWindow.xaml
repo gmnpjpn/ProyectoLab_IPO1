@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="3" Grid.ColumnSpan="7"/>
         <Rectangle x:Name="rectangle_up" Stroke="Black" Fill="#FF3A3A3A" Grid.ColumnSpan="7" Margin="0,2,0,2" Grid.RowSpan="2"/>
-        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,13,0,0" Height="49" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnHome_Click">
+        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,13,0,0" Height="49" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2">
             <Image x:Name="image_home" Source="\Resources\home_icon.png" Width="49" Height="40" />
         </Button>
         <Button x:Name="btnUser" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnUser_Click">
@@ -74,9 +74,6 @@
                                 <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
 
-                            <Button x:Name="btnEditAlbum" Width="50" Height="50" Click="btnEditAlbum_Click" Content="Editar">
-                            </Button>
-
                         </StackPanel>
 
                         <ListBox x:Name="lstAlbumList"
@@ -120,17 +117,20 @@
 
                         <StackPanel x:Name="spDetail" Width="462" Orientation="Vertical">
 
+                            <TextBox x:Name="tbAlbumName" FontWeight="Bold" FontSize="20"
+                                     Text="{Binding SelectedItem.Name, ElementName=lstAlbumList, Mode=TwoWay}"/>
 
-                            <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
-                               Content="{Binding SelectedItem.Name, ElementName=lstAlbumList}"/>
-                            <Label x:Name="lblAuthor" FontWeight="Regular" FontSize="18"
-                               Content="{Binding SelectedItem.Author, ElementName=lstAlbumList}"/>
+                            <TextBox x:Name="tbAuthor" FontWeight="Regular" FontSize="18"
+                                     Text="{Binding SelectedItem.Author, ElementName=lstAlbumList}"/>
 
                             <Image x:Name="imgCover"
                                Height="220" Width="200"
                                HorizontalAlignment="Left"
                                Margin="5" Stretch="Fill"
                                Source="{Binding SelectedItem.Cover, ElementName=lstAlbumList}"/>
+
+                            <Button x:Name="btnChangeCover" Margin="5"
+                                    Content="Cambiar Cover" FontWeight="Bold" FontSize="14" Click="btnChangeCover_Click"/>
 
                             <DockPanel x:Name="spButtons" LastChildFill="False">
 
@@ -145,45 +145,69 @@
 
                             </DockPanel>
 
+
+                            <Label Content="Muesta del Álbum:" Margin="5" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <!-- Coloca aquí los elementos necesarios antes del reproductor -->
+
+                                <!-- Reproductor de audio -->
+                                <StackPanel x:Name="audioPlayer" Orientation="Horizontal">
+                                    <Button x:Name="btnPlay" Content="▶" Width="30" Height="30" Margin="5" Click="btnPlay_Click"/>
+                                    <Button x:Name="btnPause" Content="❚❚" Width="30" Height="30" Margin="5" Click="btnPause_Click"/>
+                                    <Button x:Name="btnStop" Content="■" Width="30" Height="30" Margin="5" Click="btnStop_Click"/>
+                                </StackPanel>
+
+                                <!-- Coloca aquí los elementos necesarios después del reproductor -->
+                            </StackPanel>
+
                             <Label FontWeight="Bold" Content="PVP:"/>
-                            <Label x:Name="lblPvp"
-                               Content="{Binding SelectedItem.Pvp, ElementName=lstAlbumList}"/>
+                                <TextBox x:Name="tbPvp"
+                                         Text="{Binding SelectedItem.Pvp, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="¿Oferta?:"/>
-                            <Label x:Name="lblOffer"
-                               Content="Contenido Oferta"/>
+                                <Label FontWeight="Bold" Content="¿Oferta?:"/>
+                                <Label x:Name="lblOffer"
+                                   Content="Contenido Oferta"/>
 
-                            <Label FontWeight="Bold" Content="Año de Lanzamiento:"/>
-                            <Label x:Name="lblLaunchYear"
-                               Content="{Binding SelectedItem.LaunchYear, ElementName=lstAlbumList}"/>
+                                <Label FontWeight="Bold" Content="Año de Lanzamiento:"/>
+                                <TextBox x:Name="tbLaunchYear"
+                                         Text="{Binding SelectedItem.LaunchYear, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Puntuación:"/>
-                            <Label x:Name="lblPuntuation"
-                               Content="{Binding SelectedItem.Puntuation, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Género:"/>
-                            <Label x:Name="lblGenre"
-                               Content="{Binding SelectedItem.Genre, ElementName=lstAlbumList}"/>
+                                <Label FontWeight="Bold" Content="Puntuación:"/>
+                                <TextBox x:Name="tbPuntuacion"
+                                         Text="{Binding SelectedItem.Puntuation, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Sello Discográfico:"/>
-                            <Label x:Name="lblRecordLabel"
-                               Content="{Binding SelectedItem.RecordLabel, ElementName=lstAlbumList}"/>
+                            
+                                <Label FontWeight="Bold" Content="Género:"/>
+                                <TextBox x:Name="tbGenre"
+                                         Text="{Binding SelectedItem.Genre, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Formato:"/>
-                            <Label x:Name="lblFormat"
-                               Content="{Binding SelectedItem.Format, ElementName=lstAlbumList}"/>
+                            
+                                <Label FontWeight="Bold" Content="Sello Discográfico:"/>
+                                <TextBox x:Name="tbRecordLabel"
+                                         Text="{Binding SelectedItem.RecordLabel, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Pais:"/>
-                            <Label x:Name="lblPais"
-                               Content="{Binding SelectedItem.Country, ElementName=lstAlbumList}"/>
+                            
+                                <Label FontWeight="Bold" Content="Formato:"/>
+                                <TextBox x:Name="tbFormat"
+                                         Text="{Binding SelectedItem.Format, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Número de &quot;Me Gusta&quot;:"/>
-                            <Label x:Name="lblLikes"
-                               Content="{Binding SelectedItem.Likes, ElementName=lstAlbumList}"/>
+                                <Label FontWeight="Bold" Content="Pais:"/>
+                                <TextBox x:Name="tbPais"
+                                         Text="{Binding SelectedItem.Country, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold" Content="Unidades Disponibles:"/>
-                            <Label x:Name="lblStock"
-                               Content="{Binding SelectedItem.Stock, ElementName=lstAlbumList}"/>
+                                <Label FontWeight="Bold" Content="Likes:"/>
+                                <TextBox x:Name="tbLikes"
+                                         Text="{Binding SelectedItem.Likes, ElementName=lstAlbumList}"/>
+
+                                <Label FontWeight="Bold" Content="Unidades Disponibles:"/>
+                                <TextBox x:Name="tbStock"
+                                         Text="{Binding SelectedItem.Stock, ElementName=lstAlbumList}"/>
+
+
+                            <Button x:Name="btnApplyChanges"
+                                        Content="Aplicar Cambios" FontWeight="Bold" Click="btnApplyChanges_Click"/>
 
 
                         </StackPanel>
