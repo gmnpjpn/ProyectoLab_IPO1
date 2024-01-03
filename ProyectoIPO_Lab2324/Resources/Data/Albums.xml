@@ -10,9 +10,10 @@
 		   Likes="12"
 		   Puntuation="8.8"
 		   Pvp="39,89€"
-		   Stock="24">
+		   Stock="24"
+		   previewPath="/Resources/Music/ShakeItOff.mp3">
 
-		<SongList>
+		<SongsA>
 			<Song>Welcome to New York</Song>
 			<Song>Blank Space</Song>
 			<Song>Style</Song>
@@ -23,6 +24,9 @@
 			<Song>Bad Blood</Song>
 			<Song>Wildest Dreams</Song>
 			<Song>How You Get The Girl</Song>
+		</SongsA>
+
+		<SongsB>
 			<Song>This Love</Song>
 			<Song>I Know Places</Song>
 			<Song>Clean</Song>
@@ -34,7 +38,7 @@
 			<Song>Now That We Don't Talk</Song>
 			<Song>Suburban Legends</Song>
 			<Song>Is It Over Now?</Song>
-		</SongList>
+		</SongsB>
 	</Album>
 
 	<Album Name="Abbey Road"
@@ -48,9 +52,10 @@
 		   Likes="8"
 		   Puntuation="9.0"
 		   Pvp="34€"
-		   Stock="31">
+		   Stock="31"
+		   previewPath="/Resources/Music/HereComesTheSun.mp3">
 
-		<SongList>
+		<SongsA>
 			<Song>Come Together</Song>
 			<Song>Something</Song>
 			<Song>Maxwell's Silver Hammer</Song>
@@ -60,6 +65,9 @@
 			<Song>Here Comes The Sun</Song>
 			<Song>Because</Song>
 			<Song>You Never Give Me Your Money</Song>
+		</SongsA>
+
+		<SongsB>
 			<Song>Sun King</Song>
 			<Song>Mean Mr. Mustard</Song>
 			<Song>Polythene Pam</Song>
@@ -68,7 +76,9 @@
 			<Song>Carry That Weight</Song>
 			<Song>The End</Song>
 			<Song>Her Majesty</Song>
-		</SongList>
+		</SongsB>
+		
+		
 	</Album>
 
 	<Album Name="My Way"
@@ -82,22 +92,27 @@
 		   Likes="20"
 		   Puntuation="8.1"
 		   Pvp="34€"
-		   Stock="31">
+		   Stock="31"
+		   previewPath="/Resources/Music/MyWay.mp3">
 
-		<SongList>
+		<SongsA>
 			<Song>Watch What Happens</Song>
 			<Song>Didn't We?</Song>
 			<Song>Hallelujah, I Love Her So</Song>
 			<Song>Yesterday</Song>
 			<Song>All My Tomorrows</Song>
 			<Song>My Way</Song>
+		</SongsA>
+
+		<SongsB>
 			<Song>OA Day in the Life of a Fool</Song>
 			<Song>For Once in My Life</Song>
 			<Song>If You Go Away</Song>
 			<Song>Mrs. Robinson</Song>
 			<Song>For Once in My Life</Song>
 			<Song>My Way</Song>
-		</SongList>
+		</SongsB>
+		
 	</Album>
 
 	<Album Name="Casanova"
@@ -111,22 +126,27 @@
 		   Likes="29"
 		   Puntuation="7.5"
 		   Pvp="29€"
-		   Stock="12">
+		   Stock="12"
+		   previewPath="/Resources/Music/150Canciones.mp3">
 
-		<SongList>
+		<SongsA>
 			<Song>150 Canciones</Song>
 			<Song>Ganas</Song>
 			<Song>Cara A Cara</Song>
 			<Song>Casanova</Song>
 			<Song>Perro Hambriento</Song>
 			<Song>No Hay Manera</Song>
+		</SongsA>
+
+		<SongsB>
 			<Song>Rosas Freestyle</Song>
 			<Song>10.000 Kms</Song>
 			<Song>Primadonna</Song>
 			<Song>Los Muertos Y Las Flores</Song>
 			<Song>Dime Algo</Song>
 			<Song>Pa No Volver</Song>
-		</SongList>
+		</SongsB>
+		
 	</Album>
 
 	<Album Name="Donde Quiero Estar"
@@ -140,9 +160,10 @@
 		   Likes="20"
 		   Puntuation="8.1"
 		   Pvp="20€"
-		   Stock="31">
+		   Stock="31"
+		   previewPath="/Resources/Music/PlayaDelIngles.mp3">
 
-		<SongList>
+		<SongsA>
 			<Song>Intro - Speech Cruzzi</Song>
 			<Song>Ahora qué</Song>
 			<Song>Yankee</Song>
@@ -151,6 +172,9 @@
 			<Song>Sin Señal</Song>
 			<Song>Dame</Song>
 			<Song>Cuéntale</Song>
+		</SongsA>
+
+		<SongsB>
 			<Song>Luces Azules</Song>
 			<Song>Punto G</Song>
 			<Song>Muñeca</Song>
@@ -159,7 +183,8 @@
 			<Song>Lisboa</Song>
 			<Song>Éramos Dos</Song>
 			<Song>Donde Quiero Estar</Song>
-		</SongList>
+		</SongsB>
+
 	</Album>
 
 </Albums>

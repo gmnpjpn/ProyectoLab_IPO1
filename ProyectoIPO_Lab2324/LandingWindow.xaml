@@ -217,14 +217,17 @@
                     </ScrollViewer>
 
                     <StackPanel x:Name="spSongs" Width="349" Orientation="Vertical" Margin="5" HorizontalAlignment="Right">
-
-                        <Label x:Name="lblListSongTitle" FontWeight="Bold" FontSize="20"
+                        <Label x:Name="lblListSongTitleA" FontWeight="Bold" FontSize="20"
                                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                               Content="Listado de Canciones:"/>
+                               Content="Canciones Cara A:"/>
+                        <ListBox x:Name="lstSongListA" Height="237" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.SongsA}"/>
 
-                        <ListBox x:Name="lstSongLists" Height="528" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.Songs}"/>
-
+                        <Label x:Name="lblListSongTitleB" FontWeight="Bold" FontSize="20"
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                               Content="Canciones Cara B:"/>
+                        <ListBox x:Name="lstSongListB" Height="231" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.SongsB}"/>
                     </StackPanel>
+
 
                 </StackPanel>
 

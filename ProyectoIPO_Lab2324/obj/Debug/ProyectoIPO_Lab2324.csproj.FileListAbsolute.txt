@@ -29,3 +29,8 @@ C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\App.b
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AddAlbumWindow.g.cs
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AddAlbumWindow.baml
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\ProyectoIPO_Lab2324_Content.g.cs
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\HereComesTheSun.mp3
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\150Canciones.mp3
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\MyWay.mp3
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\PlayaDelIngles.mp3
+C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\ShakeItOff.mp3

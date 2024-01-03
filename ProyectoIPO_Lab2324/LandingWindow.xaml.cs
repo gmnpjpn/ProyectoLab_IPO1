@@ -12,8 +12,6 @@ namespace ProyectoIPO_Lab2324
     public partial class LandingWindow : Window
     {
         private MediaPlayer mediaPlayer = new MediaPlayer();
-        private static string musicPath = @"Resources/Music/HereComesTheSun.mp3"; // Ruta relativa al archivo mp3
-        string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, musicPath);
 
         public LandingWindow()
         {
@@ -112,11 +110,18 @@ namespace ProyectoIPO_Lab2324
                 newAlbum.Puntuation = node.Attributes["Puntuation"].Value;
                 newAlbum.Pvp = node.Attributes["Pvp"].Value;
                 newAlbum.Stock = node.Attributes["Stock"].Value;
+                newAlbum.previewPath = node.Attributes["previewPath"].Value;
 
                 // Obtener la lista de canciones
-                foreach (XmlNode songNode in node.SelectNodes("SongList/Song"))
+                foreach (XmlNode songNode in node.SelectNodes("SongsA/Song"))
                 {
-                    newAlbum.Songs.Add(songNode.InnerText);
+                    newAlbum.SongsA.Add(songNode.InnerText);
+                }
+
+                // Obtener la lista de canciones
+                foreach (XmlNode songNode in node.SelectNodes("SongsB/Song"))
+                {
+                    newAlbum.SongsB.Add(songNode.InnerText);
                 }
                 GlobalData.AlbumList.Add(newAlbum);
             }
@@ -414,19 +419,29 @@ namespace ProyectoIPO_Lab2324
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            string musicPath = "Resources/Music/HereComesTheSun.mp3";
-            Uri musicUri = new Uri(musicPath, UriKind.Relative);
+            Album selectedAlbum = (Album)lstAlbumList.SelectedItem;
 
-            var resourceInfo = Application.GetResourceStream(musicUri);
-            if (resourceInfo == null)
+            if (selectedAlbum != null)
             {
-                MessageBox.Show("El archivo de música no se encontró en la ruta especificada.", "Error al reproducir", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+                string previewPath = selectedAlbum.previewPath;
 
-            mediaPlayer.Open(musicUri);
-            mediaPlayer.Play();
+                if (!string.IsNullOrEmpty(previewPath))
+                {
+                    Uri uri = new Uri("./Resources/Music/HereComesTheSun.mp3", UriKind.Relative);
+                    mediaPlayer.Open(uri);
+                    mediaPlayer.Play();
+                }
+                else
+                {
+                    MessageBox.Show("La canción de vista previa no está disponible para este álbum.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un álbum primero.");
+            }
         }
+
 
 
         private void btnPause_Click(object sender, RoutedEventArgs e)
