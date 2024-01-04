@@ -11,7 +11,7 @@
 		   Puntuation="8.8"
 		   Pvp="39,89€"
 		   Stock="24"
-		   previewPath="/Resources/Music/ShakeItOff.mp3">
+		   previewPath="./Resources/Music/ShakeItOff.mp3">
 
 		<SongsA>
 			<Song>Welcome to New York</Song>
@@ -53,7 +53,7 @@
 		   Puntuation="9.0"
 		   Pvp="34€"
 		   Stock="31"
-		   previewPath="/Resources/Music/HereComesTheSun.mp3">
+		   previewPath="./Resources/Music/HereComesTheSun.mp3">
 
 		<SongsA>
 			<Song>Come Together</Song>
@@ -93,7 +93,7 @@
 		   Puntuation="8.1"
 		   Pvp="34€"
 		   Stock="31"
-		   previewPath="/Resources/Music/MyWay.mp3">
+		   previewPath="./Resources/Music/MyWay.mp3">
 
 		<SongsA>
 			<Song>Watch What Happens</Song>
@@ -127,7 +127,7 @@
 		   Puntuation="7.5"
 		   Pvp="29€"
 		   Stock="12"
-		   previewPath="/Resources/Music/150Canciones.mp3">
+		   previewPath="./Resources/Music/150Canciones.mp3">
 
 		<SongsA>
 			<Song>150 Canciones</Song>
@@ -161,7 +161,7 @@
 		   Puntuation="8.1"
 		   Pvp="20€"
 		   Stock="31"
-		   previewPath="/Resources/Music/PlayaDelIngles.mp3">
+		   previewPath="./Resources/Music/PlayaDelIngles.mp3">
 
 		<SongsA>
 			<Song>Intro - Speech Cruzzi</Song>

@@ -224,7 +224,7 @@ namespace ProyectoIPO_Lab2324
         }
 
 
-        private void btnArtistPage_Click(object sender, RoutedEventArgs e)
+        private void imgCover_MouseLeftButtonUp(object sender, RoutedEventArgs e)
         {
             Album selectedAlbum = lstAlbumList.SelectedItem as Album;
 
@@ -423,11 +423,9 @@ namespace ProyectoIPO_Lab2324
 
             if (selectedAlbum != null)
             {
-                string previewPath = selectedAlbum.previewPath;
-
-                if (!string.IsNullOrEmpty(previewPath))
+                if (!string.IsNullOrEmpty(selectedAlbum.previewPath))
                 {
-                    Uri uri = new Uri("./Resources/Music/HereComesTheSun.mp3", UriKind.Relative);
+                    Uri uri = new Uri(selectedAlbum.previewPath, UriKind.Relative);
                     mediaPlayer.Open(uri);
                     mediaPlayer.Play();
                 }
@@ -442,23 +440,15 @@ namespace ProyectoIPO_Lab2324
             }
         }
 
-
-
-        private void btnPause_Click(object sender, RoutedEventArgs e)
-        {
-            mediaPlayer.Pause();
-        }
-
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
             mediaPlayer.Stop();
             mediaPlayer.Close();
         }
 
-        private void MediaPlayer_MediaEnded(object sender, EventArgs e)
+        private void imgCover_MOuse(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            mediaPlayer.Stop();
-            mediaPlayer.Close();
+
         }
     }
 }

@@ -124,26 +124,22 @@
                                      Text="{Binding SelectedItem.Author, ElementName=lstAlbumList}"/>
 
                             <Image x:Name="imgCover"
-                               Height="220" Width="200"
-                               HorizontalAlignment="Left"
-                               Margin="5" Stretch="Fill"
-                               Source="{Binding SelectedItem.Cover, ElementName=lstAlbumList}"/>
+                                   Height="220" Width="200"
+                                   HorizontalAlignment="Left"
+                                   Margin="5" Stretch="Fill"
+                                   Source="{Binding SelectedItem.Cover, ElementName=lstAlbumList}"
+                                   Cursor="Hand" MouseLeftButtonUp="imgCover_MOuse"/>
 
-                            <Button x:Name="btnChangeCover" Margin="5"
-                                    Content="Cambiar Cover" FontWeight="Bold" FontSize="14" Click="btnChangeCover_Click"/>
 
-                            <DockPanel x:Name="spButtons" LastChildFill="False">
 
-                                <Button x:Name="btnArtistPage" Margin="5"
-                                Content="Página del Artista" FontSize="14" Click="btnArtistPage_Click"/>
+                            <Button x:Name="btnBuyAlbum" Margin="5"
+                                    Content="Comprar Álbum" FontWeight="ExtraBlack" FontSize="18" Click="btnBuyAlbum_Click"/>
 
-                                <Button x:Name="btnFav" Margin="5"
-                            Content="Añadir a Favoritos" FontWeight="Bold" FontSize="14" Click="btnFav_Click"/>
+                            <Button x:Name="btnFav" Margin="5"
+                                    Content="Añadir a Favoritos" FontWeight="Regular" FontSize="18" Click="btnFav_Click"/>
 
-                                <Button x:Name="btnBuyAlbum" Margin="5"
-                            Content="Comprar Álbum" FontWeight="Bold" FontSize="14" Click="btnBuyAlbum_Click"/>
-
-                            </DockPanel>
+                            <Button x:Name="btnChangeCover" Margin="20"
+                                    Content="Cambiar Cover" FontWeight="Bold" FontSize="15" Click="btnChangeCover_Click"/>
 
 
                             <Label Content="Muesta del Álbum:" Margin="5" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -154,7 +150,6 @@
                                 <!-- Reproductor de audio -->
                                 <StackPanel x:Name="audioPlayer" Orientation="Horizontal">
                                     <Button x:Name="btnPlay" Content="▶" Width="30" Height="30" Margin="5" Click="btnPlay_Click"/>
-                                    <Button x:Name="btnPause" Content="❚❚" Width="30" Height="30" Margin="5" Click="btnPause_Click"/>
                                     <Button x:Name="btnStop" Content="■" Width="30" Height="30" Margin="5" Click="btnStop_Click"/>
                                 </StackPanel>
 
