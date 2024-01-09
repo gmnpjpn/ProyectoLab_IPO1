@@ -58,6 +58,9 @@
     <Compile Include="AddAlbumWindow.xaml.cs">
       <DependentUpon>AddAlbumWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddArtistWindow.xaml.cs">
+      <DependentUpon>AddArtistWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Album.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -114,6 +117,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AddAlbumWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddArtistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

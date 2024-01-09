@@ -1,8 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Xml;
@@ -29,7 +31,7 @@ namespace ProyectoIPO_Lab2324
         private void setUsername_LastDate()
         {
             textblock_username.Text = GlobalData.Username;
-            textblock_lastTime.Text = "Ultimo Acceso: " + GlobalData.CurrentDateTime;
+            textblock_lastTime.Text = GlobalData.CurrentDateTime;
         }
 
         private void setAlbumInitialContent()
@@ -65,8 +67,14 @@ namespace ProyectoIPO_Lab2324
                 tbPvp.IsEnabled = false;
                 tbRecordLabel.IsEnabled = false;
                 tbStock.IsEnabled = false;
-                btnApplyChanges.Visibility = Visibility.Collapsed;
+                btnApplyChangesAlbum.Visibility = Visibility.Collapsed;
                 btnChangeCover.Visibility = Visibility.Collapsed;
+
+                tbDescription.IsEnabled = false;
+                tbBirthday.IsEnabled = false;
+                tbArtistGenre.IsEnabled = false;
+                tbInstagram.IsEnabled = false;
+                tbX_Twitter.IsEnabled = false;
             }
             else
             {
@@ -82,7 +90,7 @@ namespace ProyectoIPO_Lab2324
                 tbPvp.IsEnabled = true;
                 tbRecordLabel.IsEnabled = true;
                 tbStock.IsEnabled = true;
-                btnApplyChanges.Visibility = Visibility.Visible;
+                btnApplyChangesAlbum.Visibility = Visibility.Visible;
                 btnChangeCover.Visibility = Visibility.Visible;
             }
         }
@@ -267,21 +275,11 @@ namespace ProyectoIPO_Lab2324
                 // Actualizar la lista de álbumes
                 lstAlbumList.ItemsSource = null;
                 lstAlbumList.ItemsSource = GlobalData.AlbumList;
-
-                // Actualizar la lista de artistas
-                UpdateArtistsList();
-
-                // ...
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un álbum para eliminar.", "Álbum no seleccionado");
             }
-        }
-
-        private void UpdateArtistsList()
-        {
-
         }
 
         private void btnAddAlbum_Click(object sender, RoutedEventArgs e)
@@ -339,10 +337,9 @@ namespace ProyectoIPO_Lab2324
         }
 
 
-
         private void btnBuyAlbum_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            MessageBox.Show("Funcion no implementada todavía");
         }
 
         private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
@@ -350,7 +347,7 @@ namespace ProyectoIPO_Lab2324
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void btnApplyChanges_Click(object sender, RoutedEventArgs e)
+        private void btnApplyChangesAlbum_Click(object sender, RoutedEventArgs e)
         {
             var selectedItem = lstAlbumList.SelectedItem as Album;
 
@@ -378,6 +375,11 @@ namespace ProyectoIPO_Lab2324
             }
         }
 
+        private void btnApplyChangesArtist_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void btnChangeCover_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -385,37 +387,31 @@ namespace ProyectoIPO_Lab2324
 
             if (openFileDialog.ShowDialog() == true)
             {
-                try
+                // Obtener la ruta del archivo seleccionado
+                string imagePath = openFileDialog.FileName;
+
+                // Convertir la cadena de la ruta a un objeto Uri
+                Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+                // Actualizar la imagen en la interfaz gráfica
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = imageUri;
+                bitmap.EndInit();
+
+                imgCover.Source = bitmap;
+
+                // Actualizar la carátula del objeto Album
+                var selectedAlbum = lstAlbumList.SelectedItem as Album;
+                if (selectedAlbum != null)
                 {
-                    string imagePath = openFileDialog.FileName;
-
-                    // Asignar la nueva imagen al control Image (imgCover)
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(imagePath);
-                    bitmap.EndInit();
-                    imgCover.Source = bitmap;
-
-                    // Actualizar la imagen en el objeto del álbum seleccionado
-                    var selectedItem = lstAlbumList.SelectedItem as Album;
-                    if (selectedItem != null)
-                    {
-                        // Convertir la ruta del archivo de imagen (imagePath) a un objeto Uri
-                        Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
-
-                        // Actualizar la propiedad de la imagen en el objeto del álbum con el Uri generado
-                        selectedItem.Cover = imageUri;
-                    }
-
-                    // Actualizar la vista de la lista para reflejar los cambios
+                    selectedAlbum.Cover = imageUri;
                     lstAlbumList.Items.Refresh();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
+
+
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
@@ -446,9 +442,103 @@ namespace ProyectoIPO_Lab2324
             mediaPlayer.Close();
         }
 
-        private void imgCover_MOuse(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void btnChangeArtistImage_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos|*.*";
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Obtener la ruta del archivo seleccionado
+                string imagePath = openFileDialog.FileName;
+
+                // Convertir la cadena de la ruta a un objeto Uri
+                Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+                // Actualizar la imagen en la interfaz gráfica
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = imageUri;
+                bitmap.EndInit();
+
+                imgArtist.Source = bitmap;
+
+                // Actualizar la carátula del objeto Album
+                var selectedArtist = lstArtistList.SelectedItem as Artist;
+                if (selectedArtist != null)
+                {
+                    selectedArtist.ArtistImage = imageUri;
+                    lstArtistList.Items.Refresh();
+                }
+            }
+        }
+
+        private void combobox_language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem cbi = (ComboBoxItem)combobox_language.SelectedItem; string selectedText = cbi.Content.ToString();
+            if ((selectedText.Equals("ES") || selectedText.Equals("SP")) && !CultureInfo.CurrentCulture.Name.Equals("es-ES"))
+            {
+                Resources.MergedDictionaries.Add(App.SelectCulture("es-ES"));
+            }
+            else if (selectedText.Equals("EN")
+            && !CultureInfo.CurrentCulture.Name.Equals("en-US"))
+            {
+                Resources.MergedDictionaries.Add(App.SelectCulture("en-US"));
+            }
+        }
+
+        private void btnAddArtist_Click(object sender, RoutedEventArgs e)
+        {
+            // Crear una instancia de la ventana para agregar un álbum
+            AddAlbumWindow addAlbumWindow = new AddAlbumWindow();
+
+            // Mostrar la ventana como un diálogo modal
+            bool? result = addAlbumWindow.ShowDialog();
+
+            if (result == true)
+            {
+                // Obtener los datos ingresados por el usuario desde la ventana AddAlbumWindow
+                string albumName = addAlbumWindow.AlbumName;
+                string artistName = addAlbumWindow.Author;
+                string launchYear = addAlbumWindow.LaunchYear;
+                string genre = addAlbumWindow.Genre;
+                string recordLabel = addAlbumWindow.RecordLabel;
+                string format = addAlbumWindow.Format;
+                string country = addAlbumWindow.Country;
+                string likes = addAlbumWindow.Likes;
+                string puntuation = addAlbumWindow.Puntuation;
+                string pvp = addAlbumWindow.Pvp;
+                string stock = addAlbumWindow.Stock;
+                Uri cover = addAlbumWindow.Cover;
+
+                // Aquí puedes crear un nuevo objeto de álbum con los datos obtenidos
+                Album newAlbum = new Album
+                {
+                    Name = albumName,
+                    Author = artistName,
+                    LaunchYear = launchYear,
+                    Genre = genre,
+                    RecordLabel = recordLabel,
+                    Format = format,
+                    Country = country,
+                    Likes = likes,
+                    Puntuation = puntuation,
+                    Pvp = pvp,
+                    Stock = stock,
+                    Cover = cover
+                };
+
+                // Agregar el nuevo álbum a la lista global lstAlbumList
+                if (lstAlbumList != null) // Verificar si la lista no es nula
+                {
+                    GlobalData.AlbumList.Add(newAlbum);
+                    lstAlbumList.Items.Refresh();
+                }
+                else
+                {
+                    // Manejo de error si lstAlbumList es nula
+                }
+            }
         }
     }
 }
