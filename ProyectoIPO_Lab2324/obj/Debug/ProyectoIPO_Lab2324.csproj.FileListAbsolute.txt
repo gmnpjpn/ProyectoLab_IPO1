@@ -34,3 +34,5 @@ C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resou
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\MyWay.mp3
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\PlayaDelIngles.mp3
 C:\Users\german\ClonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\bin\Debug\Resources\Music\ShakeItOff.mp3
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AddArtistWindow.g.cs
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AddArtistWindow.baml

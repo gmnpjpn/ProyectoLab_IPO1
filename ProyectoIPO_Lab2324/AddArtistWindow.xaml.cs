@@ -23,5 +23,15 @@ namespace ProyectoIPO_Lab2324
         {
             InitializeComponent();
         }
+
+        private void btnSelectImage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
