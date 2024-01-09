@@ -55,14 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAlbumWindow.xaml.cs">
+      <DependentUpon>AddAlbumWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddArtistWindow.xaml.cs">
+      <DependentUpon>AddArtistWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Album.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Artist.cs" />
     <Compile Include="ContactWindow.xaml.cs">
       <DependentUpon>ContactWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlobalData.cs" />
     <Compile Include="ShoppingCartWindow.xaml.cs">
       <DependentUpon>ShoppingCartWindow.xaml</DependentUpon>
     </Compile>
@@ -72,9 +80,6 @@
     <Compile Include="WindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtistWindow.xaml.cs">
-      <DependentUpon>ArtistWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Faq.cs" />
     <Compile Include="FaqsWindow.xaml.cs">
       <DependentUpon>FaqsWindow.xaml</DependentUpon>
@@ -111,7 +116,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ArtistWindow.xaml">
+    <Page Include="AddAlbumWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddArtistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,11 +140,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\StringResources\StringResources.en-US.xaml">
+    <Page Include="Resources\Dictionaries\StringResources.en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\StringResources\StringResources.es-ES.xaml">
+    <Page Include="Resources\Dictionaries\StringResources.es-ES.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,7 +209,10 @@
   <ItemGroup>
     <Resource Include="Resources\Data\Albums.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Flags\spainFlag.png" />
+    <Resource Include="Resources\Flags\usaFlag.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Album\MyWay_FrankSinatra.jpg" />
   </ItemGroup>
@@ -218,6 +230,30 @@
   <ItemGroup>
     <Resource Include="Resources\Toolbar\add_c.png" />
     <Resource Include="Resources\Toolbar\remove_c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Artist\defaultArtistImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\Artists.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Music\150Canciones.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Music\HereComesTheSun.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Music\MyWay.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Music\PlayaDelIngles.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Music\ShakeItOff.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

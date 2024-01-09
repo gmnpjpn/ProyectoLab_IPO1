@@ -1,49 +1,102 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
+using System.Globalization;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Xml;
 
 namespace ProyectoIPO_Lab2324
 {
-    /// <summary>
-    /// Lógica de interacción para LandingWindow.xaml
-    /// </summary>
     public partial class LandingWindow : Window
     {
+        private MediaPlayer mediaPlayer = new MediaPlayer();
 
-        private string userNameLocal;
-        private string dateTimeLocal;
-        List<Album> albumList;
-
-        public LandingWindow(String userName, String dateTime)
+        public LandingWindow()
         {
             InitializeComponent();
-            userNameLocal = userName;
-            dateTimeLocal = dateTime;
 
-            textblock_lastTime.Text = "Ultimo Acceso: " + dateTime;
-            textblock_username.Text = userNameLocal;
+            setUsername_LastDate();
 
-            // Create album list
-            albumList = new List<Album>();
-            // Load data
-            LoadContentXML();
+            setAlbumInitialContent();
 
-            // Indicate that the lstAlbumList items origin is albumList
-            lstAlbumList.ItemsSource = albumList;
+            setArtistInitialContent();
+
+            changeView_UserAdmin();
         }
 
-        private void LoadContentXML()
+        private void setUsername_LastDate()
+        {
+            textblock_username.Text = GlobalData.Username;
+            textblock_lastTime.Text = GlobalData.CurrentDateTime;
+        }
+
+        private void setAlbumInitialContent()
+        {
+            // Load data
+            LoadContentAlbumXML();
+
+            // Indicate that the lstAlbumList items origin is albumList
+            lstAlbumList.ItemsSource = GlobalData.AlbumList;
+        }
+
+        private void setArtistInitialContent()
+        {
+            LoadContentArtistXML();
+            lstArtistList.ItemsSource = GlobalData.ArtistList;
+
+        }
+
+
+        private void changeView_UserAdmin()
+        {
+            if (GlobalData.Username != "admin")
+            {
+                tbAlbumName.IsEnabled = false;
+                tbAuthor.IsEnabled = false;
+                spAlbumEdition.Visibility = Visibility.Collapsed;
+                tbFormat.IsEnabled = false;
+                tbGenre.IsEnabled = false;
+                tbLaunchYear.IsEnabled = false;
+                tbLikes.IsEnabled = false;
+                tbPais.IsEnabled = false;
+                tbPuntuacion.IsEnabled = false;
+                tbPvp.IsEnabled = false;
+                tbRecordLabel.IsEnabled = false;
+                tbStock.IsEnabled = false;
+                btnApplyChangesAlbum.Visibility = Visibility.Collapsed;
+                btnChangeCover.Visibility = Visibility.Collapsed;
+
+                tbDescription.IsEnabled = false;
+                tbBirthday.IsEnabled = false;
+                tbArtistGenre.IsEnabled = false;
+                tbInstagram.IsEnabled = false;
+                tbX_Twitter.IsEnabled = false;
+            }
+            else
+            {
+                tbAlbumName.IsEnabled = true;
+                tbAuthor.IsEnabled = true;
+                spAlbumEdition.Visibility = Visibility.Visible;
+                tbFormat.IsEnabled = true;
+                tbGenre.IsEnabled = true;
+                tbLaunchYear.IsEnabled = true;
+                tbLikes.IsEnabled = true;
+                tbPais.IsEnabled = true;
+                tbPuntuacion.IsEnabled = true;
+                tbPvp.IsEnabled = true;
+                tbRecordLabel.IsEnabled = true;
+                tbStock.IsEnabled = true;
+                btnApplyChangesAlbum.Visibility = Visibility.Visible;
+                btnChangeCover.Visibility = Visibility.Visible;
+            }
+        }
+
+
+        private void LoadContentAlbumXML()
         {
             XmlDocument doc = new XmlDocument();
             var file = Application.GetResourceStream(new Uri("/Resources/Data/Albums.xml", UriKind.Relative));
@@ -65,26 +118,62 @@ namespace ProyectoIPO_Lab2324
                 newAlbum.Puntuation = node.Attributes["Puntuation"].Value;
                 newAlbum.Pvp = node.Attributes["Pvp"].Value;
                 newAlbum.Stock = node.Attributes["Stock"].Value;
-                newAlbum.ArtistBio = node.Attributes["ArtistBio"].Value;
-                newAlbum.ArtistImage = new Uri(node.Attributes["ArtistImage"].Value, UriKind.Relative);
+                newAlbum.previewPath = node.Attributes["previewPath"].Value;
 
                 // Obtener la lista de canciones
-                foreach (XmlNode songNode in node.SelectNodes("SongList/Song"))
+                foreach (XmlNode songNode in node.SelectNodes("SongsA/Song"))
                 {
-                    newAlbum.Songs.Add(songNode.InnerText);
+                    newAlbum.SongsA.Add(songNode.InnerText);
                 }
-                albumList.Add(newAlbum);
+
+                // Obtener la lista de canciones
+                foreach (XmlNode songNode in node.SelectNodes("SongsB/Song"))
+                {
+                    newAlbum.SongsB.Add(songNode.InnerText);
+                }
+                GlobalData.AlbumList.Add(newAlbum);
             }
         }
 
-        private void btnHome_Click(object sender, RoutedEventArgs e)
+        private void LoadContentArtistXML()
         {
-            //TODO (Some bugs encountered)
+            XmlDocument doc = new XmlDocument();
+            var file = Application.GetResourceStream(new Uri("/Resources/Data/Artists.xml", UriKind.Relative));
+            doc.Load(file.Stream);
+
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                var newArtist = new Artist();
+
+                newArtist.ArtisticName = node.Attributes["ArtisticName"].Value;
+                newArtist.RealName = node.Attributes["RealName"].Value;
+                newArtist.Birthday = node.Attributes["Birthday"].Value;
+                newArtist.Description = node.Attributes["Description"].Value;
+                newArtist.Genre = node.Attributes["Genre"].Value;
+                newArtist.Instagram = node.Attributes["Instagram"].Value;
+                newArtist.X_Twitter = node.Attributes["X_Twitter"].Value;
+                newArtist.Likes = node.Attributes["Likes"].Value;
+                newArtist.ArtistImage = new Uri(node.Attributes["ArtistImage"].Value, UriKind.Relative);
+
+                // Obtener la lista de albumes
+                foreach (XmlNode albumNode in node.SelectNodes("AlbumList/Album"))
+                {
+                    newArtist.AlbumList.Add(albumNode.InnerText);
+                }
+
+                // Obtener la lista de componentes de un grupo
+                foreach (XmlNode groupComponentNode in node.SelectNodes("GroupComponents/GroupComponent"))
+                {
+                    newArtist.GroupComponents.Add(groupComponentNode.InnerText);
+                }
+
+                GlobalData.ArtistList.Add(newArtist);
+            }
         }
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userwindow = new UserWindow(userNameLocal, dateTimeLocal);
+            UserWindow userwindow = new UserWindow();
             WindowManager.UserWindowInstance = userwindow;
             userwindow.Show();
             this.Hide();
@@ -92,7 +181,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(userNameLocal, dateTimeLocal);
+            ContactWindow contactWindow = new ContactWindow();
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();
@@ -100,7 +189,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(userNameLocal, dateTimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             WindowManager.FaqsWindowInstance = faqsWindow;
             faqsWindow.Show();
             this.Hide();
@@ -108,7 +197,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(userNameLocal, dateTimeLocal);
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
             WindowManager.ShoppingCartWindowInstance = shoppingCart;
             shoppingCart.Show();
             this.Hide();
@@ -122,52 +211,56 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFav_Click(object sender, RoutedEventArgs e)
         {
-            string albumPlusArtist = lblName.Content.ToString() + " - " + lblAuthor.Content.ToString();
+            if (lstAlbumList.SelectedItem != null && lstAlbumList.SelectedItem is Album selectedAlbum)
+            {
+                bool existsInFavorites = GlobalData.FavoritesList.Any(a =>
+                    a.Name == selectedAlbum.Name &&
+                    a.Author == selectedAlbum.Author
+                );
 
-            // Verify if it exists on the favs list
-            if (!lstFavorites.Items.Contains(albumPlusArtist))
-            {
-                lstFavorites.Items.Add(albumPlusArtist);
-            }
-            else
-            {
-                MessageBox.Show("Este álbum ya está en tus favoritos.", "Error al añadir a favoritos");
+                if (!existsInFavorites)
+                {
+                    GlobalData.FavoritesList.Add(selectedAlbum);
+                    MessageBox.Show("Añadido correctamente a la lista de favoritos.", "Añadido a favoritos");
+                    // Realizar otras acciones necesarias (actualizar interfaz, etc.)
+                }
+                else
+                {
+                    MessageBox.Show("El álbum ya está en la lista de favoritos.", "Error al añadir a favoritos");
+                }
             }
         }
 
-        private void btnDeleteFav_Click(object sender, RoutedEventArgs e)
-        {
-            // Check if the selected item is in the favs list
-            if (lstFavorites.SelectedItem != null)
-            {
-                lstFavorites.Items.Remove(lstFavorites.SelectedItem);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un elemento de la lista para eliminarlo.", "Error al eliminar un favorito");
-            }
-        }
 
-        private void btnArtistPage_Click(object sender, RoutedEventArgs e)
+        private void imgCover_MouseLeftButtonUp(object sender, RoutedEventArgs e)
         {
             Album selectedAlbum = lstAlbumList.SelectedItem as Album;
 
             if (selectedAlbum != null)
             {
-                string selectedArtistName = selectedAlbum.Author;
-                string selectedArtistBio = selectedAlbum.ArtistBio;
-                Uri selectedArtistImage = selectedAlbum.ArtistImage;
+                // Cambiar a la pestaña "Artistas"
+                // Supongamos que tu control TabControl se llama "tabControl"
+                tcLanding.SelectedIndex = 1; // Cambiar al índice correspondiente a la pestaña "Artistas"
 
-                ArtistWindow artistWindow = new ArtistWindow(selectedArtistName, selectedArtistBio, userNameLocal, dateTimeLocal, selectedArtistImage);
-                WindowManager.ArtistWindowInstance = artistWindow;
-                artistWindow.Show();
-                this.Hide();
+                // Obtener el artista que coincide con el Author del álbum seleccionado
+                var matchingArtist = lstArtistList.Items.OfType<Artist>().FirstOrDefault(artist => artist.ArtisticName == selectedAlbum.Author);
+
+                if (matchingArtist != null)
+                {
+                    // Seleccionar el artista correspondiente en lstArtistList
+                    lstArtistList.SelectedItem = matchingArtist;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el artista correspondiente al álbum seleccionado.", "Artista no encontrado");
+                }
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un álbum para ver información del artista.", "Error al acceder a la página del artista");
             }
         }
+
 
         ////////// ALBUM LIST MANAGEMENT //////////
         private void btnDeleteAlbum_Click(object sender, RoutedEventArgs e)
@@ -176,10 +269,12 @@ namespace ProyectoIPO_Lab2324
 
             if (selectedAlbum != null)
             {
-                albumList.Remove(selectedAlbum);
+                // Eliminar el álbum seleccionado de la lista de álbumes
+                GlobalData.AlbumList.Remove(selectedAlbum);
 
+                // Actualizar la lista de álbumes
                 lstAlbumList.ItemsSource = null;
-                lstAlbumList.ItemsSource = albumList;
+                lstAlbumList.ItemsSource = GlobalData.AlbumList;
             }
             else
             {
@@ -187,24 +282,263 @@ namespace ProyectoIPO_Lab2324
             }
         }
 
-        private void btnEditAlbum_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO
-        }
-
         private void btnAddAlbum_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            // Crear una instancia de la ventana para agregar un álbum
+            AddAlbumWindow addAlbumWindow = new AddAlbumWindow();
+
+            // Mostrar la ventana como un diálogo modal
+            bool? result = addAlbumWindow.ShowDialog();
+
+            if (result == true)
+            {
+                // Obtener los datos ingresados por el usuario desde la ventana AddAlbumWindow
+                string albumName = addAlbumWindow.AlbumName;
+                string artistName = addAlbumWindow.Author;
+                string launchYear = addAlbumWindow.LaunchYear;
+                string genre = addAlbumWindow.Genre;
+                string recordLabel = addAlbumWindow.RecordLabel;
+                string format = addAlbumWindow.Format;
+                string country = addAlbumWindow.Country;
+                string likes = addAlbumWindow.Likes;
+                string puntuation = addAlbumWindow.Puntuation;
+                string pvp = addAlbumWindow.Pvp;
+                string stock = addAlbumWindow.Stock;
+                Uri cover = addAlbumWindow.Cover;
+
+                // Aquí puedes crear un nuevo objeto de álbum con los datos obtenidos
+                Album newAlbum = new Album
+                {
+                    Name = albumName,
+                    Author = artistName,
+                    LaunchYear = launchYear,
+                    Genre = genre,
+                    RecordLabel = recordLabel,
+                    Format = format,
+                    Country = country,
+                    Likes = likes,
+                    Puntuation = puntuation,
+                    Pvp = pvp,
+                    Stock = stock,
+                    Cover = cover
+                };
+
+                // Agregar el nuevo álbum a la lista global lstAlbumList
+                if (lstAlbumList != null) // Verificar si la lista no es nula
+                {
+                    GlobalData.AlbumList.Add(newAlbum);
+                    lstAlbumList.Items.Refresh();
+                }
+                else
+                {
+                    // Manejo de error si lstAlbumList es nula
+                }
+            }
         }
+
 
         private void btnBuyAlbum_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            MessageBox.Show("Funcion no implementada todavía");
         }
 
         private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btnApplyChangesAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = lstAlbumList.SelectedItem as Album;
+
+            if (selectedItem != null)
+            {
+                // Actualizar cada propiedad del ítem seleccionado con los valores de los TextBox
+                selectedItem.Name = tbAlbumName.Text;
+                selectedItem.Author = tbAuthor.Text;
+                selectedItem.Pvp = tbPvp.Text;
+                selectedItem.LaunchYear = tbLaunchYear.Text;
+                selectedItem.Puntuation = tbPuntuacion.Text;
+                selectedItem.Genre = tbGenre.Text;
+                selectedItem.RecordLabel = tbRecordLabel.Text;
+                selectedItem.Format = tbFormat.Text;
+                selectedItem.Country = tbPais.Text;
+                selectedItem.Likes = tbLikes.Text;
+                selectedItem.Stock = tbStock.Text;
+
+
+                // Actualizar la vista de la lista para reflejar los cambios
+                lstAlbumList.Items.Refresh();
+
+                // Mostrar un mensaje indicando que los cambios se han aplicado correctamente
+                MessageBox.Show("Los cambios se han aplicado correctamente.", "Cambios Aplicados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void btnApplyChangesArtist_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnChangeCover_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Obtener la ruta del archivo seleccionado
+                string imagePath = openFileDialog.FileName;
+
+                // Convertir la cadena de la ruta a un objeto Uri
+                Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+                // Actualizar la imagen en la interfaz gráfica
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = imageUri;
+                bitmap.EndInit();
+
+                imgCover.Source = bitmap;
+
+                // Actualizar la carátula del objeto Album
+                var selectedAlbum = lstAlbumList.SelectedItem as Album;
+                if (selectedAlbum != null)
+                {
+                    selectedAlbum.Cover = imageUri;
+                    lstAlbumList.Items.Refresh();
+                }
+            }
+        }
+
+
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            Album selectedAlbum = (Album)lstAlbumList.SelectedItem;
+
+            if (selectedAlbum != null)
+            {
+                if (!string.IsNullOrEmpty(selectedAlbum.previewPath))
+                {
+                    Uri uri = new Uri(selectedAlbum.previewPath, UriKind.Relative);
+                    mediaPlayer.Open(uri);
+                    mediaPlayer.Play();
+                }
+                else
+                {
+                    MessageBox.Show("La canción de vista previa no está disponible para este álbum.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un álbum primero.");
+            }
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
+            mediaPlayer.Close();
+        }
+
+        private void btnChangeArtistImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Obtener la ruta del archivo seleccionado
+                string imagePath = openFileDialog.FileName;
+
+                // Convertir la cadena de la ruta a un objeto Uri
+                Uri imageUri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+
+                // Actualizar la imagen en la interfaz gráfica
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = imageUri;
+                bitmap.EndInit();
+
+                imgArtist.Source = bitmap;
+
+                // Actualizar la carátula del objeto Album
+                var selectedArtist = lstArtistList.SelectedItem as Artist;
+                if (selectedArtist != null)
+                {
+                    selectedArtist.ArtistImage = imageUri;
+                    lstArtistList.Items.Refresh();
+                }
+            }
+        }
+
+        private void combobox_language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem cbi = (ComboBoxItem)combobox_language.SelectedItem; string selectedText = cbi.Content.ToString();
+            if ((selectedText.Equals("ES") || selectedText.Equals("SP")) && !CultureInfo.CurrentCulture.Name.Equals("es-ES"))
+            {
+                Resources.MergedDictionaries.Add(App.SelectCulture("es-ES"));
+            }
+            else if (selectedText.Equals("EN")
+            && !CultureInfo.CurrentCulture.Name.Equals("en-US"))
+            {
+                Resources.MergedDictionaries.Add(App.SelectCulture("en-US"));
+            }
+        }
+
+        private void btnAddArtist_Click(object sender, RoutedEventArgs e)
+        {
+            // Crear una instancia de la ventana para agregar un álbum
+            AddAlbumWindow addAlbumWindow = new AddAlbumWindow();
+
+            // Mostrar la ventana como un diálogo modal
+            bool? result = addAlbumWindow.ShowDialog();
+
+            if (result == true)
+            {
+                // Obtener los datos ingresados por el usuario desde la ventana AddAlbumWindow
+                string albumName = addAlbumWindow.AlbumName;
+                string artistName = addAlbumWindow.Author;
+                string launchYear = addAlbumWindow.LaunchYear;
+                string genre = addAlbumWindow.Genre;
+                string recordLabel = addAlbumWindow.RecordLabel;
+                string format = addAlbumWindow.Format;
+                string country = addAlbumWindow.Country;
+                string likes = addAlbumWindow.Likes;
+                string puntuation = addAlbumWindow.Puntuation;
+                string pvp = addAlbumWindow.Pvp;
+                string stock = addAlbumWindow.Stock;
+                Uri cover = addAlbumWindow.Cover;
+
+                // Aquí puedes crear un nuevo objeto de álbum con los datos obtenidos
+                Album newAlbum = new Album
+                {
+                    Name = albumName,
+                    Author = artistName,
+                    LaunchYear = launchYear,
+                    Genre = genre,
+                    RecordLabel = recordLabel,
+                    Format = format,
+                    Country = country,
+                    Likes = likes,
+                    Puntuation = puntuation,
+                    Pvp = pvp,
+                    Stock = stock,
+                    Cover = cover
+                };
+
+                // Agregar el nuevo álbum a la lista global lstAlbumList
+                if (lstAlbumList != null) // Verificar si la lista no es nula
+                {
+                    GlobalData.AlbumList.Add(newAlbum);
+                    lstAlbumList.Items.Refresh();
+                }
+                else
+                {
+                    // Manejo de error si lstAlbumList es nula
+                }
+            }
         }
     }
 }

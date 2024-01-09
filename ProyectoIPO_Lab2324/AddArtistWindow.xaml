@@ -1,0 +1,50 @@
+﻿<Window x:Class="ProyectoIPO_Lab2324.AddArtistWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
+        mc:Ignorable="d"
+        Title="{DynamicResource AddArtist}" Height="600" Width="1000">
+    <Grid>
+        <StackPanel Margin="20">
+
+            <Label Content="Nombre Artístico:*" FontWeight="Bold" />
+            <TextBox x:Name="txtAlbumName" />
+
+            <Label Content="Nombre Real:*" FontWeight="Bold" />
+            <TextBox x:Name="txtArtistName" />
+
+            <Label Content="¿Componentes del grupo?:" FontWeight="Bold" />
+            <TextBox x:Name="txtReleaseYear" />
+
+            <Label Content="Cumpleaños:" FontWeight="Bold" />
+            <TextBox x:Name="txtGenre" />
+
+            <Label Content="Descripción:*" FontWeight="Bold" />
+            <TextBox x:Name="txtRecordLabel" />
+
+            <Label Content="Genero:*" FontWeight="Bold" />
+            <TextBox x:Name="txtFormat" />
+
+            <Label Content="Instagram:" FontWeight="Bold" />
+            <TextBox x:Name="txtCountry" />
+
+            <Label Content="X_Twitter:" FontWeight="Bold" />
+            <TextBox x:Name="txtLikes" />
+
+            <Label Content="Likes:" FontWeight="Bold" />
+            <TextBox x:Name="txtPuntuation" />
+
+            <Label Content="Cover (URI):*" FontWeight="Bold" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtCover" />
+                <Button Content="Seleccionar Imagen" Margin="5,0,0,0" Click="btnSelectImage_Click"/>
+            </StackPanel>
+
+
+
+            <Button Content="Agregar" HorizontalAlignment="Center" Margin="10,20,10,0" Click="btnAdd_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

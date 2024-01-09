@@ -80,8 +80,8 @@
         <Label x:Name="label_título" Content="¡Conecta con nosotros!" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Label x:Name="label_tlf" Content="Teléfono de contacto:" HorizontalAlignment="Left" Margin="8,115,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="label_correoContacto" Content="Correo electrónico" HorizontalAlignment="Left" Margin="10,198,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="textblock_info_Copy" Margin="14,151,6,145" Grid.Row="2" TextWrapping="Wrap" Text="925809677" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
-        <TextBlock x:Name="textblock_info_Copy1" Margin="14,229,6,67" Grid.Row="2" TextWrapping="Wrap" Text="vynilshop@contacto.es" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
+        <TextBlock x:Name="textblock_phoneNumber" Margin="14,151,6,145" Grid.Row="2" TextWrapping="Wrap" Text="925809677" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
+        <TextBlock x:Name="textblock_email" Margin="14,229,6,67" Grid.Row="2" TextWrapping="Wrap" Text="vynilshop@contacto.es" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
 
 
     </Grid>

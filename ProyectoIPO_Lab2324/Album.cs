@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoIPO_Lab2324
 {
-    class Album
+    public class Album
     {
         public String Name { set; get; }
         public String Author { set; get; }
         public Uri Cover { set; get; }
         public String Genre { set; get; }
-        public List<string> Songs { set; get; }
+        public List<string> SongsA { set; get; }
+        public List<string> SongsB { set; get; }
         public String LaunchYear { set; get; }
         public String RecordLabel { set; get; }
         public String Format { set; get; }
@@ -21,9 +19,7 @@ namespace ProyectoIPO_Lab2324
         public String Puntuation { set; get; }
         public String Pvp { set; get; }
         public String Stock { set; get; }
-        public String ArtistBio {  set; get; }
-        public  Uri ArtistImage { set; get; }
-
+        public String previewPath { set; get; }
 
         public Album()
         {
@@ -32,7 +28,8 @@ namespace ProyectoIPO_Lab2324
             Cover = null;
             Genre = "";
             LaunchYear = "";
-            Songs = new List<string>();
+            SongsA = new List<string>();
+            SongsB = new List<string>();
             RecordLabel = "";
             Format = "";
             Country = "";
@@ -40,8 +37,7 @@ namespace ProyectoIPO_Lab2324
             Puntuation = "";
             Pvp = "";
             Stock = "";
-            ArtistBio = "";
-            ArtistImage = null;
+            previewPath = "";
         }
     }
 }

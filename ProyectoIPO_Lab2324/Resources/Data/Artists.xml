@@ -1,0 +1,96 @@
+﻿<Artists>
+	<Artist ArtisticName="Taylor Swift"
+			RealName=""
+			Birthday="13/12/1989"
+			Description="Taylor Swift es una cantautora, productora, directora, actriz y empresaria."
+			Genre="Pop"
+			Instagram="@TaylorSwift"
+			X_Twitter="@TaylorSwift"
+			Likes="58"
+			ArtistImage="/Resources/Artist/TaylorSwift.png">
+
+		<GroupComponents>
+		</GroupComponents>
+
+		<AlbumList>
+			<Album>1989 (Taylor's Version)</Album>
+		</AlbumList>
+	</Artist>
+	
+	<Artist ArtisticName="The Beatles"
+			RealName=""
+			Birthday="1960"
+			Description="The Beatles fue un grupo de rock formado en Liverpool durante los años 60."
+			Genre="Rock"
+			Instagram="@TheBeatles"
+			X_Twitter="@TheBeatles"
+			Likes="12"
+			ArtistImage="/Resources/Artist/TheBeatles.jpg">
+
+		<GroupComponents>
+			<GroupComponent>John Lennon</GroupComponent>
+			<GroupComponent>Paul McCartney</GroupComponent>
+			<GroupComponent>George Harrison</GroupComponent>
+			<GroupComponent>Ringo Starr</GroupComponent>
+		</GroupComponents>
+
+		<AlbumList>
+			<Album>Abbey Road</Album>
+		</AlbumList>
+	</Artist>
+
+	<Artist ArtisticName="Frank Sinatra"
+			RealName=""
+			Birthday="12/12/1915"
+			Description="Frank Sinatra fue un cantante y actor estadounidense."
+			Genre="Pop Clásico"
+			Instagram="@FrankSinatra"
+			X_Twitter="@FrankSinatra"
+			Likes="123"
+			ArtistImage="/Resources/Artist/FrankSinatra.jpg">
+
+		<GroupComponents>
+		</GroupComponents>
+
+		<AlbumList>
+			<Album>My Way</Album>
+		</AlbumList>
+	</Artist>
+
+	<Artist ArtisticName="Recycled J"
+			RealName="Jorge Escorial"
+			Birthday="17/07/1993"
+			Description="Recycled J es un rapero español."
+			Genre="Hip-Hop"
+			Instagram="@RecycledJ"
+			X_Twitter="@RecycledJ"
+			Likes="96"
+			ArtistImage="/Resources/Artist/RecycledJ.jpg">
+
+		<GroupComponents>
+		</GroupComponents>
+
+		<AlbumList>
+			<Album>Casanova</Album>
+		</AlbumList>
+	</Artist>
+
+	<Artist ArtisticName="Quevedo"
+		RealName="Pedro Domínguez"
+		Birthday="07/12/2001"
+		Description="Quevedo es un cantante y compositor español de reguetón."
+		Genre="Hip-Hop"
+		Instagram="@Quevedo"
+		X_Twitter="@Quevedo"
+		Likes="145"
+		ArtistImage="/Resources/Artist/Quevedo.jpg">
+
+		<GroupComponents>
+		</GroupComponents>
+
+		<AlbumList>
+			<Album>Donde Quiero Estar</Album>
+		</AlbumList>
+
+	</Artist>
+</Artists>

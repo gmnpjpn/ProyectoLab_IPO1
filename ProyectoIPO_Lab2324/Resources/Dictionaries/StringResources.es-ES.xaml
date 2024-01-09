@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="WindowTitle">VinylShop ES</sys:String>
+    <sys:String x:Key="label_loginTitle">VinylShop ES</sys:String>
+    <sys:String x:Key="label_userTitle">Nombre de Usuario</sys:String>
+    <sys:String x:Key="label_passwordTitle">Contraseña</sys:String>
+    <sys:String x:Key="button_login">Iniciar Sesion</sys:String>
+    <sys:String x:Key="label_warning">Credenciales Incorrectas</sys:String>
+
+    <sys:String x:Key="tb_contact">Contacto</sys:String>
+    <sys:String x:Key="tb_shoppingCart">Carrito</sys:String>
+    <sys:String x:Key="tb_logout">Cerrar Sesión</sys:String>
+    <sys:String x:Key="bt_buyAlbum">Comprar Álbum</sys:String>
+    <sys:String x:Key="bt_fav">Añadir a Favoritos</sys:String>
+    <sys:String x:Key="bt_changeCover">Cambiar Cover</sys:String>
+    <sys:String x:Key="lb_preview">Muestra del álbum</sys:String>
+    <sys:String x:Key="lb_PVP">PVP:</sys:String>
+    <sys:String x:Key="lb_launchDate">Fecha de Lanzamiento:</sys:String>
+    <sys:String x:Key="lb_score">Puntuación:</sys:String>
+    <sys:String x:Key="lb_genre">Género:</sys:String>
+    <sys:String x:Key="lb_recordLabel">Sello Discográfico:</sys:String>
+    <sys:String x:Key="lb_format">Formato:</sys:String>
+    <sys:String x:Key="lb_country">Pais:</sys:String>
+    <sys:String x:Key="lb_stock">Stock Disponible:</sys:String>
+    <sys:String x:Key="lb_apply">Aplicar Cambios:</sys:String>
+    <sys:String x:Key="lb_songListsA">Canciones Cara A:</sys:String>
+    <sys:String x:Key="lb_songListsB">Canciones Cara B:</sys:String>
+    <sys:String x:Key="header_artistas">Artistas</sys:String>
+    <sys:String x:Key="header_albums">Álbumes</sys:String>
+    <sys:String x:Key="bt_changeArtistImage">Cambiar Imagen del Artista</sys:String>
+    <sys:String x:Key="lb_description">Descripción:</sys:String>
+    <sys:String x:Key="lb_birthday">Cumpleaños:</sys:String>
+    <sys:String x:Key="lb_artistGenre">Género:</sys:String>
+    <sys:String x:Key="lb_artistInstagram">Usuario de Instagram:</sys:String>
+    <sys:String x:Key="lb_artist_X_Twitter">Usuario de X/Twitter:</sys:String>
+    <sys:String x:Key="lb_artistAlbumTitle">Albumes del autor/a:</sys:String>
+    <sys:String x:Key="lb_groupComponents">Componentes del Grupo:</sys:String>
+
+    <sys:String x:Key="AddArtist">Añadir Artista</sys:String>
+    <sys:String x:Key="AddAlbum">Añadir Album</sys:String>
+    
+
+
+
+
+
+
+
+</ResourceDictionary>

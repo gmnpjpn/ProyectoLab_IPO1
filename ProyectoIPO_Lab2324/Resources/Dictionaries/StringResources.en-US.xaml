@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="WindowTitle">VinylShop USA</sys:String>
+    <sys:String x:Key="label_loginTitle">VinylShop USA</sys:String>
+    <sys:String x:Key="label_userTitle">Username</sys:String>
+    <sys:String x:Key="label_passwordTitle">Password</sys:String>
+    <sys:String x:Key="button_login">Sign In</sys:String>
+    <sys:String x:Key="label_warning">Wrong Credentials</sys:String>
+
+    <sys:String x:Key="tb_contact">Contact</sys:String>
+    <sys:String x:Key="tb_shoppingCart">Shopping Cart</sys:String>
+    <sys:String x:Key="tb_logout">Logout</sys:String>
+    <sys:String x:Key="bt_buyAlbum">Buy Album</sys:String>
+    <sys:String x:Key="bt_fav">Add to Favorites</sys:String>
+    <sys:String x:Key="bt_changeCover">Change Cover</sys:String>
+    <sys:String x:Key="lb_preview">Album Preview</sys:String>
+    <sys:String x:Key="lb_PVP">PVP:</sys:String>
+    <sys:String x:Key="lb_launchDate">Launch Date:</sys:String>
+    <sys:String x:Key="lb_score">Score:</sys:String>
+    <sys:String x:Key="lb_genre">Genre:</sys:String>
+    <sys:String x:Key="lb_recordLabel">Record Label:</sys:String>
+    <sys:String x:Key="lb_format">Format:</sys:String>
+    <sys:String x:Key="lb_country">Country:</sys:String>
+    <sys:String x:Key="lb_stock">Available Stock:</sys:String>
+    <sys:String x:Key="lb_apply">Apply Changes:</sys:String>
+    <sys:String x:Key="lb_songListsA">Songs Side A:</sys:String>
+    <sys:String x:Key="lb_songListsB">Songs Side B:</sys:String>
+    <sys:String x:Key="header_artistas">Artists</sys:String>
+    <sys:String x:Key="header_albums">Albums</sys:String>
+    <sys:String x:Key="bt_changeArtistImage">Change Artist Image</sys:String>
+    <sys:String x:Key="lb_description">Description:</sys:String>
+    <sys:String x:Key="lb_birthday">Birthday:</sys:String>
+    <sys:String x:Key="lb_artistGenre">Genre:</sys:String>
+    <sys:String x:Key="lb_artistInstagram">Instagram User:</sys:String>
+    <sys:String x:Key="lb_artist_X_Twitter">X/Twitter User:</sys:String>
+    <sys:String x:Key="lb_artistAlbumTitle">Author's Albums:</sys:String>
+    <sys:String x:Key="lb_groupComponents">Group Components:</sys:String>
+
+    <sys:String x:Key="AddArtist">Add Artists</sys:String>
+    <sys:String x:Key="AddAlbum">Add Albums</sys:String>
+
+
+</ResourceDictionary>

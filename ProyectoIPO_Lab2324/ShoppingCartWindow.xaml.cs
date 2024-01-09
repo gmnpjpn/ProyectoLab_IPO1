@@ -19,14 +19,12 @@ namespace ProyectoIPO_Lab2324
     /// </summary>
     public partial class ShoppingCartWindow : Window
     {
-        private String usernameLocal;
-        private String datetimeLocal;
-        public ShoppingCartWindow(String username, String dateTime)
+        public ShoppingCartWindow()
         {
             InitializeComponent();
 
-            usernameLocal = username;
-            datetimeLocal = dateTime;
+            textblock_username.Text = GlobalData.Username;
+            textblock_lastTime.Text = GlobalData.CurrentDateTime;
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
@@ -36,7 +34,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userwindow = new UserWindow(usernameLocal, datetimeLocal);
+            UserWindow userwindow = new UserWindow();
             WindowManager.UserWindowInstance = userwindow;
             userwindow.Show();
             this.Hide();
@@ -44,7 +42,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            ContactWindow contactWindow = new ContactWindow();
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();
@@ -52,7 +50,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnFaqs_Click(object sender, RoutedEventArgs e)
         {
-            FaqsWindow faqsWindow = new FaqsWindow(usernameLocal, datetimeLocal);
+            FaqsWindow faqsWindow = new FaqsWindow();
             faqsWindow.Show();
             this.Hide();
         }

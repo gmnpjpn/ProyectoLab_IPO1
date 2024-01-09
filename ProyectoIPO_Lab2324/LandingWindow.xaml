@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - Página Principal" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" Closing="stopAtClose" WindowStartupLocation="CenterScreen">
+        Title="{DynamicResource WindowTitle}" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" Closing="stopAtClose" WindowStartupLocation="CenterScreen">
     <Grid x:Name="gridLanding">
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
@@ -13,69 +13,76 @@
             <RowDefinition Height="315*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="143*"/>
-            <ColumnDefinition Width="198*"/>
-            <ColumnDefinition Width="619*"/>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="85*"/>
-            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="221*"/>
+            <ColumnDefinition Width="177*"/>
+            <ColumnDefinition Width="210*"/>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="84*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="3" Grid.ColumnSpan="7"/>
-        <Rectangle x:Name="rectangle_up" Stroke="Black" Fill="#FF3A3A3A" Grid.ColumnSpan="7" Margin="0,2,0,2" Grid.RowSpan="2"/>
-        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,13,0,0" Height="49" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnHome_Click">
+        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Left" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="3" Grid.ColumnSpan="9" Height="704" Width="1280"/>
+        <Rectangle x:Name="rectangle_up" Stroke="Black" Fill="#FF3A3A3A" Grid.ColumnSpan="9" Margin="0,2,0,2" Grid.RowSpan="2"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Height="49" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2">
             <Image x:Name="image_home" Source="\Resources\home_icon.png" Width="49" Height="40" />
         </Button>
         <Button x:Name="btnUser" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnUser_Click">
             <Image x:Name="image_user" Source="\Resources\user_icon.png" Width="49" Height="40" />
         </Button>
         <TextBlock x:Name="textblock_username" Margin="4,12,84,40" TextWrapping="Wrap" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White" Grid.Column="1" Grid.RowSpan="2"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
-        <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="4,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White" Height="20" Width="220" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
-        <Button x:Name="btnContact" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="3" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnContact_Click">
+        <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="4,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White" Height="20" Width="220" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"><Run Language="es-es" Text="xx-xx-xxx xx:xx"/></TextBlock>
+        <Button x:Name="btnContact" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="5" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnContact_Click">
             <StackPanel>
                 <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="37.8" />
-                <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
+                <TextBlock x:Name="TextBlock_contact" Text="{DynamicResource tb_contact}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnFaqs" Margin="10,9,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnFaqs_Click" Grid.Column="4" Foreground="{x:Null}" Grid.RowSpan="2">
+        <Button x:Name="btnFaqs" Margin="10,9,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnFaqs_Click" Grid.Column="6" Foreground="{x:Null}" Grid.RowSpan="2">
             <StackPanel>
 
                 <Image x:Name="FAQS_image" Source="\Resources\faqs_icon.ico" Width="49" Height="38" />
                 <TextBlock x:Name="TextBlock_FAQS" Text="FAQS" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnShoppingCart" Margin="10,10,10,10" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="5" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnShoppingCart_Click">
+        <Button x:Name="btnShoppingCart" Margin="10,10,10,10" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="7" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnShoppingCart_Click">
             <StackPanel>
                 <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="49" Height="38" RenderTransformOrigin="0.592,0.5" />
-                <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Margin="1,1,1,1"/>
+                <TextBlock x:Name="TextBlock_ShoppingCart" Text="{DynamicResource tb_shoppingCart}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Margin="1,1,1,1"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnLogout" Click="btnLogout_Click" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="6" Foreground="{x:Null}" Grid.RowSpan="2">
+        <Button x:Name="btnLogout" Click="btnLogout_Click" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="8" Foreground="{x:Null}" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="image_logout" Source="\Resources\logout_icon.png" Width="49" Height="38" />
-                <TextBlock x:Name="TextBlock_Logout" Text="Cerrar Sesión" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
+                <TextBlock x:Name="TextBlock_Logout" Text="{DynamicResource tb_logout}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
 
             </StackPanel>
         </Button>
 
-        <TabControl Margin="10,3,10,10" Grid.Row="2" Opacity="0.9" Grid.ColumnSpan="7">
-            <TabItem Header="Catálogo" IsSelected="True">
-                <StackPanel Orientation="Horizontal" Margin="5">
-                    <StackPanel Orientation="Vertical" Margin="5">
+        <!-- Language ComboBox -->
+        <ComboBox x:Name="combobox_language" Margin="10,4,10,10" TabIndex="3"
+                  SelectionChanged="combobox_language_SelectionChanged" FontFamily="Berlin Sans FB" FontSize="25"
+                  SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Opacity="0.6" Grid.Column="3" Grid.Row="1">
+            <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+            <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+        </ComboBox>
 
+
+        <TabControl x:Name="tcLanding" Margin="10,10,10,10" Grid.Row="2" Opacity="0.9" Grid.ColumnSpan="9">
+            <TabItem Header="{DynamicResource header_albums}" IsSelected="True">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <StackPanel Orientation="Vertical" Margin="5" Width="287">
                         <StackPanel x:Name="spAlbumEdition" Orientation="Horizontal"
                                  Grid.Row="0" Grid.ColumnSpan="2"
                                  Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            
+
                             <Button x:Name="btnAddAlbum" Width="50" Height="50" Click="btnAddAlbum_Click">
                                 <Image Source="/Resources/Toolbar/add_c.png" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
 
                             <Button x:Name="btnDeleteAlbum" Width="50" Height="50" Click="btnDeleteAlbum_Click">
                                 <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Button>
-
-                            <Button x:Name="btnEditAlbum" Width="50" Height="50" Click="btnEditAlbum_Click" Content="Editar">
                             </Button>
 
                         </StackPanel>
@@ -117,119 +124,258 @@
                         </ListBox>
 
                     </StackPanel>
-                    
+                    <ScrollViewer Width="526">
 
+                        <StackPanel x:Name="spDetail" Width="462" Orientation="Vertical">
 
-                    <ScrollViewer>
+                            <TextBox x:Name="tbAlbumName" FontWeight="Bold" FontSize="20"
+                                     Text="{Binding SelectedItem.Name, ElementName=lstAlbumList, Mode=TwoWay}"/>
 
-                        <StackPanel x:Name="spDetail" Width="400" Orientation="Vertical">
-
-
-                            <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Name}"/>
-                            <Label x:Name="lblAuthor" FontWeight="Regular" FontSize="18"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Author}"/>
+                            <TextBox x:Name="tbAuthor" FontWeight="Regular" FontSize="18"
+                                     Text="{Binding SelectedItem.Author, ElementName=lstAlbumList}"/>
 
                             <Image x:Name="imgCover"
-                               Height="220" Width="200"
-                               HorizontalAlignment="Left"
-                               Margin="5" Stretch="Fill"
-                               Source="{Binding ElementName=lstAlbumList, Path= SelectedItem.Cover}"/>
+                                   Height="220" Width="200"
+                                   HorizontalAlignment="Left"
+                                   Margin="5" Stretch="Fill"
+                                   Source="{Binding SelectedItem.Cover, ElementName=lstAlbumList}"
+                                   Cursor="Hand"/>
 
-                            <DockPanel x:Name="spButtons" LastChildFill="False">
 
-                                <Button x:Name="btnArtistPage" Margin="5"
-                                Content="Página del Artista" FontSize="14" Click="btnArtistPage_Click">
-                                </Button>
 
-                                <Button x:Name="btnFav" Margin="5"
-                            Content="Añadir a Favoritos" FontWeight="Bold" FontSize="14" Click="btnFav_Click">
-                                </Button>
+                            <Button x:Name="btnBuyAlbum" Margin="5"
+                                    Content="{DynamicResource bt_buyAlbum}" FontWeight="ExtraBlack" FontSize="18" Click="btnBuyAlbum_Click"/>
 
-                                <Button x:Name="btnBuyAlbum" Margin="5"
-                            Content="Comprar Álbum" FontWeight="Bold" FontSize="14" Click="btnBuyAlbum_Click">
-                                </Button>
+                            <Button x:Name="btnFav" Margin="5"
+                                    Content="{DynamicResource bt_fav}" FontWeight="Regular" FontSize="18" Click="btnFav_Click"/>
 
-                            </DockPanel>
+                            <Button x:Name="btnChangeCover" Margin="20"
+                                    Content="{DynamicResource bt_changeCover}" FontWeight="Bold" FontSize="15" Click="btnChangeCover_Click"/>
 
-                            <Label FontWeight="Bold">PVP:</Label>
-                            <Label x:Name="lblPvp"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Pvp}"/>
 
-                            <Label FontWeight="Bold">¿Oferta?:</Label>
+                            <Label Content="{DynamicResource lb_preview}" Margin="5" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <!-- Coloca aquí los elementos necesarios antes del reproductor -->
+
+                                <!-- Reproductor de audio -->
+                                <StackPanel x:Name="audioPlayer" Orientation="Horizontal">
+                                    <Button x:Name="btnPlay" Content="▶" Width="30" Height="30" Margin="5" Click="btnPlay_Click"/>
+                                    <Button x:Name="btnStop" Content="■" Width="30" Height="30" Margin="5" Click="btnStop_Click"/>
+                                </StackPanel>
+
+                                <!-- Coloca aquí los elementos necesarios después del reproductor -->
+                            </StackPanel>
+
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_PVP}"/>
+                            <TextBox x:Name="tbPvp" MaxLength="76"
+                                     Text="{Binding SelectedItem.Pvp, ElementName=lstAlbumList}"/>
+
+                            <Label FontWeight="Bold" Content="¿Oferta?:"/>
                             <Label x:Name="lblOffer"
-                               Content="Contenido Oferta"/>
+                                   Content="Contenido Oferta"/>
 
-                            <Label FontWeight="Bold">Año de Lanzamiento:</Label>
-                            <Label x:Name="lblLaunchYear"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.LaunchYear}"/>
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_launchDate}"/>
+                            <TextBox x:Name="tbLaunchYear" MaxLength="76"
+                                         Text="{Binding SelectedItem.LaunchYear, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Puntuación:</Label>
-                            <Label x:Name="lblPuntuation"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Puntuation}"/>
 
-                            <Label FontWeight="Bold">Género:</Label>
-                            <Label x:Name="lblGenre"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Genre}"/>
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_score}"/>
+                            <TextBox x:Name="tbPuntuacion" MaxLength="76"
+                                        Text="{Binding SelectedItem.Puntuation, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Sello Discográfico:</Label>
-                            <Label x:Name="lblRecordLabel"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.RecordLabel}"/>
 
-                            <Label FontWeight="Bold">Formato:</Label>
-                            <Label x:Name="lblFormat"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Format}"/>
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_genre}"/>
+                            <TextBox x:Name="tbGenre" MaxLength="76"
+                                        Text="{Binding SelectedItem.Genre, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Pais:</Label>
-                            <Label x:Name="lblPais"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Country}"/>
 
-                            <Label FontWeight="Bold">Número de "Me Gusta":</Label>
-                            <Label x:Name="lblLikes"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Likes}"/>
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_recordLabel}"/>
+                            <TextBox x:Name="tbRecordLabel" MaxLength="76"
+                                        Text="{Binding SelectedItem.RecordLabel, ElementName=lstAlbumList}"/>
 
-                            <Label FontWeight="Bold">Unidades Disponibles:</Label>
-                            <Label x:Name="lblStock"
-                               Content="{Binding ElementName=lstAlbumList, Path=SelectedItem.Stock}"/>
 
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_format}"/>
+                            <TextBox x:Name="tbFormat" MaxLength="76"
+                                        Text="{Binding SelectedItem.Format, ElementName=lstAlbumList}"/>
+
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_country}"/>
+                            <TextBox x:Name="tbPais" MaxLength="76"
+                                        Text="{Binding SelectedItem.Country, ElementName=lstAlbumList}"/>
+
+                            <Label FontWeight="Bold" Content="Likes:"/>
+                            <TextBox x:Name="tbLikes" MaxLength="76"
+                                        Text="{Binding SelectedItem.Likes, ElementName=lstAlbumList}"/>
+
+                            <Label FontWeight="Bold" Content="{DynamicResource lb_stock}"/>
+                            <TextBox x:Name="tbStock" MaxLength="76"
+                                        Text="{Binding SelectedItem.Stock, ElementName=lstAlbumList}"/>
+
+                            <Button x:Name="btnApplyChangesAlbum"
+                                        Content="{DynamicResource lb_apply}" FontWeight="Bold" Click="btnApplyChangesAlbum_Click"/>
 
                         </StackPanel>
 
+
+
                     </ScrollViewer>
 
-                    <StackPanel x:Name="spSongs" Width="275" Orientation="Vertical" Margin="5">
-
-                        <Label x:Name="lblListSongTitle" FontWeight="Bold" FontSize="20"
+                    <StackPanel x:Name="spSongs" Width="349" Orientation="Vertical" Margin="5" HorizontalAlignment="Right">
+                        <Label x:Name="lblListSongTitleA" FontWeight="Bold" FontSize="20"
                                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                               Content="Listado de Canciones:"/>
+                               Content="{DynamicResource lb_songListsA}"/>
+                        <ListBox x:Name="lstSongListA" Height="237" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.SongsA}"/>
 
-                        <ListBox x:Name="lstSongLists" Height="528" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.Songs}"/>
-
+                        <Label x:Name="lblListSongTitleB" FontWeight="Bold" FontSize="20"
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                               Content="{DynamicResource lb_songListsB}"/>
+                        <ListBox x:Name="lstSongListB" Height="231" ItemsSource="{Binding ElementName=lstAlbumList, Path=SelectedItem.SongsB}"/>
                     </StackPanel>
 
-                    <StackPanel x:Name="spFavorites" Width="340" Orientation="Vertical" Margin="5">
-
-                        <Label x:Name="lblFavoritesTitle" FontWeight="Bold" FontSize="20"
-                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                               Content="Favoritos:"/>
-
-                        <Button x:Name="btnDeleteFav" Margin="5"
-                                Content="Eliminar Seleccionado" Click="btnDeleteFav_Click" Width="312" >
-                        </Button>
-
-                        <ListBox x:Name="lstFavorites" Height="497" Width="312">
-
-                        </ListBox>
-
-
-                    </StackPanel>
 
                 </StackPanel>
 
             </TabItem>
 
-            <TabItem Header="Artistas">
-                
+            <TabItem Header="{DynamicResource header_artistas}" Margin="0,-1,-4,1">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <StackPanel Orientation="Vertical" Margin="5" Width="272">
+                        <StackPanel x:Name="spArtistsEdition" Orientation="Horizontal"
+                                    Grid.Row="0" Grid.ColumnSpan="2"
+                                    Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            <Button x:Name="btnAddArtist" Width="50" Height="50" Click="btnAddArtist_Click">
+                                <Image Source="/Resources/Toolbar/add_c.png" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+
+                            <Button x:Name="btnDeleteArtist" Width="50" Height="50">
+                                <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+
+                        </StackPanel>
+
+                        <ListBox x:Name="lstArtistList"
+                                 SelectedIndex="0"
+                                 AlternationCount="2">
+
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Height="30" Orientation="Horizontal">
+                                        <Image Width="32" Height="32" Stretch="Fill"
+                               Source="{Binding ArtistImage}"/>
+                                        <TextBlock Padding="2" Margin="10, 0, 0, 0"
+                                   Text="{Binding ArtisticName}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListBoxItem}">
+                                    <Setter Property="Margin" Value="2"/>
+
+                                    <Style.Triggers>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="LightGray"/>
+                                        </Trigger>
+
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Foreground" Value="Blue"/>
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                            <Setter Property="BorderBrush" Value="Blue"/>
+                                            <Setter Property="BorderThickness" Value="3"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+
+                        </ListBox>
+
+                    </StackPanel>
+
+
+                    <ScrollViewer Width="526" >
+
+                        <StackPanel x:Name="spArtistDetail" Width="521" Orientation="Vertical">
+
+                            <Label x:Name="lblArtisticName" FontWeight="Bold" FontSize="20"
+                                   Content="{Binding SelectedItem.ArtisticName, ElementName=lstArtistList}"/>
+
+                            <Label x:Name="lblRealName" FontWeight="Normal" FontSize="15"
+                                   Content="{Binding SelectedItem.RealName, ElementName=lstArtistList}"/>
+
+                            <Image x:Name="imgArtist"
+                                   Height="200" Width="180"
+                                   HorizontalAlignment="Left"
+                                   Margin="5" Stretch="Fill"
+                                   Source="{Binding SelectedItem.ArtistImage, ElementName=lstArtistList}" VerticalAlignment="Top"/>
+
+                            <Button x:Name="btnChangeArtistImage" Margin="5"
+                                    Content="{DynamicResource bt_changeArtistImage}" FontWeight="Bold" FontSize="15"
+                                    Click="btnChangeArtistImage_Click"/>
+
+                            <Label FontWeight="Bold" FontSize="15" Content="{DynamicResource lb_description}"/>
+
+                            <TextBox x:Name="tbDescription" FontWeight="Normal" FontSize="15" MaxLength="76"
+                                   Text="{Binding SelectedItem.Description, ElementName=lstArtistList}" Width="497"/>
+
+
+                            <Label FontWeight="Bold" FontSize="15" Content="{DynamicResource lb_birthday}"/>
+
+                            <TextBox x:Name="tbBirthday" FontWeight="Normal" FontSize="15" MaxLength="76"
+                                   Text="{Binding SelectedItem.Birthday, ElementName=lstArtistList}" Width="498"/>
+
+
+
+
+                            <Label FontWeight="Bold" FontSize="15" Content="{DynamicResource lb_artistGenre}"/>
+
+                            <TextBox x:Name="tbArtistGenre" FontWeight="Normal" FontSize="15" MaxLength="76"
+                                   Text="{Binding SelectedItem.Genre, ElementName=lstArtistList}" Width="497"/>
+
+                            <Label FontWeight="Bold" FontSize="15" Content="{DynamicResource lb_artistInstagram}"/>
+
+                            <TextBox x:Name="tbInstagram" FontWeight="Normal" FontSize="15" MaxLength="76"
+                                   Text="{Binding SelectedItem.Instagram, ElementName=lstArtistList}" Width="499"/>
+
+                            <Label FontWeight="Bold" FontSize="15" Content="{DynamicResource lb_artist_X_Twitter}"/>
+
+                            <TextBox x:Name="tbX_Twitter" FontWeight="Normal" FontSize="15" MaxLength="76"
+                                   Text="{Binding SelectedItem.X_Twitter, ElementName=lstArtistList}" Width="497"/>
+
+                            <Button x:Name="btnApplyChangesArtist" Margin="5"
+                                    Content="{DynamicResource lb_apply}" FontWeight="Bold" FontSize="15"
+                                    Click="btnApplyChangesArtist_Click"/>
+
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel x:Name="spAlbums" Width="349" Orientation="Vertical" Margin="5" HorizontalAlignment="Right">
+                        <Label x:Name="lblListAlbumTitle" FontWeight="Bold" FontSize="20"
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                               Content="{DynamicResource lb_artistAlbumTitle}"/>
+                        <!-- ListBox para mostrar los álbumes del artista -->
+                        <ListBox x:Name="lstAlbumLists" Height="287" ItemsSource="{Binding ElementName=lstArtistList, Path=SelectedItem.AlbumList}"/>
+
+                        <!-- ListBox para mostrar los componentes del grupo -->
+                        <Label x:Name="lblGroupComponents" FontWeight="Bold" FontSize="20"
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                               Content="{DynamicResource lb_groupComponents}"/>
+                        <ListBox x:Name="lstGroupComponents" Height="200" Width="300"
+                                 ItemsSource="{Binding ElementName=lstArtistList, Path=SelectedItem.GroupComponents}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding}" Margin="5"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+
+
+                </StackPanel>
+
+
             </TabItem>
 
         </TabControl>

@@ -15,26 +15,17 @@ using System.Xml;
 
 namespace ProyectoIPO_Lab2324
 {
-    /// <summary>
-    /// Lógica de interacción para FaqsWindow.xaml
-    /// </summary>
     public partial class FaqsWindow : Window
     {
 
         List<Faq> faqList;
 
-        private string usernameLocal;
-        private string datetimeLocal;
-
-        public FaqsWindow(String username, String datetime)
+        public FaqsWindow()
         {
             InitializeComponent();
 
-            usernameLocal = username;
-            datetimeLocal = datetime;
-
-            textblock_lastTime.Text = "Ultimo Acceso: " + datetimeLocal;
-            textblock_username.Text = usernameLocal;
+            textblock_lastTime.Text = "Ultimo Acceso: " + GlobalData.CurrentDateTime;
+            textblock_username.Text = GlobalData.Username;
 
             // Create faq list
             faqList = new List<Faq>();
@@ -70,7 +61,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userwindow = new UserWindow(usernameLocal, datetimeLocal);
+            UserWindow userwindow = new UserWindow();
             WindowManager.UserWindowInstance = userwindow;
             userwindow.Show();
             this.Hide();
@@ -78,7 +69,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
         {
-            ContactWindow contactWindow = new ContactWindow(usernameLocal, datetimeLocal);
+            ContactWindow contactWindow = new ContactWindow();
             WindowManager.ContactWindowInstance = contactWindow;
             contactWindow.Show();
             this.Hide();
@@ -86,7 +77,7 @@ namespace ProyectoIPO_Lab2324
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow(usernameLocal, datetimeLocal);
+            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
             WindowManager.ShoppingCartWindowInstance = shoppingCart;
             shoppingCart.Show();
             this.Hide();

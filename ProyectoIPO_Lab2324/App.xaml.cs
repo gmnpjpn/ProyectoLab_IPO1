@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace ProyectoIPO_Lab2324
 {
@@ -29,15 +30,15 @@ namespace ProyectoIPO_Lab2324
             {
                 case "en-US":
                     resourceDictionary.Source =
-                    new Uri("/Resources/StringResources/StringResources.en-US.xaml", UriKind.Relative);
+                    new Uri("/Resources/Dictionaries/StringResources.en-US.xaml", UriKind.Relative);
                     break;
                 case "es-ES":
                     resourceDictionary.Source =
-                    new Uri("/Resources/StringResources/StringResources.es-ES.xaml", UriKind.Relative);
+                    new Uri("/Resources/Dictionaries/StringResources.es-ES.xaml", UriKind.Relative);
                     break;
                 default:
                     resourceDictionary.Source =
-                    new Uri("/Resources/StringResources/StringResources.es-ES.xaml", UriKind.Relative);
+                    new Uri("/Resources/Dictionaries/StringResources.es-ES.xaml", UriKind.Relative);
                     break;
             }
             Thread.CurrentThread.CurrentCulture = new CultureInfo(idioma);
@@ -45,14 +46,5 @@ namespace ProyectoIPO_Lab2324
             return resourceDictionary;
         }
 
-
     }
 }
-
-
-
-
-
-
-
-

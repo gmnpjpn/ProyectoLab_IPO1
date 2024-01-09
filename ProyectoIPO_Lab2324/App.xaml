@@ -6,10 +6,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/StringResources/StringResources.en-US.xaml" />
-                <ResourceDictionary Source="Resources/StringResources/StringResources.es-ES.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/StringResources.en-US.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/StringResources.es-ES.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </Application.Resources>
 
+    </Application.Resources>
 </Application>
