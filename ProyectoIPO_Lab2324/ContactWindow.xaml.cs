@@ -47,7 +47,6 @@ namespace ProyectoIPO_Lab2324
                 img_sq_cr.Visibility = Visibility.Visible;
                 img_sq_cu.Visibility = Visibility.Visible;
                 label_add_pin.Visibility = Visibility.Visible;
-                btnShoppingCart.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -77,11 +76,18 @@ namespace ProyectoIPO_Lab2324
 
         private void btnShoppingCart_Click(object sender, RoutedEventArgs e)
         {
-            ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
-            WindowManager.ShoppingCartWindowInstance = shoppingCart;
-            shoppingCart.Show();
-            this.Hide();
 
+            if (GlobalData.Username == "admin")
+            {
+                MessageBox.Show("Función no disponible en modo administración", "Función no disponible");
+            }
+            else
+            {
+                ShoppingCartWindow shoppingCart = new ShoppingCartWindow();
+                WindowManager.ShoppingCartWindowInstance = shoppingCart;
+                shoppingCart.Show();
+                this.Hide();
+            }
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)

@@ -16,7 +16,7 @@
     <sys:String x:Key="bt_fav">Add to Favorites</sys:String>
     <sys:String x:Key="bt_changeCover">Change Cover</sys:String>
     <sys:String x:Key="lb_preview">Album Preview</sys:String>
-    <sys:String x:Key="lb_PVP">PVP:</sys:String>
+    <sys:String x:Key="lb_PVP">Price:</sys:String>
     <sys:String x:Key="lb_launchDate">Launch Date:</sys:String>
     <sys:String x:Key="lb_score">Score:</sys:String>
     <sys:String x:Key="lb_genre">Genre:</sys:String>
@@ -34,7 +34,7 @@
     <sys:String x:Key="lb_birthday">Birthday:</sys:String>
     <sys:String x:Key="lb_artistGenre">Genre:</sys:String>
     <sys:String x:Key="lb_artistInstagram">Instagram User:</sys:String>
-    <sys:String x:Key="lb_artist_X_Twitter">X/Twitter User:</sys:String>
+    <sys:String x:Key="lb_artist_X_Twitter">Twitter User:</sys:String>
     <sys:String x:Key="lb_artistAlbumTitle">Author's Albums:</sys:String>
     <sys:String x:Key="lb_groupComponents">Group Components:</sys:String>
     <sys:String x:Key="AddArtist">Add Artists</sys:String>

@@ -14,16 +14,16 @@
     <sys:String x:Key="tb_logout">Cerrar Sesión</sys:String>
     <sys:String x:Key="bt_buyAlbum">Añadir al carrito</sys:String>
     <sys:String x:Key="bt_fav">Añadir a Favoritos</sys:String>
-    <sys:String x:Key="bt_changeCover">Cambiar Cover</sys:String>
+    <sys:String x:Key="bt_changeCover">Cambiar Carátula</sys:String>
     <sys:String x:Key="lb_preview">Muestra del álbum</sys:String>
-    <sys:String x:Key="lb_PVP">PVP:</sys:String>
+    <sys:String x:Key="lb_PVP">Precio:</sys:String>
     <sys:String x:Key="lb_launchDate">Fecha de Lanzamiento:</sys:String>
     <sys:String x:Key="lb_score">Puntuación:</sys:String>
     <sys:String x:Key="lb_genre">Género:</sys:String>
     <sys:String x:Key="lb_recordLabel">Sello Discográfico:</sys:String>
     <sys:String x:Key="lb_format">Formato:</sys:String>
     <sys:String x:Key="lb_country">Pais:</sys:String>
-    <sys:String x:Key="lb_stock">Stock Disponible:</sys:String>
+    <sys:String x:Key="lb_stock">Unidades Disponibles:</sys:String>
     <sys:String x:Key="lb_apply">Aplicar Cambios:</sys:String>
     <sys:String x:Key="lb_songListsA">Canciones Cara A:</sys:String>
     <sys:String x:Key="lb_songListsB">Canciones Cara B:</sys:String>
@@ -34,8 +34,8 @@
     <sys:String x:Key="lb_birthday">Cumpleaños:</sys:String>
     <sys:String x:Key="lb_artistGenre">Género:</sys:String>
     <sys:String x:Key="lb_artistInstagram">Usuario de Instagram:</sys:String>
-    <sys:String x:Key="lb_artist_X_Twitter">Usuario de X/Twitter:</sys:String>
-    <sys:String x:Key="lb_artistAlbumTitle">Albumes del autor/a:</sys:String>
+    <sys:String x:Key="lb_artist_X_Twitter">Usuario de Twitter:</sys:String>
+    <sys:String x:Key="lb_artistAlbumTitle">Álbumes del autor/a:</sys:String>
     <sys:String x:Key="lb_groupComponents">Componentes del Grupo:</sys:String>
     <sys:String x:Key="AddArtist">Añadir Artista</sys:String>
     <sys:String x:Key="lb_artisticName">Nombre Artistico:</sys:String>
@@ -70,22 +70,5 @@
     <sys:String x:Key="title_sc_label">Discos añadidos a su carrito:</sys:String>
     <sys:String x:Key="price_label_sc">Precio total:</sys:String>
     <sys:String x:Key="buy_button_sc">Comprar</sys:String>
-
-    <!-- FAQs Window -->
-    <sys:String x:Key="faq1"></sys:String>
-    <sys:String x:Key="faq2"></sys:String>
-    <sys:String x:Key="faq3"></sys:String>
-    <sys:String x:Key="faq4"></sys:String>
-    <sys:String x:Key="faq5"></sys:String>
-    <sys:String x:Key="faq6"></sys:String>
-    <sys:String x:Key="faq7"></sys:String>
-    <sys:String x:Key="faq8"></sys:String>
-    <sys:String x:Key="faq9"></sys:String>
-    <sys:String x:Key="faq10">Puedes ponerte en contacto con nuestro equipo de servicio al cliente a través del formulario de contacto en la aplicación o mediante el correo electrónico de soporte proporcionado en la sección de ayuda.</sys:String>
-
-
-
-
-
 
 </ResourceDictionary>
