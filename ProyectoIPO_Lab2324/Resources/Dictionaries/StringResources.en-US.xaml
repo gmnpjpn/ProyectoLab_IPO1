@@ -68,7 +68,7 @@
 
     <!-- Shopping Cart Window -->
     <sys:String x:Key="title_sc_label">Albums added to your shopping cart:</sys:String>
-    <sys:String x:Key="price_label_sc">Total price:</sys:String>
+    <sys:String x:Key="price_label_sc">Product price:</sys:String>
     <sys:String x:Key="buy_button_sc">Buy</sys:String>
 
 

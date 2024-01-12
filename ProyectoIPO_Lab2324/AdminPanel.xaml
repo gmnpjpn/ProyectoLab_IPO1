@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProyectoIPO_Lab2324.UserWindow"
+﻿<Window x:Class="ProyectoIPO_Lab2324.AdminPanel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - Página de Usuario" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" WindowStartupLocation="CenterScreen" Closing="StopAtClose">
+        Title="{DynamicResource WindowTitle}" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinWidth="1280" MinHeight="720" Closing="stopAtClose" WindowStartupLocation="CenterScreen">
     <Grid x:Name="gridUser">
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
@@ -57,38 +57,34 @@
 
             </StackPanel>
         </Button>
-        <StackPanel x:Name="stackPanel_Favorites" Margin="10,10,11,10" Orientation="Horizontal" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="7">
 
-            <StackPanel x:Name="sp_HistoryList" Orientation="Vertical">
-                <Label x:Name="label_history"  Content="{DynamicResource lbl_history}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="White"/>
-                <ListBox x:Name="listbox_History" Height="545" Opacity="0.6" FontSize="18"/>
+        
+        <Rectangle Fill="DarkGray" Height="283" Grid.Column="2" Grid.Row="2" Margin="0,85,0,262" Opacity="0.7"/>
 
+
+        <!-- StackPanel para centrar los elementos -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2" Height="409" Width="590">
+
+            <!-- Label -->
+            <Label Content="Envío de Newsletter" HorizontalAlignment="Center" Margin="0,0,0,10" FontSize="30" FontWeight="Bold"/>
+
+            <Label Content="Introduce los emails de destino:" HorizontalAlignment="Left"  FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tb_emails" Margin="0, 0, 0, 10"/>
+
+            <!-- Selector de archivo -->
+            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2" >
+                <Button Content="Seleccionar Archivo" Margin="0, 0, 0, 10" Click="SeleccionarArchivo_Click"/>
+                <TextBox Text="{Binding RutaSeleccionada}" IsReadOnly="True" Margin="0, 0, 0, 10"/>
             </StackPanel>
 
-            <StackPanel x:Name="sp_HistoryDetail" Orientation="Vertical" Width="576">
-                <Label x:Name="label_HistoryDetail"  Content="Lista de Deseos" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="White"/>
+            <!-- Botón de confirmar envío -->
+            <Button Content="Confirmar Envío" Click="ConfirmarEnvio_Click" Margin="0,0,0,10" FontWeight="Bold"/>
+            
 
-            </StackPanel>
-
-            <StackPanel x:Name="sp_Favorites" Orientation="Vertical" Width="364">
-                <Label x:Name="label_favorites"  Content="Lista de Deseos" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="White"/>
-                <StackPanel x:Name="spFavoritesEdition" Orientation="Horizontal"
-                                 Grid.Row="0" Grid.ColumnSpan="2"
-                                 Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                    <Button x:Name="btnDeleteFAvorite" Width="50" Height="50" Click="btnDeleteFavorite_Click">
-                        <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Button>
-
-                </StackPanel>
-                <ListBox x:Name="listbox_favorites" Height="545" Opacity="0.6" FontSize="18"/>
-
-            </StackPanel>
-
-
-
-
+            <!-- Rectángulo gris oscuro -->
         </StackPanel>
+
+        
 
 
 

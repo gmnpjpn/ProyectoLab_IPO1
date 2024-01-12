@@ -40,3 +40,5 @@ C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\About
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\About.baml
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\PurchaseFormWindow.g.cs
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\PurchaseFormWindow.baml
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AdminPanel.g.cs
+C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\obj\Debug\AdminPanel.baml

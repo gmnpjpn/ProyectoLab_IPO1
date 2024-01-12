@@ -21,7 +21,7 @@ namespace ProyectoIPO_Lab2324
         public string Country => txtCountry.Text;
         public string Likes => txtLikes.Text;
         public string Puntuation => txtPuntuation.Text;
-        public string Pvp => txtPvp.Text;
+        public String Pvp => txtPvp.Text;
         public string Stock => txtStock.Text;
         public Uri Cover => new Uri(txtCover.Text, UriKind.RelativeOrAbsolute);
 

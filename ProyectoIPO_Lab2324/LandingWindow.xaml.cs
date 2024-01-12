@@ -177,10 +177,20 @@ namespace ProyectoIPO_Lab2324
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userwindow = new UserWindow();
-            WindowManager.UserWindowInstance = userwindow;
-            userwindow.Show();
-            this.Hide();
+            if (GlobalData.Username == "admin")
+            {
+                AdminPanel adminPanel = new AdminPanel();
+                WindowManager.AdminPanelInstance = adminPanel;
+                adminPanel.Show();
+                this.Hide();
+            }
+            else
+            {
+                UserWindow userwindow = new UserWindow();
+                WindowManager.UserWindowInstance = userwindow;
+                userwindow.Show();
+                this.Hide();
+            }
         }
 
         private void btnContact_Click(object sender, RoutedEventArgs e)
@@ -344,16 +354,18 @@ namespace ProyectoIPO_Lab2324
             if (lstAlbumList.SelectedItem != null && lstAlbumList.SelectedItem is Album selectedAlbum)
             {
 
-                bool existsInShoppingCart = GlobalData.ShoppingCartList.Any(a =>
-                    a.Name == selectedAlbum.Name &&
-                    a.Author == selectedAlbum.Author
-                );
+                bool existsInShoppingCart = GlobalData.ShoppingCartList.Any(a => a.Name == selectedAlbum.Name && a.Author == selectedAlbum.Author);
 
                 if (!existsInShoppingCart)
                 {
                     GlobalData.ShoppingCartList.Add(selectedAlbum);
-                    MessageBox.Show("Añadido correctamente al carrito de compra.", "Añadido al carrito");
 
+                    if (Double.TryParse(selectedAlbum.Pvp, out double albumPvp))
+                    {
+                        GlobalData.totalPrice += albumPvp;
+                    }
+                   
+                    MessageBox.Show("Añadido correctamente al carrito de compra.", "Añadido al carrito");
                 }
                 else
                 {

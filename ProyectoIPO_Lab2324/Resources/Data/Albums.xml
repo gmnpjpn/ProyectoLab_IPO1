@@ -9,7 +9,7 @@
 		   Country="USA"
 		   Likes="12"
 		   Puntuation="8.8"
-		   Pvp="39,89€"
+		   Pvp="39.89"
 		   Stock="24"
 		   previewPath="./Resources/Music/ShakeItOff.mp3">
 
@@ -51,7 +51,7 @@
 		   Country="UK"
 		   Likes="8"
 		   Puntuation="9.0"
-		   Pvp="34€"
+		   Pvp="34"
 		   Stock="31"
 		   previewPath="./Resources/Music/HereComesTheSun.mp3">
 
@@ -91,7 +91,7 @@
 		   Country="USA"
 		   Likes="20"
 		   Puntuation="8.1"
-		   Pvp="34€"
+		   Pvp="34"
 		   Stock="31"
 		   previewPath="./Resources/Music/MyWay.mp3">
 
@@ -125,7 +125,7 @@
 		   Country="España"
 		   Likes="29"
 		   Puntuation="7.5"
-		   Pvp="29€"
+		   Pvp="29"
 		   Stock="12"
 		   previewPath="./Resources/Music/150Canciones.mp3">
 
@@ -159,7 +159,7 @@
 		   Country="España"
 		   Likes="20"
 		   Puntuation="8.1"
-		   Pvp="20€"
+		   Pvp="20"
 		   Stock="31"
 		   previewPath="./Resources/Music/PlayaDelIngles.mp3">
 

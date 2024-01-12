@@ -30,7 +30,7 @@ namespace ProyectoIPO_Lab2324
             listbox_shopping_cart.ItemsSource = GlobalData.ShoppingCartList;
             listbox_shopping_cart.DisplayMemberPath = "Name";
 
-            // add();
+            //add();
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
@@ -74,12 +74,11 @@ namespace ProyectoIPO_Lab2324
 
         private void buy_button_Click(object sender, RoutedEventArgs e)
         {
-            // Crear una instancia de la ventana para agregar un álbum
+            // Crear una instancia de la ventana para comprar un álbum
             PurchaseFormWindow purchaseFormWindow = new PurchaseFormWindow();
             // Mostrar la ventana como un diálogo modal
             bool? result = purchaseFormWindow.ShowDialog();
 
-            GlobalData.ShoppingCartList.Clear();
             listbox_shopping_cart.ItemsSource = GlobalData.ShoppingCartList;
             listbox_shopping_cart.DisplayMemberPath = "Name";
 
@@ -104,18 +103,28 @@ namespace ProyectoIPO_Lab2324
             }
         }
 
+        private void bt_clear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         /* private void add()
          {
              double add = 0;
-             Album album = new Album();
-             for (int i = 0; i < GlobalData.ShoppingCartList.Count; i++)
+             String aux = "";
+
+             foreach (Album album in GlobalData.ShoppingCartList)
              {
-                 //album = listbox_shopping_cart.Items.GetItemAt(i);
-                 add = Convert.ToDouble(listbox_shopping_cart.Items.GetItemAt(i));
+                 aux = album.Pvp.Length.ToString();
+                 aux.Remove(aux.Length-1);
+                 add = Convert.ToDouble(aux);
                  add += add;
              }
-             tbPvp.Text = add.ToString(Name);
+
+             tbPvp.Text = add.ToString();
+
          }
         */
+
     }
 }

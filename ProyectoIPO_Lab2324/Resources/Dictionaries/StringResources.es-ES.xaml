@@ -68,7 +68,7 @@
 
     <!-- Shopping Cart Window -->
     <sys:String x:Key="title_sc_label">Discos añadidos a su carrito:</sys:String>
-    <sys:String x:Key="price_label_sc">Precio total:</sys:String>
+    <sys:String x:Key="price_label_sc">Precio del artículo:</sys:String>
     <sys:String x:Key="buy_button_sc">Comprar</sys:String>
 
 </ResourceDictionary>

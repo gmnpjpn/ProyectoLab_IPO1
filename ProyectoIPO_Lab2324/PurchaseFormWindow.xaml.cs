@@ -44,6 +44,15 @@ namespace ProyectoIPO_Lab2324
                 return; // Detiene la ejecución si faltan campos obligatorios
             }
 
+
+
+            foreach (Album album in GlobalData.ShoppingCartList)
+            {
+                GlobalData.OrdersHistoryList.Add(album);
+            }
+
+            GlobalData.ShoppingCartList.Clear();
+
             MessageBox.Show("Pago realizado con éxito, disfrute de su compra", "Compra realizada");
             DialogResult = true;
             Close();

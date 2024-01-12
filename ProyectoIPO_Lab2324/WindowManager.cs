@@ -14,5 +14,6 @@ namespace ProyectoIPO_Lab2324
         public static ContactWindow ContactWindowInstance { get; set; }
         public static FaqsWindow FaqsWindowInstance { get; set; }
         public static ShoppingCartWindow ShoppingCartWindowInstance { get; set;}
+        public static AdminPanel AdminPanelInstance { get; set; }
     }
 }
