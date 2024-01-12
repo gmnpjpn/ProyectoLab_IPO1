@@ -44,9 +44,10 @@ namespace ProyectoIPO_Lab2324
 
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
-                var newFaq = new Faq("", "");
+                var newFaq = new Faq();
 
                 newFaq.Title = node.Attributes["Title"].Value;
+                newFaq.ListTitle = node.Attributes["ListTitle"].Value;
                 newFaq.Content = node.Attributes["Content"].Value;
 
                 faqList.Add(newFaq);

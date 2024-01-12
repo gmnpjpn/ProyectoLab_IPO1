@@ -14,7 +14,7 @@ namespace ProyectoIPO_Lab2324
         public static List<Album> ShoppingCartList { get; set; }
         public static String Username { get; set; }
         public static String CurrentDateTime { get; set; }
-        public static Boolean isDataLoaded { get; set; } = false;
+        public static int counterLanding { get; set; } = 0;
     
         static GlobalData()
         {

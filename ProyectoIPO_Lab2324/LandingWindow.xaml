@@ -139,7 +139,14 @@
                                    HorizontalAlignment="Left"
                                    Margin="5" Stretch="Fill"
                                    Source="{Binding SelectedItem.Cover, ElementName=lstAlbumList}"
-                                   Cursor="Hand"/>
+                                   Cursor="Hand">
+
+                                <Image.ToolTip>
+                                    <ToolTip Content="{DynamicResource tooltip_cover}" />
+                                </Image.ToolTip>
+
+
+                            </Image>
 
 
 
@@ -248,7 +255,7 @@
                                 <Image Source="/Resources/Toolbar/add_c.png" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
 
-                            <Button x:Name="btnDeleteArtist" Width="50" Height="50">
+                            <Button x:Name="btnDeleteArtist" Width="50" Height="50" Click="btnDeleteArtist_Click">
                                 <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Button>
 
@@ -297,11 +304,11 @@
 
                         <StackPanel x:Name="spArtistDetail" Width="521" Orientation="Vertical">
 
-                            <Label x:Name="lblArtisticName" FontWeight="Bold" FontSize="20"
-                                   Content="{Binding SelectedItem.ArtisticName, ElementName=lstArtistList}"/>
+                            <TextBox x:Name="tbArtisticName" FontWeight="Bold" FontSize="20"
+                                   Text="{Binding SelectedItem.ArtisticName, ElementName=lstArtistList}"/>
 
-                            <Label x:Name="lblRealName" FontWeight="Normal" FontSize="15"
-                                   Content="{Binding SelectedItem.RealName, ElementName=lstArtistList}"/>
+                            <TextBox x:Name="tbRealName" FontWeight="Normal" FontSize="15"
+                                   Text="{Binding SelectedItem.RealName, ElementName=lstArtistList}"/>
 
                             <Image x:Name="imgArtist"
                                    Height="200" Width="180"

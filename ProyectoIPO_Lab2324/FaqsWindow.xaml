@@ -62,7 +62,7 @@
                             <DataTemplate>
                                 <StackPanel Height="30" Orientation="Horizontal">
                                     <TextBlock Padding="2" Margin="10, 0, 0, 0"
-                                        Text="{Binding Title}" />
+                                        Text="{Binding ListTitle}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -88,7 +88,7 @@
 
                     </ListBox>
 
-                    <StackPanel x:Name="spDetail" Width="426" Orientation="Vertical">
+                    <StackPanel x:Name="spDetail" Width="1031" Orientation="Vertical">
                         <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
                            Content="{Binding ElementName=lstFaqList, Path=SelectedItem.Title}"/>
 

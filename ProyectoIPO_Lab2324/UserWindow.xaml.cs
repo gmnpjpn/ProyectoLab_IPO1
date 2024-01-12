@@ -69,5 +69,26 @@ namespace ProyectoIPO_Lab2324
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void btnDeleteFavorite_Click(object sender, RoutedEventArgs e)
+        {
+
+            Album selectedAlbum = listbox_favorites.SelectedItem as Album;
+
+            if (listbox_favorites.SelectedItem != null)
+            {
+                // Eliminar el álbum seleccionado de la lista de álbumes
+                GlobalData.FavoritesList.Remove(selectedAlbum);
+
+                // Actualizar la lista de álbumes
+                listbox_favorites.ItemsSource = null;
+                listbox_favorites.ItemsSource = GlobalData.FavoritesList;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un favorito para eliminar.", "Álbum no seleccionado");
+            }
+        }
+
     }
 }

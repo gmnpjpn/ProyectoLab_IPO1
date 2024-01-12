@@ -2,17 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <sys:String x:Key="button_about">Sobre la App</sys:String>
     <sys:String x:Key="WindowTitle">VinylShop ES</sys:String>
     <sys:String x:Key="label_loginTitle">VinylShop ES</sys:String>
     <sys:String x:Key="label_userTitle">Nombre de Usuario</sys:String>
     <sys:String x:Key="label_passwordTitle">Contraseña</sys:String>
     <sys:String x:Key="button_login">Iniciar Sesion</sys:String>
     <sys:String x:Key="label_warning">Credenciales Incorrectas</sys:String>
-
     <sys:String x:Key="tb_contact">Contacto</sys:String>
     <sys:String x:Key="tb_shoppingCart">Carrito</sys:String>
     <sys:String x:Key="tb_logout">Cerrar Sesión</sys:String>
-    <sys:String x:Key="bt_buyAlbum">Comprar Álbum</sys:String>
+    <sys:String x:Key="bt_buyAlbum">Añadir al carrito</sys:String>
     <sys:String x:Key="bt_fav">Añadir a Favoritos</sys:String>
     <sys:String x:Key="bt_changeCover">Cambiar Cover</sys:String>
     <sys:String x:Key="lb_preview">Muestra del álbum</sys:String>
@@ -37,10 +37,20 @@
     <sys:String x:Key="lb_artist_X_Twitter">Usuario de X/Twitter:</sys:String>
     <sys:String x:Key="lb_artistAlbumTitle">Albumes del autor/a:</sys:String>
     <sys:String x:Key="lb_groupComponents">Componentes del Grupo:</sys:String>
-
     <sys:String x:Key="AddArtist">Añadir Artista</sys:String>
+    <sys:String x:Key="lb_artisticName">Nombre Artistico:</sys:String>
+    <sys:String x:Key="lb_realName">Nombre Real:</sys:String>
     <sys:String x:Key="AddAlbum">Añadir Album</sys:String>
-    
+    <sys:String x:Key="lb_likes">Cantidad de "Me Gusta":</sys:String>
+    <sys:String x:Key="lb_image">Imagen:</sys:String>
+    <sys:String x:Key="btn_add">Agregar:</sys:String>
+    <sys:String x:Key="btn_close">Cerrar</sys:String>
+    <sys:String x:Key="lb_about">Sobre la App</sys:String>
+    <sys:String x:Key="lb_aboutAuthors">Autores: Germán Pajarero y Benedicto Tapetado</sys:String>
+    <sys:String x:Key="lb_creationDate">Fecha de Realización: 12/01/2024</sys:String>
+    <sys:String x:Key="lb_version">Versión: 1.0</sys:String>
+    <sys:String x:Key="tooltip_cover">Caratula del Album</sys:String>
+    <sys:String x:Key="lbl_history">Historial de Pedidos</sys:String>
 
 
 

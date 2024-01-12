@@ -2,17 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <sys:String x:Key="button_about">About the App</sys:String>
     <sys:String x:Key="WindowTitle">VinylShop USA</sys:String>
     <sys:String x:Key="label_loginTitle">VinylShop USA</sys:String>
     <sys:String x:Key="label_userTitle">Username</sys:String>
     <sys:String x:Key="label_passwordTitle">Password</sys:String>
     <sys:String x:Key="button_login">Sign In</sys:String>
     <sys:String x:Key="label_warning">Wrong Credentials</sys:String>
-
     <sys:String x:Key="tb_contact">Contact</sys:String>
     <sys:String x:Key="tb_shoppingCart">Shopping Cart</sys:String>
     <sys:String x:Key="tb_logout">Logout</sys:String>
-    <sys:String x:Key="bt_buyAlbum">Buy Album</sys:String>
+    <sys:String x:Key="bt_buyAlbum">Add to Shopping Cart</sys:String>
     <sys:String x:Key="bt_fav">Add to Favorites</sys:String>
     <sys:String x:Key="bt_changeCover">Change Cover</sys:String>
     <sys:String x:Key="lb_preview">Album Preview</sys:String>
@@ -37,9 +37,21 @@
     <sys:String x:Key="lb_artist_X_Twitter">X/Twitter User:</sys:String>
     <sys:String x:Key="lb_artistAlbumTitle">Author's Albums:</sys:String>
     <sys:String x:Key="lb_groupComponents">Group Components:</sys:String>
-
     <sys:String x:Key="AddArtist">Add Artists</sys:String>
+    <sys:String x:Key="lb_artisticName">Artistic Name:</sys:String>
+    <sys:String x:Key="lb_realName">Real Name:</sys:String>
     <sys:String x:Key="AddAlbum">Add Albums</sys:String>
+    <sys:String x:Key="lb_likes">Like's Number:</sys:String>
+    <sys:String x:Key="lb_image">Image:</sys:String>
+    <sys:String x:Key="btn_add">Add:</sys:String>
+    <sys:String x:Key="btn_close">Close</sys:String>
+    <sys:String x:Key="lb_about">About the App</sys:String>
+    <sys:String x:Key="lb_aboutAuthors">Authors: Germán Pajarero y Benedicto Tapetado</sys:String>
+    <sys:String x:Key="lb_creationDate">Creation Date: 12/01/2024</sys:String>
+    <sys:String x:Key="lb_version">Version: 1.0</sys:String>
+    <sys:String x:Key="tooltip_cover">Album's cover</sys:String>
+    <sys:String x:Key="lbl_history">Order History</sys:String>
+
 
 
 </ResourceDictionary>

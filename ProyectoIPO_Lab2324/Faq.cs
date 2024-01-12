@@ -9,12 +9,14 @@ namespace ProyectoIPO_Lab2324
     class Faq
     {
         public string Title { set ; get; }
+        public string ListTitle { set ; get; }
         public string Content { set ; get; }
 
-        public Faq(string title, string content)
+        public Faq()
         {
-            Title = title;
-            Content = content;
+            Title = "";
+            ListTitle = "";
+            Content = "";
         }
     }
 }

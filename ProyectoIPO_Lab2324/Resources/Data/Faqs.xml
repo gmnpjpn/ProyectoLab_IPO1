@@ -1,42 +1,17 @@
 ﻿<Faqs>
-	<Faq Title="Pregunta Frecuente 1"
-		 Content="Solución a la pregunta frecuente 1">
+	<Faq Title="¿Cómo puedo realizar un pedido en la tienda online de vinilos?"
+		 ListTitle="1"
+		 Content=" Para realizar un pedido en nuestra tienda online de vinilos, simplemente navega por nuestro catálogo, selecciona los vinilos que te interesen y agrégales al carrito de compras.">
 	</Faq>
 	
-	<Faq Title="Pregunta Frecuente 2"
-		 Content="Solución a la pregunta frecuente 2">
+	<Faq Title="¿Cuál es el tiempo estimado de entrega de los vinilos comprados en la tienda?"
+		 ListTitle="2"
+		 Content="El tiempo estimado de entrega varía según tu ubicación y las opciones de envío seleccionadas durante el proceso de compra. ">
 	</Faq>
 	
-	<Faq Title="Pregunta Frecuente 3"
-		 Content="Solución a la pregunta frecuente 3">
-	</Faq>
-	
-	<Faq Title="Pregunta Frecuente 4"
-		 Content="Solución a la pregunta frecuente 4">
-	</Faq>
-	
-	<Faq Title="Pregunta Frecuente 5"
-		 Content="Solución a la pregunta frecuente 5">
-	</Faq>
-
-	<Faq Title="Pregunta Frecuente 6"
-		 Content="Solución a la pregunta frecuente 6">
-	</Faq>
-
-	<Faq Title="Pregunta Frecuente 7"
-		 Content="Solución a la pregunta frecuente 7">
-	</Faq>
-
-	<Faq Title="Pregunta Frecuente 8"
-		 Content="Solución a la pregunta frecuente 8">
-	</Faq>
-
-	<Faq Title="Pregunta Frecuente 9"
-		 Content="Solución a la pregunta frecuente 9">
-	</Faq>
-
-	<Faq Title="Pregunta Frecuente 10"
-		 Content="Solución a la pregunta frecuente 10">
+	<Faq Title="¿Mi pago se realiza de forma segura?"
+		 ListTitle="3"
+		 Content="Si, la plataforma de pago que utilizamos cuenta con encriptación punto a punto.">
 	</Faq>
 	
 </Faqs>

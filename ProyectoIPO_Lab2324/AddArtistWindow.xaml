@@ -9,42 +9,47 @@
     <Grid>
         <StackPanel Margin="20">
 
-            <Label Content="Nombre Artístico:*" FontWeight="Bold" />
-            <TextBox x:Name="txtAlbumName" />
+            <Label Content="{DynamicResource lb_artisticName}" FontWeight="Bold" />
+            <TextBox x:Name="txtArtisticName" />
 
-            <Label Content="Nombre Real:*" FontWeight="Bold" />
-            <TextBox x:Name="txtArtistName" />
+            <Label Content="{DynamicResource lb_realName}" FontWeight="Bold" />
+            <TextBox x:Name="txtRealName" />
 
-            <Label Content="¿Componentes del grupo?:" FontWeight="Bold" />
-            <TextBox x:Name="txtReleaseYear" />
+            <Label Content="{DynamicResource lb_birthday}" FontWeight="Bold" />
+            <TextBox x:Name="txtBirthday" />
 
-            <Label Content="Cumpleaños:" FontWeight="Bold" />
+            <Label Content="{DynamicResource lb_description}" FontWeight="Bold" />
+            <TextBox x:Name="txtDescription" />
+
+            <Label Content="{DynamicResource lb_genre}" FontWeight="Bold" />
             <TextBox x:Name="txtGenre" />
 
-            <Label Content="Descripción:*" FontWeight="Bold" />
-            <TextBox x:Name="txtRecordLabel" />
+            <Label Content="{DynamicResource lb_artistInstagram}" FontWeight="Bold" />
+            <TextBox x:Name="txtInstagram" />
 
-            <Label Content="Genero:*" FontWeight="Bold" />
-            <TextBox x:Name="txtFormat" />
+            <Label Content="{DynamicResource lb_artist_X_Twitter}" FontWeight="Bold" />
+            <TextBox x:Name="txtX_Twitter" />
 
-            <Label Content="Instagram:" FontWeight="Bold" />
-            <TextBox x:Name="txtCountry" />
-
-            <Label Content="X_Twitter:" FontWeight="Bold" />
+            <Label Content="{DynamicResource lb_likes}" FontWeight="Bold" />
             <TextBox x:Name="txtLikes" />
 
-            <Label Content="Likes:" FontWeight="Bold" />
-            <TextBox x:Name="txtPuntuation" />
-
-            <Label Content="Cover (URI):*" FontWeight="Bold" />
+            <Label Content="{DynamicResource lb_image}" FontWeight="Bold" />
             <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="txtCover" />
+                <TextBox x:Name="txtImage" />
                 <Button Content="Seleccionar Imagen" Margin="5,0,0,0" Click="btnSelectImage_Click"/>
             </StackPanel>
 
-
-
-            <Button Content="Agregar" HorizontalAlignment="Center" Margin="10,20,10,0" Click="btnAdd_Click"/>
+            <Button Content="{DynamicResource btn_add}" HorizontalAlignment="Center" Margin="10,20,10,0" Click="btnAdd_Click"/>
         </StackPanel>
+
+
+        <!-- Language ComboBox -->
+        <ComboBox x:Name="combobox_language" Margin="20,512,839,20" TabIndex="3"
+                  SelectionChanged="combobox_language_SelectionChanged" FontFamily="Berlin Sans FB" FontSize="25"
+                  SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Opacity="0.6">
+            <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+            <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+        </ComboBox>
+
     </Grid>
 </Window>
