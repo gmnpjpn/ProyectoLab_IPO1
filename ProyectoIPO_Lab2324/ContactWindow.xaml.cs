@@ -47,10 +47,11 @@ namespace ProyectoIPO_Lab2324
                 img_sq_cr.Visibility = Visibility.Visible;
                 img_sq_cu.Visibility = Visibility.Visible;
                 label_add_pin.Visibility = Visibility.Visible;
+                btnShoppingCart.Visibility = Visibility.Collapsed;
             }
         }
 
-                private void btnHome_Click(object sender, RoutedEventArgs e)
+        private void btnHome_Click(object sender, RoutedEventArgs e)
         {
 
             if (WindowManager.LandingWindowInstance != null && !WindowManager.LandingWindowInstance.IsVisible)
@@ -111,7 +112,7 @@ namespace ProyectoIPO_Lab2324
             {
                 tbEmail.Text = "";
                 tbSuggestion.Text = "";
-                
+
                 if (selectedText.Equals("ES") || selectedText.Equals("SP"))
                 {
                     MessageBox.Show("¡Sugerencia enviada!", "Envío de sugerencia");
@@ -120,7 +121,7 @@ namespace ProyectoIPO_Lab2324
                 {
                     MessageBox.Show("Suggestion sent succesfully!", "Sending message");
                 }
-                    
+
             }
         }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - Página de Contacto" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" Closing="StopAtClose">
+        Title="{DynamicResource WindowTitle}" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" Closing="StopAtClose">
     <Grid x:Name="gridContact">
         <Grid.RowDefinitions>
 

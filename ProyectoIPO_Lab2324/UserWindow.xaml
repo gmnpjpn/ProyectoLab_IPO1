@@ -57,10 +57,34 @@
 
             </StackPanel>
         </Button>
-        <StackPanel x:Name="stackPanel_Favorites" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="4" Margin="10,10,10,10">
+        <StackPanel x:Name="stackPanel_Favorites" Margin="10,10,11,10" Orientation="Horizontal" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="7">
+
+            <StackPanel x:Name="sp_HistoryList" Orientation="Vertical">
+                <Label x:Name="label_history"  Content="{DynamicResource lbl_history}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="White"/>
+                <ListBox x:Name="listbox_History" Height="545" Opacity="0.6" FontSize="18"/>
+
+            </StackPanel>
+
+            <StackPanel x:Name="sp_HistoryDetail" Orientation="Vertical" Width="576">
+                <Label x:Name="label_HistoryDetail"  Content="Lista de Deseos" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="White"/>
+
+            </StackPanel>
+
+            <StackPanel x:Name="sp_Favorites" Orientation="Vertical" Width="364">
+                <Label x:Name="label_favorites"  Content="Lista de Deseos" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35" Foreground="White"/>
+                <StackPanel x:Name="spFavoritesEdition" Orientation="Horizontal"
+                                 Grid.Row="0" Grid.ColumnSpan="2"
+                                 Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <Button x:Name="btnDeleteFAvorite" Width="50" Height="50" Click="btnDeleteFavorite_Click">
+                        <Image Source="/Resources/Toolbar/remove_c.png" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Button>
+
+                </StackPanel>
+                <ListBox x:Name="listbox_favorites" Height="545" Opacity="0.6" FontSize="18"/>
+
+            </StackPanel>
             
-            <Label x:Name="label_favorites"  Content="Lista de Deseos" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Foreground="White"/>
-            <ListBox x:Name="listbox_favorites" Height="545" Opacity="0.6" FontSize="18"/>
 
 
 

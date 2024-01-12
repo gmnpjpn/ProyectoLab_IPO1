@@ -50,19 +50,19 @@
             </StackPanel>
         </Button>
 
-        <TabControl x:Name="tcFaqs" Margin="124,5,125,8" Grid.Row="1">
+        <TabControl x:Name="tcFaqs" Margin="10,3,10,10" Grid.Row="1">
             <TabItem Header="" IsSelected="True">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <ListBox x:Name="lstFaqList"
                          SelectedIndex="0"
-                         Width="377" Margin="5"
+                         Width="200" Margin="5"
                          AlternationCount="2">
 
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Height="30" Orientation="Horizontal">
                                     <TextBlock Padding="2" Margin="10, 0, 0, 0"
-                                        Text="{Binding Title}" />
+                                        Text="{Binding ListTitle}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -88,22 +88,22 @@
 
                     </ListBox>
 
-                    <StackPanel x:Name="spDetail" Width="628" Orientation="Vertical" Margin="0,5,0,0">
+                    <StackPanel x:Name="spDetail" Width="1031" Orientation="Vertical">
                         <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
-                           Content="{Binding ElementName=lstFaqList, Path=SelectedItem.Title}" Margin="4,0,-4,0"/>
+                           Content="{Binding ElementName=lstFaqList, Path=SelectedItem.Title}"/>
 
-                        <Label FontWeight="Bold" Margin="4,0,-4,0">Solución:</Label>
-                        <TextBlock x:Name="tbSolution" FontStretch="Expanded" TextAlignment="Justify" TextWrapping="Wrap"
-                           Text="{Binding ElementName=lstFaqList, Path=SelectedItem.Content}" Height="259" Margin="10,0"/>
+                        <Label FontWeight="Bold">Solución:</Label>
+                        <TextBlock x:Name="tbSolution"
+                           Text="{Binding ElementName=lstFaqList, Path=SelectedItem.Content}"/>
 
                     </StackPanel>
                 </StackPanel>
 
             </TabItem>
-
-
+            
         </TabControl>
-        <Rectangle x:Name="rec_fw" Fill="#FFB1B6BC" Stroke="#FFB1B6BC" Margin="124,480,125,0" Grid.Row="1"/>
-        <Image HorizontalAlignment="Left" Height="155" Margin="720,480,0,0" Grid.Row="1" VerticalAlignment="Top" Width="435" Source="Resources/Faqs/faqs_banner_rect.jpg" OpacityMask="Black"/>
+
+        <Image x:Name="Image" Margin="487,377,259,39" Grid.Row="1" Source="/Resources/Faqs/vinilos.png"/>
+
     </Grid>
 </Window>

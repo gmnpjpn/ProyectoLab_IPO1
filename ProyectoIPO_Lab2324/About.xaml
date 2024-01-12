@@ -1,0 +1,33 @@
+﻿<Window x:Class="ProyectoIPO_Lab2324.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
+        mc:Ignorable="d"
+        Title="{DynamicResource WindowTitle}" Height="300" Width="400" WindowStartupLocation="CenterScreen" Icon="/Resources/program_icon.ico">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Label Content="{DynamicResource lb_about}" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        <TextBlock>
+            <Label Content="{DynamicResource lb_aboutAuthors}"/>
+            <LineBreak/>
+            <Label Content="{DynamicResource lb_creationDate}"/>
+            <LineBreak/>
+            <Label Content="{DynamicResource lb_version}"/>
+        </TextBlock>
+        </StackPanel>
+
+        <!-- Language ComboBox -->
+        <ComboBox x:Name="combobox_language" Margin="10,219,307,10" TabIndex="3"
+                  SelectionChanged="combobox_language_SelectionChanged" FontFamily="Berlin Sans FB" FontSize="25"
+                  SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Opacity="0.6">
+            <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+            <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+        </ComboBox>
+
+
+
+    </Grid>
+</Window>

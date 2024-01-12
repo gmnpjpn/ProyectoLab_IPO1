@@ -30,7 +30,7 @@ namespace ProyectoIPO_Lab2324
             listbox_shopping_cart.ItemsSource = GlobalData.ShoppingCartList;
             listbox_shopping_cart.DisplayMemberPath = "Name";
 
-           // add();
+            // add();
         }
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {

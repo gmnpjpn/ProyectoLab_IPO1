@@ -38,7 +38,7 @@ namespace ProyectoIPO_Lab2324
                 string.IsNullOrWhiteSpace(txtCity_pf.Text) ||
                 string.IsNullOrWhiteSpace(txtAddress_pf.Text) ||
                 string.IsNullOrWhiteSpace(txtCardNumber_pf.Text) ||
-                string.IsNullOrWhiteSpace(txtCardName_pf.Text)) 
+                string.IsNullOrWhiteSpace(txtCardName_pf.Text))
             {
                 MessageBox.Show("Por favor, completa todos los campos obligatorios (*) antes de intentar el pago.", "Campos obligatorios vacíos", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return; // Detiene la ejecución si faltan campos obligatorios
