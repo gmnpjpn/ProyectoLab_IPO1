@@ -103,5 +103,7 @@
             
         </TabControl>
 
+        <Image x:Name="Image" Margin="487,377,259,39" Grid.Row="1" Source="/Resources/Faqs/vinilos.png"/>
+
     </Grid>
 </Window>

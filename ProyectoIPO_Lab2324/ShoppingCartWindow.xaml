@@ -15,6 +15,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="143*"/>
             <ColumnDefinition Width="198*"/>
+
             <ColumnDefinition Width="619*"/>
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="85*"/>
@@ -34,7 +35,7 @@
         <Button x:Name="btnContact" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="3" Foreground="{x:Null}" Grid.RowSpan="2" Click="btnContact_Click">
             <StackPanel>
                 <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="37.8" />
-                <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
+                <TextBlock x:Name="TextBlock_contact" Text="{DynamicResource tb_contact}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
         <Button x:Name="btnFaqs" Margin="10,9,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnFaqs_Click" Grid.Column="4" Foreground="{x:Null}" Grid.RowSpan="2">
@@ -47,15 +48,30 @@
         <Button x:Name="btnShoppingCart" Margin="10,10,10,10" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="5" Foreground="{x:Null}" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="49" Height="38" RenderTransformOrigin="0.592,0.5" />
-                <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Margin="1,1,1,1"/>
+                <TextBlock x:Name="TextBlock_ShoppingCart" Text="{DynamicResource tb_shoppingCart}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Margin="1,1,1,1"/>
             </StackPanel>
         </Button>
         <Button x:Name="btnLogout" Click="btnLogout_Click" Margin="10,10,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="6" Foreground="{x:Null}" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="image_logout" Source="\Resources\logout_icon.png" Width="49" Height="38" />
-                <TextBlock x:Name="TextBlock_Logout" Text="Cerrar Sesión" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
+                <TextBlock x:Name="TextBlock_Logout" Text="{DynamicResource tb_logout}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
 
             </StackPanel>
         </Button>
+        <ListBox x:Name="listbox_shopping_cart" Grid.Column="2" HorizontalAlignment="Left" Height="377" Margin="10,104,0,0" Grid.Row="2" VerticalAlignment="Top" Width="586"/>
+        <Label x:Name="price_label_sc" HorizontalContentAlignment="Left" Content="{DynamicResource price_label_sc}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,490,0,0" Grid.Row="2" VerticalAlignment="Top" Height="71" Width="586" FontSize="36" Background="#FFB0A8A8" BorderBrush="Black" Foreground="Black"/>
+        <Button x:Name="buy_button_sc" Grid.ColumnSpan="4" Content="{DynamicResource buy_button_sc}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="59,490,0,0" Grid.Row="2" VerticalAlignment="Top" Width="239" FontSize="36" Height="71" Grid.Column="3" Click="buy_button_Click" FontWeight="Bold"/>
+        <Label x:Name="title_sc_label" FontFamily="Berlin Sans FB" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="{DynamicResource title_sc_label}" Grid.Column="1" HorizontalAlignment="Left" Margin="81,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="89" Width="835" FontSize="48" Background="{x:Null}" Foreground="White" Grid.ColumnSpan="4"/>
+
+
+        <TextBox x:Name="tbPvp" MaxLength="76" VerticalContentAlignment="Center"
+         Text="{Binding SelectedItem.Pvp, ElementName=listbox_shopping_cart}" Grid.Column="2" Margin="323,490,69,56" Grid.Row="2" FontSize="36" Background="#FFB0A8A8" IsEnabled="False"/>
+
+        <ComboBox x:Name="combobox_language" Grid.Column="2" HorizontalAlignment="Center" Margin="225,3,226,7" FontFamily="Berlin Sans FB" FontSize="25"
+                  Opacity="0.6" VerticalAlignment="Center" Width="155" Grid.Row="1" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="combobox_language_SelectionChanged">
+            <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+            <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+        </ComboBox>
+
     </Grid>
 </Window>

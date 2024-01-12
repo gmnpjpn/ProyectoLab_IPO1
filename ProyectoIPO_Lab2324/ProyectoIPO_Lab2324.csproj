@@ -76,6 +76,9 @@
       <DependentUpon>ContactWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GlobalData.cs" />
+    <Compile Include="PurchaseFormWindow.xaml.cs">
+      <DependentUpon>PurchaseFormWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCartWindow.xaml.cs">
       <DependentUpon>ShoppingCartWindow.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PurchaseFormWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,6 +251,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Faqs\faqs_banner_rect.jpg" />
+    <Resource Include="Resources\Faqs\vinilos.png" />
     <Content Include="Resources\Music\150Canciones.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

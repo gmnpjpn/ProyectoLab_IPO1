@@ -13,5 +13,70 @@
 		 ListTitle="3"
 		 Content="Si, la plataforma de pago que utilizamos cuenta con encriptación punto a punto.">
 	</Faq>
+
+	<Faq Title="¿Qué tipos de vinilos puedo encontrar en la aplicación?"
+	 ListTitle="4"
+	 Content="Explora nuestra amplia selección de vinilos, que abarca géneros musicales como rock, pop, jazz, música clásica y más. También ofrecemos ediciones especiales y vinilos de artistas emergentes.">
+	</Faq>
+
+	<Faq Title="¿Cuál es la calidad de los vinilos que ofrecen?"
+	 ListTitle="5"
+	 Content="Aceptamos devoluciones dentro de un plazo determinado después de la entrega. Asegúrate de revisar nuestra política de devoluciones para obtener detalles sobre el proceso y las condiciones.">
+	</Faq>
+
+	<Faq Title="¿Ofrecemos vinilos de edición limitada o exclusivos?"
+	 ListTitle="6"
+	 Content="En un futuro contaremos con una sección especial de vinilos de edición limitada y exclusivos. Estos productos son ideales para coleccionistas y amantes de la música que buscan algo único.">
+	</Faq>
 	
 </Faqs>
+
+
+
+
+
+
+
+
+<!--﻿<Faqs>
+	<Faq Title="1.¿Qué tipos de vinilos puedo encontrar en la aplicación?"
+		 Content="Explora nuestra amplia selección de vinilos, que abarca géneros musicales como rock, pop, jazz, música clásica y más. También ofrecemos ediciones especiales y vinilos de artistas emergentes.">
+	</Faq>
+
+	<Faq Title="2.¿Cómo puedo buscar vinilos específicos?"
+		 Content="Utiliza la sección de inicio (icono de casa en la esquina superior izquierda) para visitar nuestro catálogo y encontrar vinilos por artista o álbum. Explora nuestra tienda y descubre el vinilo que más se acomode a tus gustos">
+	</Faq>
+
+	<Faq Title="3.¿Cuál es la calidad de los vinilos que ofrecen?"
+		 Content="Nos comprometemos a proporcionar vinilos de alta calidad. La mayoría de nuestros productos son vinilos de 180 gramos para garantizar una reproducción de sonido excepcional.">
+	</Faq>
+
+	<Faq Title="4.¿Ofrecemos envíos internacionales?"
+		 Content="Sí, realizamos envíos internacionales. Consulta nuestras opciones de envío durante el proceso de compra para conocer los costos y tiempos de entrega estimados.">
+	</Faq>
+
+	<Faq Title="5.¿Cuál es la política de devoluciones?"
+		 Content="Aceptamos devoluciones dentro de un plazo determinado después de la entrega. Asegúrate de revisar nuestra política de devoluciones para obtener detalles sobre el proceso y las condiciones.">
+	</Faq>
+
+	<Faq Title="6.¿Cómo puedo realizar un seguimiento de mi pedido?"
+		 Content="Una vez que tu pedido sea enviado, recibirás un correo electrónico con un enlace de seguimiento. Puedes utilizar este enlace para rastrear tu pedido en tiempo real.">
+	</Faq>
+
+	<Faq Title="7.¿Ofrecemos vinilos de edición limitada o exclusivos?"
+		 Content="En un futuro contaremos con una sección especial de vinilos de edición limitada y exclusivos. Estos productos son ideales para coleccionistas y amantes de la música que buscan algo único.">
+	</Faq>
+
+	<Faq Title="8.¿Cuáles son los métodos de pago aceptados?"
+		 Content="Aceptamos diversos métodos de pago, incluyendo tarjetas de crédito, débito y opciones de pago en línea seguras. Consulta la página de pago para ver todas las opciones disponibles.">
+	</Faq>
+
+	<Faq Title="9.¿Puedo cancelar mi pedido después de realizar la compra?"
+		 Content="Puedes cancelar tu pedido dentro de un período específico después de la compra. Consulta nuestra política de cancelación para obtener más detalles.">
+	</Faq>
+
+	<Faq Title="10.¿Cómo puedo contactar al servicio al cliente?"
+		 Content="Puedes ponerte en contacto con nuestro equipo de servicio al cliente a través del formulario de contacto en la aplicación o mediante el correo electrónico de soporte proporcionado en la sección de ayuda.">
+	</Faq>
+
+</Faqs>-->

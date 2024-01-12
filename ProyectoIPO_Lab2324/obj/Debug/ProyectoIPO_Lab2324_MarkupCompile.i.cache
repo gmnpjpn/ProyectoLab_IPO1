@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\german\clonedRepos\ProyectoLab_IPO1\ProyectoIPO_Lab2324\App.xaml
-11-119992976
+12961586607
 51437397286
-19-2001726871
+20361026794
 151937372271
-About.xaml;AddAlbumWindow.xaml;AddArtistWindow.xaml;ContactWindow.xaml;FaqsWindow.xaml;LandingWindow.xaml;LoginWindow.xaml;Resources\Dictionaries\StringResources.en-US.xaml;Resources\Dictionaries\StringResources.es-ES.xaml;ShoppingCartWindow.xaml;UserWindow.xaml;
+About.xaml;AddAlbumWindow.xaml;AddArtistWindow.xaml;ContactWindow.xaml;FaqsWindow.xaml;LandingWindow.xaml;LoginWindow.xaml;PurchaseFormWindow.xaml;Resources\Dictionaries\StringResources.en-US.xaml;Resources\Dictionaries\StringResources.es-ES.xaml;ShoppingCartWindow.xaml;UserWindow.xaml;
 
-True
+False
 

@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIPO_Lab2324"
         mc:Ignorable="d"
-        Title="VinylShop - Página de Contacto" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" Closing="StopAtClose">
+        Title="{DynamicResource WindowTitle}" Height="720" Width="1280" Icon="/Resources/program_icon.ico" MinHeight="720" MinWidth="1280" WindowStartupLocation="CenterScreen" Closing="StopAtClose">
     <Grid x:Name="gridContact">
         <Grid.RowDefinitions>
-            <RowDefinition Height="68*"/>
+
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="46*"/>
             <RowDefinition Height="95*"/>
             <RowDefinition Height="318*"/>
             <RowDefinition Height="208*"/>
@@ -17,71 +19,80 @@
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="110*"/>
             <ColumnDefinition Width="37*"/>
+
         </Grid.ColumnDefinitions>
-        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Center" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="4" Grid.ColumnSpan="3" Height="689" Width="1272"/>
-        <Rectangle x:Name="rectangle_up" Height="70" Stroke="Black" VerticalAlignment="Center" Fill="#FF3A3A3A" Grid.ColumnSpan="3" Margin="0,-1,0,94" Grid.RowSpan="2"/>
-        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnHome_Click">
+        <Image x:Name="wallpaper" VerticalAlignment="Top" HorizontalAlignment="Center" Source="/Resources/wallpaper.png" Stretch="Fill" Grid.RowSpan="5" Grid.ColumnSpan="3" Height="689" Width="1272"/>
+        <Rectangle x:Name="rectangle_up" Height="70" Stroke="Black" VerticalAlignment="Center" Fill="#FF3A3A3A" Grid.ColumnSpan="3" Margin="0,-1,0,94" Grid.RowSpan="3"/>
+        <Button x:Name="btnHome" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Height="49" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnHome_Click" Grid.RowSpan="2">
             <Image x:Name="image_home" Source="\Resources\home_icon.png" Width="49" Height="40" />
         </Button>
-        <Button x:Name="btnUser" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnUser_Click">
+        <Button x:Name="btnUser" HorizontalAlignment="Left" Margin="81,10,0,10" Width="60" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnUser_Click" Grid.RowSpan="2">
             <Image x:Name="image_user" Source="\Resources\user_icon.png" Width="49" Height="40" />
         </Button>
-        <Button x:Name="btnLogout" Click="Logout_Click" Margin="140,12,10,2" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Grid.Column="2">
+        <Button x:Name="btnLogout" Click="Logout_Click" Margin="140,12,10,2" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Grid.Column="2" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="image_logout" Source="\Resources\logout_icon.png" Width="49" Height="38" />
-                <TextBlock x:Name="TextBlock_Logout" Text="Cerrar Sesión" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
+                <TextBlock x:Name="TextBlock_Logout" Text="{DynamicResource tb_logout}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White" Height="13"/>
 
             </StackPanel>
         </Button>
-        <TextBlock x:Name="textblock_username" HorizontalAlignment="Left" Margin="146,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White" Height="22" Width="97"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
-        <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="146,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White" Height="20" Width="220"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
-        <Button x:Name="btnShoppingCart" Margin="43,10,75,4" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Grid.Column="2" Click="btnShoppingCart_Click">
+        <TextBlock x:Name="textblock_username" HorizontalAlignment="Left" Margin="146,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="20" Foreground="White" Height="22" Width="97" Grid.RowSpan="2"><Run Language="es-es" Text="yoel_arroyo"/></TextBlock>
+        <TextBlock x:Name="textblock_lastTime" HorizontalAlignment="Left" Margin="146,11.515,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Berlin Sans FB" FontSize="18" Foreground="White" Height="20" Width="220" Grid.Row="1"><Run Language="es-es" Text="Ultimo Acceso: xx-xx-xxx xx:xx"/></TextBlock>
+        <Button x:Name="btnShoppingCart" Margin="43,10,75,4" Height="Auto" Width="Auto" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Grid.Column="2" Click="btnShoppingCart_Click" Grid.RowSpan="2">
             <StackPanel>
-                <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="49" Height="40" />
-                <TextBlock x:Name="TextBlock_ShoppingCart" Text="Carrito de la compra" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
+                <Image x:Name="shoppingCart_image" Source="\Resources\shoppingcart_icon.ico" Width="48" Height="40" />
+                <TextBlock x:Name="TextBlock_ShoppingCart" Text="{DynamicResource tb_shoppingCart}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnFaqs" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="635,9,0,0" Height="58" Width="68" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnFaqs_Click" Grid.Column="1" Grid.ColumnSpan="2">
+        <Button x:Name="btnFaqs" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="635,9,0,0" Height="58" Width="68" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Click="btnFaqs_Click" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <StackPanel>
 
                 <Image x:Name="FAQS_image" Source="\Resources\faqs_icon.ico" Width="49" Height="43" />
                 <TextBlock x:Name="TextBlock_FAQS" Text="FAQS" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnContact" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="571,9,0,0" Height="58" Width="64" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Grid.Column="1">
+        <Button x:Name="btnContact" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="571,9,0,0" Height="58" Width="64" Background="#FF3A3A3A" BorderBrush="#FF3A3A3A" Grid.Column="1" Grid.RowSpan="2">
             <StackPanel>
                 <Image x:Name="Contact_image" Source="\Resources\contact_icon.ico" Width="49" Height="43" />
-                <TextBlock x:Name="TextBlock_contact" Text="Contacto" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
+                <TextBlock x:Name="TextBlock_contact" Text="{DynamicResource tb_contact}" FontSize="10" HorizontalAlignment="Center" FontFamily="Berlin Sans FB" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Image x:Name="image_map" Grid.Column="1" Margin="10" Grid.Row="2" Stretch="UniformToFill" Source="Resources/Contact/map.jpg" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Image x:Name="image_map" Grid.Column="1" Margin="10" Grid.Row="3" Stretch="UniformToFill" Source="Resources/Contact/map.jpg" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
-        <StackPanel x:Name="stpPaleta" Grid.Row="1" Grid.Column="1" Cursor="Hand" Grid.ColumnSpan="2" Background="#FF292929"/>
-        <TextBlock x:Name="textblock_info_lateral" TextWrapping="Wrap" Text="Nuestra área de operación se distribuye entre Extremadura, CLM, Valencia y Madrid. Encuéntranos siempre cerca de ti!" Foreground="#FFF9F9F9" Panel.ZIndex="3" FontSize="24" FontWeight="Bold" Grid.Column="1" Margin="100,17,106,10" Grid.Row="1" Grid.ColumnSpan="2" OpacityMask="Black"/>
+        <StackPanel x:Name="stpPaleta" Grid.Row="2" Grid.Column="1" Cursor="Hand" Grid.ColumnSpan="2" Background="#FF292929"/>
+        <TextBlock x:Name="textblock_info_lateral" TextWrapping="Wrap" Text="{DynamicResource textblock_info_lateral}" HorizontalAlignment="Center" Foreground="#FFF9F9F9" Panel.ZIndex="3" FontSize="24" FontWeight="Bold" Grid.Column="1" Margin="10,17,10,10" Grid.Row="2" OpacityMask="Black"/>
 
-        <StackPanel  x:Name="contac_info" Grid.Row="1" Margin="0,0,0,10" Grid.RowSpan="3">
+        <StackPanel  x:Name="contac_info" Grid.Row="2" Margin="0,0,0,10" Grid.RowSpan="3">
 
         </StackPanel>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="386,190,0,0" Grid.Row="2" VerticalAlignment="Top" Width="30" Source="Resources/Contact/square.jpg" AllowDrop="True" Drop="AddObject"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="596,178,0,0" Grid.Row="2" VerticalAlignment="Top" Width="30" Source="Resources/Contact/square.jpg" AllowDrop="True" Drop="AddObject"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="420,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="30" Source="Resources/Contact/square.jpg" AllowDrop="True" Drop="AddObject"/>
-        <Image x:Name="pin" HorizontalAlignment="Left" Height="30" Margin="150,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="30" Source="Resources/Contact/pin.png" Grid.Column="2" MouseDown="StartDrag"/>
+        <Image x:Name="img_sq_to" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="386,190,0,0" Grid.Row="3" VerticalAlignment="Top" Width="30" Source="Resources/Contact/square.jpg" AllowDrop="True" Drop="AddObject"/>
+        <Image x:Name="img_sq_cu" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="596,178,0,0" Grid.Row="3" VerticalAlignment="Top" Width="30" Source="Resources/Contact/square.jpg" AllowDrop="True" Drop="AddObject" OpacityMask="Black"/>
+        <Image x:Name="img_sq_cr" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="420,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="30" Source="Resources/Contact/square.jpg" AllowDrop="True" Drop="AddObject"/>
 
 
-        <Rectangle Fill="#FFBFBFBF" Grid.Row="3" Stroke="Black"/>
-        <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="19" Margin="10,52,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" SpellCheck.IsEnabled="True"/>
-        <TextBox x:Name="tbSuggestion" HorizontalAlignment="Left" Height="66" Margin="10,98,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" SpellCheck.IsEnabled="True"/>
-        <Label x:Name="label1" Content="Alguna sugerencia? Háznoslo saber aquí:" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="29" Width="278"/>
-        <Label x:Name="label_correo" Content="Tu correo electrónico:" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="125"/>
-        <Label x:Name="label_opinion" Content="Opinión:" HorizontalAlignment="Left" Margin="10,77,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="55"/>
-        <Button x:Name="btnSend" Content="Enviar" HorizontalAlignment="Left" Margin="299,178,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="btnSend_Click"/>
-        <Rectangle Fill="#FFEAEAEA" HorizontalAlignment="Left" Height="412" Margin="0,1,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="390" Grid.RowSpan="2"/>
-        <TextBlock x:Name="textblock_info" Margin="10,50,10,245" Grid.Row="1" TextWrapping="Wrap" Grid.RowSpan="2" Text="En VynilShop, nuestra pasión por la música se fusiona con la nostalgia de los vinilos. Nuestro viaje comenzó en las calles históricas de Talavera de la Reina, donde la primera tienda física de VynilShop se convirtió en un punto de encuentro para amantes de la música y coleccionistas de vinilos de todas las generaciones." FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
-        <Label x:Name="label_título" Content="¡Conecta con nosotros!" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <Label x:Name="label_tlf" Content="Teléfono de contacto:" HorizontalAlignment="Left" Margin="8,115,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Label x:Name="label_correoContacto" Content="Correo electrónico" HorizontalAlignment="Left" Margin="10,198,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="textblock_phoneNumber" Margin="14,151,6,145" Grid.Row="2" TextWrapping="Wrap" Text="925809677" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
-        <TextBlock x:Name="textblock_email" Margin="14,229,6,67" Grid.Row="2" TextWrapping="Wrap" Text="vynilshop@contacto.es" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
+        <Rectangle Fill="#FFBFBFBF" Grid.Row="4" Stroke="Black"/>
+        <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="19" Margin="10,52,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" SpellCheck.IsEnabled="True"/>
+        <TextBox x:Name="tbSuggestion" HorizontalAlignment="Left" Height="66" Margin="10,98,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" SpellCheck.IsEnabled="True"/>
+        <Label x:Name="label_b_cw" Content="{DynamicResource label_b_cw}" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="4" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="29" Width="278"/>
+        <Label x:Name="label_yemail_cw" Content="{DynamicResource label_yemail_cw}" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="125"/>
+        <Label x:Name="label_opinion_cw" Content="{DynamicResource label_opinion_cw}" HorizontalAlignment="Left" Margin="10,77,0,0" Grid.Row="4" VerticalAlignment="Top" Height="26" Width="55"/>
+        <Button x:Name="btnSend" Content="{DynamicResource btnSend}" HorizontalAlignment="Left" Margin="299,178,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="btnSend_Click"/>
+        <Rectangle Fill="#FFEAEAEA" HorizontalAlignment="Left" Height="412" Margin="0,1,0,0" Grid.Row="2" Stroke="Black" VerticalAlignment="Top" Width="390" Grid.RowSpan="2"/>
+        <TextBlock x:Name="textblock_info_cw" Margin="10,50,10,245" Grid.Row="2" TextWrapping="Wrap" Grid.RowSpan="2" Text="{DynamicResource textblock_info_cw}" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
+        <Label x:Name="label_title_cw" Content="{DynamicResource label_title_cw}" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="label_tlf_cw" Content="{DynamicResource label_tlf_cw}" HorizontalAlignment="Left" Margin="8,115,0,0" Grid.Row="3" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="label_email_cw" Content="{DynamicResource label_email_cw}" HorizontalAlignment="Left" Margin="10,198,0,0" Grid.Row="3" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="textbox_phoneNumber" Margin="14,151,6,145" Grid.Row="3" TextWrapping="Wrap" Text="925809677" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
+        <TextBox x:Name="textbox_email" Margin="14,229,6,67" Grid.Row="3" TextWrapping="Wrap" Text="vynilshop@contacto.es" FontSize="14" FontStretch="Expanded" TextAlignment="Justify"/>
+
+        <ComboBox x:Name="combobox_language" Grid.Column="1" HorizontalAlignment="Center" Margin="172,0,333,5" FontFamily="Berlin Sans FB" FontSize="25"
+                  Opacity="0.6" VerticalAlignment="Bottom" Width="155" Grid.Row="1" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="combobox_language_SelectionChanged">
+            <ComboBoxItem x:Name="cbItem1" Content="ES"/>
+            <ComboBoxItem x:Name="cbItem2" Content="EN"/>
+        </ComboBox>
+
+        <Label x:Name="label_add_pin" Content="{DynamicResource label_add_pin}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="202" Background="#FFBFBFBF" Grid.Column="2" Height="75"/>
+        <Image x:Name="pin" HorizontalAlignment="Left" Height="30" Margin="94,46,0,0" Grid.Row="2" VerticalAlignment="Top" Width="30" Source="Resources/Contact/pin.png" MouseDown="StartDrag" Grid.Column="2"/>
 
 
     </Grid>
