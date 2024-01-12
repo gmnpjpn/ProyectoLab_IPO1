@@ -41,5 +41,21 @@
     <sys:String x:Key="AddArtist">Add Artists</sys:String>
     <sys:String x:Key="AddAlbum">Add Albums</sys:String>
 
+    <!-- Contact Window -->
+    <sys:String x:Key="textblock_info_lateral">Our ​​operation area is distributed between Extremadura, CLM, Valencia and Madrid. Always find us near you!</sys:String>
+    <sys:String x:Key="label_title_cw">Connect with us!</sys:String>
+    <sys:String x:Key="textblock_info_cw">At VynilShop, our passion for music merges with the nostalgia of vinyl. Our journey began in the historic streets of Talavera de la Reina, where VynilShop's first physical store became a meeting point for music lovers and vinyl collectors of all generations.</sys:String>
+    <sys:String x:Key="label_tlf_cw">Telephone contact:</sys:String>
+    <sys:String x:Key="label_email_cw">Email:</sys:String>
+    <sys:String x:Key="label_b_cw">Any suggestions? Let us know below:</sys:String>
+    <sys:String x:Key="label_yemail_cw">Your email:</sys:String>
+    <sys:String x:Key="label_opinion_cw">Opinion:</sys:String>
+    <sys:String x:Key="btnSend">Send</sys:String>
+    <sys:String x:Key="label_add_pin">Add establishment:</sys:String>
 
+    <!-- Shopping Cart Window -->
+    <sys:String x:Key="title_sc_label">Albums added to your shopping cart:</sys:String>
+    <sys:String x:Key="price_label_sc">Total price:</sys:String>
+    <sys:String x:Key="buy_button_sc">Comprar</sys:String>
+    
 </ResourceDictionary>

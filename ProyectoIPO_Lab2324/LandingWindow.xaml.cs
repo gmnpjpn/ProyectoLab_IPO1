@@ -339,7 +339,26 @@ namespace ProyectoIPO_Lab2324
 
         private void btnBuyAlbum_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Funcion no implementada todavía");
+            
+            if (lstAlbumList.SelectedItem != null && lstAlbumList.SelectedItem is Album selectedAlbum)
+            {
+                
+                bool existsInShoppingCart = GlobalData.ShoppingCartList.Any(a =>
+                    a.Name == selectedAlbum.Name &&
+                    a.Author == selectedAlbum.Author
+                );
+
+                if (!existsInShoppingCart)
+                {
+                    GlobalData.ShoppingCartList.Add(selectedAlbum);
+                    MessageBox.Show("Añadido correctamente al carrito de compra.", "Añadido al carrito");
+                  
+                }
+                else
+                {
+                    MessageBox.Show("El álbum ya había sido añadido al carrito.", "Error al añadir al carrito");
+                }
+            }
         }
 
         private void stopAtClose(object sender, System.ComponentModel.CancelEventArgs e)

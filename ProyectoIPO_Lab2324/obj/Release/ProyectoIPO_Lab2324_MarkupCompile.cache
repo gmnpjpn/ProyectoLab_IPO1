@@ -10,11 +10,11 @@ none
 false
 TRACE
 C:\Users\pilar\Documents\GitHub\ProyectoLab_IPO1\ProyectoIPO_Lab2324\App.xaml
-9-2142738416
-
-1457088177
+112059705853
+52008799386
+181911802115
 13-1505183044
-ArtistWindow.xaml;ContactWindow.xaml;FaqsWindow.xaml;LandingWindow.xaml;LoginWindow.xaml;Resources\StringResources\StringResources.en-US.xaml;Resources\StringResources\StringResources.es-ES.xaml;ShoppingCartWindow.xaml;UserWindow.xaml;
+AddAlbumWindow.xaml;AddArtistWindow.xaml;ContactWindow.xaml;FaqsWindow.xaml;LandingWindow.xaml;LoginWindow.xaml;PurchaseFormWindow.xaml;Resources\Dictionaries\StringResources.en-US.xaml;Resources\Dictionaries\StringResources.es-ES.xaml;ShoppingCartWindow.xaml;UserWindow.xaml;
 
 True
 

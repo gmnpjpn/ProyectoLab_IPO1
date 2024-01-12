@@ -50,12 +50,12 @@
             </StackPanel>
         </Button>
 
-        <TabControl x:Name="tcFaqs" Margin="10,3,10,10" Grid.Row="1">
+        <TabControl x:Name="tcFaqs" Margin="124,5,125,8" Grid.Row="1">
             <TabItem Header="" IsSelected="True">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <ListBox x:Name="lstFaqList"
                          SelectedIndex="0"
-                         Width="200" Margin="5"
+                         Width="377" Margin="5"
                          AlternationCount="2">
 
                         <ListBox.ItemTemplate>
@@ -88,20 +88,22 @@
 
                     </ListBox>
 
-                    <StackPanel x:Name="spDetail" Width="426" Orientation="Vertical">
+                    <StackPanel x:Name="spDetail" Width="628" Orientation="Vertical" Margin="0,5,0,0">
                         <Label x:Name="lblName" FontWeight="Bold" FontSize="20"
-                           Content="{Binding ElementName=lstFaqList, Path=SelectedItem.Title}"/>
+                           Content="{Binding ElementName=lstFaqList, Path=SelectedItem.Title}" Margin="4,0,-4,0"/>
 
-                        <Label FontWeight="Bold">Solución:</Label>
-                        <TextBlock x:Name="tbSolution"
-                           Text="{Binding ElementName=lstFaqList, Path=SelectedItem.Content}"/>
+                        <Label FontWeight="Bold" Margin="4,0,-4,0">Solución:</Label>
+                        <TextBlock x:Name="tbSolution" FontStretch="Expanded" TextAlignment="Justify" TextWrapping="Wrap"
+                           Text="{Binding ElementName=lstFaqList, Path=SelectedItem.Content}" Height="259" Margin="10,0"/>
 
                     </StackPanel>
                 </StackPanel>
 
             </TabItem>
-            
-        </TabControl>
 
+
+        </TabControl>
+        <Rectangle x:Name="rec_fw" Fill="#FFB1B6BC" Stroke="#FFB1B6BC" Margin="124,480,125,0" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="155" Margin="720,480,0,0" Grid.Row="1" VerticalAlignment="Top" Width="435" Source="Resources/Faqs/faqs_banner_rect.jpg" OpacityMask="Black"/>
     </Grid>
 </Window>

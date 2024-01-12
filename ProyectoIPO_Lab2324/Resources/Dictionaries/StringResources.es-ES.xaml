@@ -40,10 +40,36 @@
 
     <sys:String x:Key="AddArtist">Añadir Artista</sys:String>
     <sys:String x:Key="AddAlbum">Añadir Album</sys:String>
-    
+
+    <!-- Contact Window -->
+    <sys:String x:Key="textblock_info_lateral">Nuestra área de operación se distribuye entre Extremadura, CLM, Valencia y Madrid. Encuéntranos siempre cerca de ti!</sys:String>
+    <sys:String x:Key="label_title_cw">¡Conecta con nosotros!</sys:String>
+    <sys:String x:Key="textblock_info_cw">En VynilShop, nuestra pasión por la música se fusiona con la nostalgia de los vinilos. Nuestro viaje comenzó en las calles históricas de Talavera de la Reina, donde la primera tienda física de VynilShop se convirtió en un punto de encuentro para amantes de la música y coleccionistas de vinilos de todas las generaciones.</sys:String>
+    <sys:String x:Key="label_tlf_cw">Teléfono de contacto:</sys:String>
+    <sys:String x:Key="label_email_cw">Correo electrónico:</sys:String>
+    <sys:String x:Key="label_b_cw">Alguna sugerencia? Háznoslo saber aquí:</sys:String>
+    <sys:String x:Key="label_yemail_cw">Tu correo electrónico:</sys:String>
+    <sys:String x:Key="label_opinion_cw">Opinión:</sys:String>
+    <sys:String x:Key="btnSend">Enviar</sys:String>
+    <sys:String x:Key="label_add_pin">Añadir establecimiento:</sys:String>
 
 
+    <!-- Shopping Cart Window -->
+    <sys:String x:Key="title_sc_label">Discos añadidos a su carrito:</sys:String>
+    <sys:String x:Key="price_label_sc">Precio total:</sys:String>
+    <sys:String x:Key="buy_button_sc">Comprar</sys:String>
 
+    <!-- FAQs Window -->
+    <sys:String x:Key="faq1"></sys:String>
+    <sys:String x:Key="faq2"></sys:String>
+    <sys:String x:Key="faq3"></sys:String>
+    <sys:String x:Key="faq4"></sys:String>
+    <sys:String x:Key="faq5"></sys:String>
+    <sys:String x:Key="faq6"></sys:String>
+    <sys:String x:Key="faq7"></sys:String>
+    <sys:String x:Key="faq8"></sys:String>
+    <sys:String x:Key="faq9"></sys:String>
+    <sys:String x:Key="faq10">Puedes ponerte en contacto con nuestro equipo de servicio al cliente a través del formulario de contacto en la aplicación o mediante el correo electrónico de soporte proporcionado en la sección de ayuda.</sys:String>
 
 
 
