@@ -4,3 +4,5 @@
 </p>
 
 # IPO PROJECT 2023-24
+
+* The practice had an score of **6.27**.
