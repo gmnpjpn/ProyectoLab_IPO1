@@ -37,4 +37,4 @@ Lab project of the Human-Computer Interaction (HCI) assignment.
 * Benedicto Tapetado
 
 ## License
-This project is licensed under the [LICENSE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
